@@ -2,55 +2,23 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
-      <home-manager/nixos>
+      ./home.nix
+      ../hardware/bluetooth.nix
+      ../hardware/nvidia.nix
+      ../system/fonts.nix
     ];
 
-  # NVIDIA
-  ## OpenGL
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-  };
-
-  ## Load drivers for Wayland
-  services.xserver.videoDrivers = ["nvidia"];
-
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
-
-  hardware.nvidia.prime = {
-    offload = {
-      enable = true;
-      enableOffloadCmd = true;
-    };
-    intelBusId = "PCI:0:2:0";
-    nvidiaBusId = "PCI:1:0:0";
-  };
-  
-  
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "hacky_os"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
+  # Networking
+  networking.hostName = "hacky_os";
   networking.networkmanager.enable = true;
   services.mullvad-vpn.enable = true;
+  services.openssh.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Matamoros";
@@ -61,6 +29,7 @@
   # Fish 🐡
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
+  environment.shells = with pkgs; [ fish ];
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -104,85 +73,23 @@
     isNormalUser = true;
     description = "hacky";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      firefox
-      brave
-      signal-desktop
-      timeshift
-      steam
-      bat
-      starship
-      qbittorrent
-      synology-drive-client
-      rhythmbox
-    ];
+    packages = with pkgs; [];
+    uid = 1000;
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   environment.systemPackages = with pkgs; [
-      brightnessctl
-      cargo
-      dunst
-      git
-      go
-      kitty 
-      lshw
-      mullvad-vpn
-      neovim
-      pamixer
-      pkgs.helix
-      (python3.withPackages(ps: with ps; [ pandas requests numpy ruff mnamer]))
-      rofi
-      rofimoji
-      rustc
-      swww
-      vim
-      waybar
-      wget
-      zellij
+    vim
+    wget
+    fish
+    git
+    home-manager
 ];
 
-  # Fonts
-  fonts.packages = with pkgs; [
-	fira-code
-	fira-code-symbols
-	fira-code-nerdfont
-	iosevka
-        monaspace
-];
+  # System Version
+  system.stateVersion = "23.11";
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
-
-  # Bluetooth Settings
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true; # For use with HyprLand
-
+  # Nix Flakes ❄️
+  nix.package= pkgs.nixFlakes;
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  nixpkgs.config.allowUnfree = true;
 }
