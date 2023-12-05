@@ -5,9 +5,10 @@
     nixpkgs.url = "nixpkgs/nixos-23.11";
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nur.url = github:nix-community/NUR;
   };
 
-  outputs = { self, nixpkgs, home-manager, ...}: 
+  outputs = { self, nixpkgs, home-manager, nur, ...}: 
     let 
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -16,7 +17,9 @@
     nixosConfigurations = {
       hackyos = lib.nixosSystem {
         inherit system;
-        modules = [ ./configuration.nix ];
+        modules = [ 
+        ./configuration.nix 
+        nur.nixosModules.nur ];
       };
     };
     homeConfigurations = {

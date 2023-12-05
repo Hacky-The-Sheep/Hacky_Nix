@@ -5,14 +5,15 @@
   home.homeDirectory = "/home/hacky";
 
   # Packages to install
-#   home.packages = [
+  home.packages = [
 # 	pkgs.htop
 # 	pkgs.fastfetch
 # 	pkgs.lf
 # 	pkgs.signal-desktop
 # 	pkgs.timeshift
 # 	pkgs.mullvad-vpn
-# ];
+    pkgs.libreoffice
+];
  
   # Home Manager Version
   home.stateVersion = "23.11";
@@ -29,7 +30,6 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      # General
       vi = "nvim";
       ei = "exit";
       tt = "tmux new";

@@ -4,6 +4,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      <home-manager/nixos>
     ];
 
   # NVIDIA
@@ -40,7 +41,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "hackyos"; # Define your hostname.
+  networking.hostName = "hacky_os"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -183,6 +184,5 @@
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true; # For use with HyprLand
 
-  nix.settings.experimental-features = [ "nix-command" "flakes"];
-
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 }
