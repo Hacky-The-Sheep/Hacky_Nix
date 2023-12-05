@@ -28,6 +28,12 @@
     mullvad-vpn
     
     # Fun
+    rhythmbox
+    discord
+    mpv
+    inkscape
+    obs-studio
+    yt-dlp
     
 ];
  
