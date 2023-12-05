@@ -183,4 +183,6 @@
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true; # For use with HyprLand
 
+  nix.settings.experimental-features = [ "nix-command" "flakes"];
+
 }
