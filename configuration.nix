@@ -5,9 +5,9 @@
     [
       ./hardware-configuration.nix
       ./home.nix
-      ../hardware/bluetooth.nix
-      ../hardware/nvidia.nix
-      ../system/fonts.nix
+      ./hardware/bluetooth.nix
+      ./hardware/nvidia.nix
+      ./system/fonts.nix
     ];
 
   # Bootloader.

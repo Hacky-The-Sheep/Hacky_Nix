@@ -1,7 +1,19 @@
 {
   description = "Hacky's Flake";
 
-  outputs = { self, nixpkgs, home-manager, nur, ...}: 
+  inputs = {
+    nixpkgs.url = "nixpkgs/nixos-23.11";
+    home-manager.url = "github:nix-community/home-manager/release-23.11";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nur.url = github:nix-community/NUR;
+
+    spicetify-nix = {
+      url = "github:the-argus/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
+  outputs = { self, nixpkgs, home-manager, nur, spicetify-nix, ...}: 
     let 
 
       # ----- System Settings ----- #
@@ -31,48 +43,16 @@
         modules = [ 
         ./configuration.nix 
         nur.nixosModules.nur ];
-        specialArgs = {          
-            inherit system;
-            inherit hostname;
-            inherit timezone;
-            inherit locale;
-            inherit username;
-            inherit name;
-            inherit email;
-            inherit dotfilesDir;
-            inherit wm;
-            inherit term;
-            inherit font;
-        };
       };
     };
 
     homeConfigurations = {
       hacky = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ ./home.nix ];
-        specialArgs = {          
-            inherit system;
-            inherit hostname;
-            inherit timezone;
-            inherit locale;
-            inherit username;
-            inherit name;
-            inherit email;
-            inherit dotfilesDir;
-            inherit wm;
-            inherit term;
-            inherit font;
-        };
+        modules = [ 
+        ./home.nix 
+        ];
       };
     };
   };
-
-  inputs = {
-    nixpkgs.url = "nixpkgs/nixos-23.11";
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nur.url = github:nix-community/NUR;
-  };
-
 }

@@ -1,25 +1,34 @@
-{ config, pkgs, ... }:
+{ config, pkgs, username, ... }:
 
 {
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
 
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+
   # Packages to install
-  home.packages = [
-# 	pkgs.htop
-# 	pkgs.fastfetch
-# 	pkgs.lf
-# 	pkgs.signal-desktop
-# 	pkgs.timeshift
-# 	pkgs.mullvad-vpn
-    pkgs.libreoffice
+  home.packages = with pkgs; [
+
+    # Main
+    htop
+    fastfetch
+    lf
+    signal-desktop
+    timeshift
+    brave
+    firefox
+    rofi
+    swww
+
+    # "Work"
+    libreoffice
+    mullvad-vpn
 ];
  
   # Home Manager Version
   home.stateVersion = "23.11";
 
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 
   programs.git = {
     enable = true;
