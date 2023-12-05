@@ -20,15 +20,23 @@
     firefox
     rofi
     swww
+    helix
+    kitty
 
     # "Work"
     libreoffice
     mullvad-vpn
+    
+    # Fun
+    
 ];
  
   # Home Manager Version
   home.stateVersion = "23.11";
 
+  programs.helix = {
+    enable = true;
+  };
 
   programs.git = {
     enable = true;

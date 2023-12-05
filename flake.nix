@@ -5,7 +5,6 @@
     nixpkgs.url = "nixpkgs/nixos-23.11";
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    nur.url = github:nix-community/NUR;
 
     spicetify-nix = {
       url = "github:the-argus/spicetify-nix";
@@ -13,7 +12,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nur, spicetify-nix, ...}: 
+  outputs = { self, nixpkgs, home-manager, spicetify-nix, ...}: 
     let 
 
       # ----- System Settings ----- #
@@ -42,7 +41,7 @@
         inherit system;
         modules = [ 
         ./configuration.nix 
-        nur.nixosModules.nur ];
+        ];
       };
     };
 

@@ -4,7 +4,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./home.nix
       ./hardware/bluetooth.nix
       ./hardware/nvidia.nix
       ./system/fonts.nix
@@ -83,6 +82,7 @@
     fish
     git
     home-manager
+    steam
 ];
 
   # System Version
