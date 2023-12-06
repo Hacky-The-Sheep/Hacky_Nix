@@ -83,6 +83,8 @@
     git
     home-manager
     steam
+    discord
+    zellij
 ];
 
   # System Version
