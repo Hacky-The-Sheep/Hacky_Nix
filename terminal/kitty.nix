@@ -1,8 +1,10 @@
-{ config, pkgs, ... }
+{ config, pkgs, ... }:
 
-programs.kitty = {
-  enable = true;
-  theme = "Catppuccin-Mocha";
-  font.name = "Iosevka";  
-  font.size = "15";
-};
+{
+  programs.kitty = {
+    enable = true;
+    theme = "Catppuccin-Mocha";
+    font.name = "Iosevka";  
+    font.size = 15;
+  };
+}

@@ -4,8 +4,8 @@
 
   # --- MODULARITY --- #
   imports = 
-    [ ../terminal/kitty.nix 
-      ../terminal/fish.nix
+    [ ./terminal/kitty.nix 
+      ./terminal/fish.nix
     ];
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
