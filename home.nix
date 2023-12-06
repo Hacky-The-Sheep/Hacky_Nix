@@ -8,6 +8,7 @@
       ./terminal/fish.nix
       ./terminal/zellij.nix
       ./terminal/helix.nix
+      ./apps/firefox.nix
     ];
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
