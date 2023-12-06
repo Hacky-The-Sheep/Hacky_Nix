@@ -1,8 +1,6 @@
-{ pkgs, ... }:
-
 {
   programs.firefox = {
-    enabled = true;
+    enable = true;
     profiles = {
       default = {
         id = 0;
@@ -15,10 +13,6 @@
           force = true;
           default = "DuckDuckGo";
         };
-        extenstions = with pkgs.inputs.firefox-addons; [
-          ublock-origin
-          bitwarden
-        ];
       };
     };
   };
