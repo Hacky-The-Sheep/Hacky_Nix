@@ -80,19 +80,141 @@
       cursorline = "#2a2b3c";
       secondary_cursor = "#b5a6a8";
     in {
+      "ui.linenr" = {
+        fg = text;
+        bg = base;
+      };
+      "ui.linenr.selected" = {
+        fg = lavender;
+      };
+      "ui.statusline" = {
+        fg = subtext1;
+        bg = mantle;
+      };
+      "ui.statusline.inactive" = {
+        fg = surface2;
+        bg = lavender;
+        modifiers = [ "bold" ];
+      };
+      "ui.statusline.normal" = {
+        fg = base;
+        bg = lavender;
+        modifiers = [ "bold" ];
+      };
+      "ui.statusline.insert" = {
+        fg = base;
+        bg = green;
+        modifiers = [ "bold" ];
+      };
+      "ui.statusline.select" = {
+        fg = base;
+        bg = flamingo;
+        modifiers = [ "bold" ];
+      };
+      "ui.popup" = {
+        fg = text;
+        bg = surface0;
+      };
+      "ui.window" = {
+        fg = crust;
+      };
+      "ui.help" = {
+        fg = overlay2;
+        bg = surface0;
+      };
+      "ui.bufferline" = {
+        fg = subtext0;
+        bg = mantle;
+      };
+      "ui.bufferline.active" = {
+        fg = mauve;
+        bg = base;
+        underline = {
+          color = mauve;
+          style = "line";
+        };
+      };
+      "ui.bufferline.background" = {
+        bg = crust;
+      };
+      "ui.text.focus" = {
+        fg = text;
+        bg = surface0;
+        modifiers = [ "bold" ];
+      };
+      "ui.text.inactive" = {
+        fg = overlay1;
+      };
+      "ui.virtual.ruler" = {
+        bg = surface0;
+      };
+      "ui.menu.selected" = {
+        fg = overlay2;
+        bg = surface0;
+        modifiers = [ "bold" ];
+      };
+      "ui.virtual.inlay-hint" = {
+        fg = surface1;
+        bg = mantle;
+      };
+      "ui.cursor" = {
+        fg = base;
+        bg = secondary_cursor;
+      };
+      "ui.cursor.primary" = {
+        fg = base;
+        bg = rosewater;
+      };
+      "ui.cursor.match" = {
+        fg = peach;
+        modifiers = [ "bold" ];
+      };
+      "ui.highlight" = {
+        bg = surface1;
+        modifiers = [ "bold" ];
+      };
+      "ui.menu" = {
+        fg = overlay2;
+        bg = surface0;
+      };
+      "diagnostic.error" = {
+        underline = {
+          color = red;
+          style = "curl";
+        };
+      };
+      "diagnostic.warning" = {
+        underline = {
+          color = red;
+          style = "curl";
+        };
+      };
+      "diagnostic.info" = {
+        underline = {
+          color = sky;
+          style = "curl";
+        };
+      };
+      "diagnostic.hint" = {
+        underline = {
+          color = yellow;
+          style = "curl";
+        };
+      };
+      "variable.parameter" = {
+        fg = maroon;
+        modifiers = [ "italic" ];
+      };
+      "ui.selection" = surface1;
+      "ui.cursorline.primary" = cursorline;
+      "ui.virtual" = overlay0;
+      "ui.virtual.indent-guide" = surface0;
       "type" = yellow;
       "constructor" = sapphire;
       "constant" = peach;
       "constant.builtin" = peach;
       "constant.character" = teal;
       "constant.character.escape" = pink;
-      "ui.menu.selected" = {
-        modifiers = [ "reversed" ];
-      };
-      "ui.selection" = {
-        fg = mantle;
-        bg = blue;
-      };
       "string" = green;
       "string.regexp" = peach;
       "string.special" = blue;
