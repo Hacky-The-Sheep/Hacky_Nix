@@ -6,5 +6,6 @@
     theme = "Catppuccin-Mocha";
     font.name = "Iosevka";  
     font.size = 15;
+    shellIntegration.enableFishIntegration = true;
   };
 }

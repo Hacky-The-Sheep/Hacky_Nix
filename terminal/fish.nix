@@ -33,6 +33,8 @@
       cpr = "cd ~/ExtraDrive/Projects/";
       kb = "cd ~/Documents/PKM/";
       zj = "zellij";
+      hmu = "home-manager switch --flake .";
+      nup = "sudo nixos-rebuild switch --flake .";
     };
   };
 }

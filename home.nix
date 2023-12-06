@@ -6,6 +6,7 @@
   imports = 
     [ ./terminal/kitty.nix 
       ./terminal/fish.nix
+      ./terminal/zellij.nix
     ];
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
@@ -29,6 +30,12 @@
     helix
     kitty
 
+    # Coding
+    go
+    rustc
+    cargo
+    (python3.withPackages(ps: with ps; [ pandas requests numpy ruff mnamer]))
+
     # "Work"
     libreoffice
     mullvad-vpn
@@ -40,7 +47,6 @@
     obs-studio
     yt-dlp
     qbittorrent
-    
 ];
  
   # Home Manager Version
