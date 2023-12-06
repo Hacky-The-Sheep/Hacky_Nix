@@ -9,6 +9,7 @@
       ./terminal/zellij.nix
       ./terminal/helix.nix
       ./apps/firefox.nix
+      ./wm/hyprland.nix
     ];
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
