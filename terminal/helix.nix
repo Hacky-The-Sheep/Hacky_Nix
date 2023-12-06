@@ -49,6 +49,8 @@
         auto-format = true;
     }];
   };
+
+  ## --- Catppuccin 😹 --- ##
   themes = {
     catppuccin-mocha = let
       rosewater = "#f5e0dc";
@@ -93,8 +95,7 @@
       };
       "ui.statusline.inactive" = {
         fg = surface2;
-        bg = lavender;
-        modifiers = [ "bold" ];
+        bg = mantle;
       };
       "ui.statusline.normal" = {
         fg = base;
@@ -149,8 +150,8 @@
         bg = surface0;
       };
       "ui.menu.selected" = {
-        fg = overlay2;
-        bg = surface0;
+        fg = text;
+        bg = surface1;
         modifiers = [ "bold" ];
       };
       "ui.virtual.inlay-hint" = {
