@@ -7,6 +7,7 @@
     [ ./terminal/kitty.nix 
       ./terminal/fish.nix
       ./terminal/zellij.nix
+      ./terminal/helix.nix
     ];
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
@@ -51,10 +52,6 @@
  
   # Home Manager Version
   home.stateVersion = "23.11";
-
-  programs.helix = {
-    enable = true;
-  };
 
   programs.git = {
     enable = true;

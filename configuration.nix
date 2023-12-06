@@ -85,6 +85,7 @@
     steam
     discord
     zellij
+    nil
 ];
 
   # System Version

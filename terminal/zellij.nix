@@ -7,6 +7,6 @@
       pane_frames = false;
       theme = "catppuccin-mocha";
       default_layout = "compact";
-    }
+    };
   };
 }
