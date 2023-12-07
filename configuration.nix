@@ -34,22 +34,23 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+    desktopManager.default = "gnome";
+  };  
+
   # Wayland 
   ## Enable HyprLand
   programs.hyprland.enable = true;
 
-  # Enable the KDE Plasma Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
-  services.xserver.displayManager.defaultSession = "plasmawayland";
-
-  # Configure keymap in X11
-  #services.xserver = {
-    #layout = "us";
-    #xkbVariant = "";
-  #};
+  # Remove Gnome bloat
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-photos
+    gnome-tour
+    epiphany
+  ]);
 
   # Enable CUPS to print documents.
   services.printing.enable = true;

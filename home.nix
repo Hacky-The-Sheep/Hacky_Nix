@@ -42,6 +42,7 @@
     # "Work"
     libreoffice
     mullvad-vpn
+    remmina
     
     # Fun
     rhythmbox
