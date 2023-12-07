@@ -8,7 +8,6 @@
       ./terminal/fish.nix
       ./terminal/zellij.nix
       ./terminal/helix.nix
-      ./apps/firefox.nix
       ./wm/hyprland.nix
       ./wm/waybar.nix
     ];
