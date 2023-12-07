@@ -38,7 +38,7 @@
     enable = true;
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
-    desktopManager.default = "gnome";
+    displayManager.defaultSession = "gnome";
   };  
 
   # Wayland 
