@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   programs.fish = {
     enable = true;
@@ -22,11 +20,11 @@
       ydl = "yt-dlp --prefer-ffmpeg --merge-output-format mkv ";
       ymp4 = "yt-dlp --prefer-ffmpeg --merge-output-format mp4 ";
       ymp3 = "yt-dlp --extract-audio --audio-format mp3 ";
-      la = "exa -a --color =always --group-directories-first --icons,";
       rmark = "ssh root@10.11.99.1";
       gotti = "mpv https://www.twitch.tv/tugotti78";
       mami = "mpv https://www.twitch.tv/donscaremami";
       screens = "rm -f Pictures/Screenshots/*";
+      ls = "exa -a --color --icons --long";
       code = "cd ~/ExtraDrive/Coding";
       cpy = "cd ~/ExtraDrive/Coding/Python/";
       crst = "cd ~/ExtraDrive/Coding/rust/";
