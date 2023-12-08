@@ -10,6 +10,7 @@
       ./terminal/helix.nix
       ./terminal/lf.nix
       ./terminal/eza.nix
+      ./system/gtk.nix
       ./wm/hyprland.nix
       ./wm/waybar.nix
     ];
