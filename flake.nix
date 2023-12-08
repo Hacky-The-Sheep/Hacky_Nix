@@ -10,6 +10,8 @@
       url = "github:the-argus/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprland.url = "github:hyprwm/hyprland";
   };
 
   outputs = { self, nixpkgs, home-manager, spicetify-nix, ...}: 
