@@ -12,6 +12,7 @@
         passthrough = false;
         gtk-layer-shell = true;
         height = 30;
+
         modules-left = [
           "hyprland/workspaces"
           "custom/game"
@@ -21,7 +22,7 @@
         modules-center = [
           "clock"
         ];
-        "modules-right" = [
+        modules-right = [
           "network"
           "bluetooth"
           "battery"
@@ -31,9 +32,11 @@
           "user"
           "tray"
         ];
+
         "hyprland/window" = {
           "format" = "{}";
         };
+
         "hyprland/workspaces" = {
           "sort-by-name" = true;
           "format" = "{id}";
@@ -44,31 +47,38 @@
             "4" = [];
           };
         };
+
         "custom/game" = {
           format = "Game";
           on-click = "bash ~/.config/waybar/scripts/game_mode.sh";
         };
+
         "custom/home" = {
           format = "Home";
           on-click = "bash ~/.config/waybar/scripts/home_mode.sh";
         };
+
         "custom/work" = {
           format = "Work";
           on-click = "bash ~/.config/waybar/scripts/work_mode.sh";
         };
+
         "user" = {
           format = "{user}";
           spacing = 4;
           on-click = "bash ~/.config/waybar/scripts/power_menu.sh";
         };
+        
         "tray" = {
           icon-size = 14;
           spacing = 4;
         };
+        
         "clock" = {
           format = "{: %I:%M    %b %e, %y}";
           interval = 60;
         };
+
         "backlight" = {
           device = "intel_backlight";
           format = "{icon} {percent}%";
@@ -82,11 +92,13 @@
            disable-scroll = true;
            min-length = 5;
           };
+
           "network" = {
             format = "{ifname}";
             format-wifi = "{essid}";
             format-ethernet = "{ipaddr}";
           };
+
           "battery" = {
             states = {
               good = 100;
@@ -110,6 +122,7 @@
               ""
             ];
           };
+
           "pulseaudio" = {
             format = "{icon} {volume}%";
             tooltip = true;
@@ -132,6 +145,7 @@
               ];
             };
           };
+
           "pulseaudio#microphone" = {
             format = "{format_source}";
             format-source = " {volume}%";
@@ -146,6 +160,7 @@
             format-wifi = "  {essid}";
             tooltip-format = "  {signalStrength}";
           };
+
           "bluetooth" = {
             format = " {status}";
             format-disabled = " {status}";
@@ -155,16 +170,18 @@
             tooltip-format-enumerate-connected = "{device_alias}";
             on-click = "blueman-manager";
           };
+
           "memory" =  {
             interval = 1;
             format = "  {used}G ";
           };
+
           "disk" = {
             interval = 30;
             format = "  {free} / {total}";
           };
         };
       };
-    style = '' ./wm/style.css '';
+    # style = '' ./wm/style.css '';
     };
 }

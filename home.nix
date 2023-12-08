@@ -4,9 +4,19 @@
 
   # --- MODULARITY --- #
   imports = 
-    [ ./terminal
+    [ 
+      # Terminal
+      ./terminal/eza.nix
+      ./terminal/fish.nix
+      ./terminal/helix.nix
+      ./terminal/kitty.nix
+      ./terminal/lf.nix
+      ./terminal/zellij.nix
+      # System
       ./system/gtk.nix
-      ./wm
+      # WM
+      ./wm/hyprland.nix
+      ./wm/waybar.nix
     ];
 
   home.username = "hacky";
