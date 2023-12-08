@@ -8,6 +8,8 @@
       ./terminal/fish.nix
       ./terminal/zellij.nix
       ./terminal/helix.nix
+      ./terminal/lf.nix
+      ./terminal/eza.nix
       ./wm/hyprland.nix
       ./wm/waybar.nix
     ];
@@ -38,6 +40,7 @@
     rustc
     cargo
     (python3.withPackages(ps: with ps; [ pandas requests numpy ruff mnamer]))
+    eza
 
     # "Work"
     libreoffice
@@ -61,4 +64,8 @@
     userName = "Hacky-The-Sheep";
     userEmail = "jon.nguyen7@protonmail.com";
   };
+
+  # Gnome Theming
+  gtk.enable = true;
+  
 }
