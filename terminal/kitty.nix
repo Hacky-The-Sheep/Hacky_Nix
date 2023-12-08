@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ lib, ...}:
 
 {
   programs.kitty = {
@@ -7,5 +7,8 @@
     font.name = "Iosevka";  
     font.size = 15;
     shellIntegration.enableFishIntegration = true;
+    settings = {
+      background_opacity = lib.mkForce "0.95";
+    };
   };
 }
