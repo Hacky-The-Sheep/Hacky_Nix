@@ -33,6 +33,9 @@
     swww
     kitty
 
+    # Catppuccin 😹
+    catppuccin-gtk
+
     # Terminal Programs
     helix
     lf
