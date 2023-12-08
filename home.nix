@@ -1,18 +1,12 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
 
   # --- MODULARITY --- #
   imports = 
-    [ ./terminal/kitty.nix 
-      ./terminal/fish.nix
-      ./terminal/zellij.nix
-      ./terminal/helix.nix
-      ./terminal/lf.nix
-      ./terminal/eza.nix
+    [ ./terminal
       ./system/gtk.nix
-      ./wm/hyprland.nix
-      ./wm/waybar.nix
+      ./wm
     ];
 
   home.username = "hacky";
