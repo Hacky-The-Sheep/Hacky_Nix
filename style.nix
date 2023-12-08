@@ -1,3 +1,6 @@
+{colorscheme}:
+
+''
 * {
     border: none;
     border-radius: 0;
@@ -178,7 +181,7 @@ animation-direction:        alternate;
     margin-left: 5px;
     margin-right: 5px;
     border-left: 5px;
-    
+
 }
 #custom-home {
     color: #74c7ec;
@@ -193,3 +196,4 @@ animation-direction:        alternate;
     border-left: 5px;
 }
 */
+''

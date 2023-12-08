@@ -182,6 +182,6 @@
           };
         };
       };
-    # style = '' ./wm/style.css '';
+    style = '' ./wm/style.nix '';
     };
 }
