@@ -13,6 +13,7 @@
       ./wm/hyprland.nix
       ./wm/waybar.nix
     ];
+
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
 
@@ -23,24 +24,28 @@
   home.packages = with pkgs; [
 
     # Main
-    htop
     fastfetch
-    lf
     signal-desktop
     timeshift
     brave
     firefox
     rofi
     swww
-    helix
     kitty
+
+    # Terminal Programs
+    helix
+    lf
+    htop
+    eza
+    yt-dlp
+    bat
 
     # Coding
     go
     rustc
     cargo
     (python3.withPackages(ps: with ps; [ pandas requests numpy ruff mnamer]))
-    eza
 
     # "Work"
     libreoffice
@@ -52,7 +57,6 @@
     mpv
     inkscape
     obs-studio
-    yt-dlp
     qbittorrent
 ];
  
