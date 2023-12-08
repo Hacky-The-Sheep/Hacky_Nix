@@ -40,6 +40,7 @@
     eza
     yt-dlp
     bat
+    ripgrep
 
     # Coding
     go
