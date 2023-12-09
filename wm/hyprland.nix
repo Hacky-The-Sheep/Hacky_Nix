@@ -107,7 +107,7 @@ wayland.windowManager.hyprland = {
       "$mod, E, exec, kitty lf"
       "$mod, F, exec, firefox"
       "$mod, V, togglefloating, q"
-      "$mod, R, exec, ~/.config/rofi/launchers/type-1/launcher.sh"
+      "$mod, R, exec, rofi -show run"
       "$mod, P, pseudo, # dwindle"
       "$mod, O, togglesplit, # dwindle"
       "$mod, S, exec, slurp | grim -g - - | wl-copy"
