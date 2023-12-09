@@ -73,6 +73,9 @@
   };
 
   services.xserver.libinput.enable = true;
+  services.udev.packages = with pkgs; [
+    gnome.gnome-settings-daemon
+  ];
 
   # Define a user account
   users.users.hacky = {
@@ -93,6 +96,7 @@
     zellij
     nil
     synology-drive-client
+    gnomeExtensions.appindicator
 ];
 
   # System Version
