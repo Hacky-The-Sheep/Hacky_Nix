@@ -5,12 +5,12 @@
     nixpkgs.url = "nixpkgs/nixos-23.11";
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    hyprland.url = "github:hyprwm/Hyprland";
 
   };
 
-  outputs = { nixpkgs, home-manager, ...}: 
-    let 
-
+  outputs = { nixpkgs, home-manager, hyprland, ...}: 
+    let
       # ----- System Settings ----- #
       system = "x86_64-linux";      
       lib = nixpkgs.lib;
@@ -21,7 +21,9 @@
       hackyos = lib.nixosSystem {
         inherit system;
         modules = [ 
-        ./configuration.nix 
+        ./configuration.nix
+        hyprland.nixosModules.default
+        {programs.hyprland.enable = true;}
         ];
       };
     };
