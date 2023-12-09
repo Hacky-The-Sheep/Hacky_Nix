@@ -23,7 +23,6 @@ tooltip {
     border-color: #11111b;
 }
 
-
 #workspaces button {
     padding: 2px;
     padding-left: 5px;
@@ -195,5 +194,4 @@ animation-direction:        alternate;
     margin-right: 5px;
     border-left: 5px;
 }
-*/
 ''
