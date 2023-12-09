@@ -51,6 +51,7 @@
     yt-dlp
     bat
     ripgrep
+    rofimoji
 
     # Coding
     go
