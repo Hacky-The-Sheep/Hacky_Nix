@@ -13,6 +13,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Laptop Settings
+  ## Set the screen to lock if the laptop is powered externally
+  services.logind.lidSwitchExternalPower = "ignore";
+
   # Networking
   networking.hostName = "hacky_os";
   networking.networkmanager.enable = true;
