@@ -1,6 +1,5 @@
 # {colorscheme}:
-
-''
+in ''
 * {
     border: none;
     border-radius: 0;
