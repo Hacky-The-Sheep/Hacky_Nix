@@ -75,7 +75,6 @@
     isNormalUser = true;
     description = "hacky";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
     uid = 1000;
   };
 
@@ -89,6 +88,7 @@
     discord
     zellij
     nil
+    synology-drive-client
 ];
 
   # System Version

@@ -5,10 +5,16 @@
     enable = true;
     font.name = "Iosevka";
     theme = {
-      name = "Catppuccin-Mocha";
-      package = pkgs.catppuccin-gtk;
-    };
+      name = "SolArc-Dark";
+      package = pkgs.solarc-gtk-theme;
+      # name = "Catppuccin-Mocha";
+      # package = pkgs.catppuccin-gtk.override {
+        # accents = ["blue"];
+        # size = "compact";
+      };
+    # };
     iconTheme = {
+      name = "Adwaita";
       package = pkgs.gnome.adwaita-icon-theme;
     };
     gtk3.extraConfig = {
