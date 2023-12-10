@@ -1,6 +1,6 @@
 {
   programs.rofi = {
     enable = true;
-    theme = "./themes/catppuccin_mocha.rasi";
+    theme = "./themes/catppuccin-mocha.rasi";
   };
 }
