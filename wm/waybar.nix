@@ -127,9 +127,8 @@
             format = "{icon} {volume}%";
             tooltip = true;
             format-muted = " Muted";
-            on-click = "pamixer -t";
-            on-scroll-up = "pactl set-sink-volume @DEFAULT_SINK@ +10%";
-            on-scroll-down = "pactl set-sink-volume @DEFAULT_SINK@ -10%";
+            on-scroll-up = "amixer -D pipewire sset Master 5%+";
+            on-scroll-down = "amixer -D pipewire sset Master 5%-";
             scroll-step = 10;
             format-icons = {
               headphone = " ";
@@ -150,9 +149,8 @@
             format = "{format_source}";
             format-source = " {volume}%";
             format-source-muted = " Muted";
-            on-click = "pamixer --default-source -t";
-            on-scroll-up = "pamixer --default-source -i 5";
-            on-scroll-down = "pamixer --default-source -d 5";
+            on-scroll-up = "amixer -D pipewire sset Capture 5%+";
+            on-scroll-down = "amixer -D pipewire sset Capture 5%+";
             scroll-step = 5;
           };
           "" = {
