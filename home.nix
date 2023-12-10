@@ -19,6 +19,7 @@
       ./wm/waybar.nix
       # Apps
       ./apps/rofi.nix
+      ./apps/dunst.nix
     ];
 
   home.username = "hacky";
