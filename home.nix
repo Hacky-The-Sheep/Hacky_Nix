@@ -52,6 +52,7 @@
     bat
     ripgrep
     rofimoji
+    dunst
 
     # Coding
     go
