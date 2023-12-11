@@ -6,10 +6,11 @@
     home-manager.url = "github:nix-community/home-manager/release-23.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     hyprland.url = "github:hyprwm/Hyprland";
+    nix-colors.url = "github:misterio77/nix-colors";
 
   };
 
-  outputs = { nixpkgs, home-manager, hyprland, ...}: 
+  outputs = { nixpkgs, home-manager, ...}@inputs: 
     let
       # ----- System Settings ----- #
       system = "x86_64-linux";      
@@ -20,17 +21,14 @@
     nixosConfigurations = {
       hackyos = lib.nixosSystem {
         inherit system;
-        modules = [ 
-        ./configuration.nix
-        hyprland.nixosModules.default
-        {programs.hyprland.enable = true;}
-        ];
+        modules = [ ./configuration.nix ];
       };
     };
 
     homeConfigurations = {
       hacky = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
+        extraSpecialArgs = { inherit inputs ;};
         modules = [ ./home.nix ];
       };
     };

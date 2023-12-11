@@ -1,10 +1,12 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
 
   # --- MODULARITY --- #
   imports = 
     [ 
+      # Flake Inputs
+      inputs.nix-colors.homeManagerModules.default
       # Terminal
       ./terminal/eza.nix
       ./terminal/fish.nix
@@ -21,6 +23,9 @@
       ./apps/rofi.nix
       ./apps/dunst.nix
     ];
+
+  # Set the colorscheme
+  colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
 
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
@@ -54,6 +59,8 @@
     ripgrep
     rofimoji
     dunst
+    slurp
+    grim
 
     # Coding
     go
