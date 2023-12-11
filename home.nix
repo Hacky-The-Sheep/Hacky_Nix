@@ -16,7 +16,7 @@
       ./terminal/kitty.nix
       ./terminal/lf.nix
       ./terminal/zellij.nix
-      #./terminal/bat.nix
+      ./terminal/bat.nix
 
       # System
       ./system/gtk.nix
