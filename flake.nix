@@ -14,30 +14,30 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, ...}@inputs: 
+  outputs = { self, nixpkgs, ...}@inputs: 
     let
       # ----- System Settings ----- #
       system = "x86_64-linux";      
-      lib = nixpkgs.lib;
-      # pkgs = nixpkgs.legacyPackages.${system};
+      # lib = nixpkgs.lib;
+      pkgs = nixpkgs.legacyPackages.${system};
 
     in {
-    nixosConfigurations = {
-      hackyos = lib.nixosSystem {
-        inherit system;
-        specialArgs = { inherit inputs ;};
-        modules = [ 
-        ./configuration.nix
-        inputs.home-manager.nixosModules.default
-        ];
+      nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [ ./configuration.nix ];
       };
+      # nixosConfigurations = {
+      #   hackyos = lib.nixosSystem {
+      #     inherit system;
+      #     modules = [ ./configuration.nix ];
+      #   };
     };
 
-    # homeConfigurations = {
-    #   hacky = home-manager.lib.homeManagerConfiguration {
-    #     inherit pkgs;
-    #     modules = [ ./home.nix ];
-      # };
-    # };
-  };
+    home-manager = {
+      # specialArgs = { inherit inputs; };
+      users = {
+        "username" = import ./home.nix;
+      };
+    };
+  # };
 }
