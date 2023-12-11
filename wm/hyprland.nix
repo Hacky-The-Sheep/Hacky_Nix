@@ -4,6 +4,7 @@ wayland.windowManager.hyprland = {
   enableNvidiaPatches = true;
 
   settings = {
+    source = "mocha.conf";
     exec-once = [
       "dunst"
       "waybar"
@@ -105,7 +106,7 @@ wayland.windowManager.hyprland = {
       "$mod, Q, killactive "
       "$mod, W, exit"
       "$mod, E, exec, kitty lf"
-      "$mod, F, exec, firefox"
+      "$mod, F, exec, brave"
       "$mod, V, togglefloating, q"
       "$mod, R, exec, rofi -show run"
       "$mod, P, pseudo, # dwindle"
