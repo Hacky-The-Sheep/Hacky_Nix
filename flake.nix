@@ -16,28 +16,45 @@
 
   outputs = { self, nixpkgs, ...}@inputs: 
     let
-      # ----- System Settings ----- #
-      system = "x86_64-linux";      
-      # lib = nixpkgs.lib;
+      system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-
-    in {
+    in
+    {
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
-        modules = [ ./configuration.nix ];
-      };
-      # nixosConfigurations = {
-      #   hackyos = lib.nixosSystem {
-      #     inherit system;
-      #     modules = [ ./configuration.nix ];
-      #   };
-    };
-
-    home-manager = {
-      # specialArgs = { inherit inputs; };
-      users = {
-        "username" = import ./home.nix;
+        modules = [
+          ./configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
       };
     };
-  # };
 }
+#     let
+#       # ----- System Settings ----- #
+#       system = "x86_64-linux";      
+#       pkgs = nixpkgs.legacyPackages.${system};
+
+#     in {
+#       # nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+#       #   inherit system;
+#       #   specialArgs = { inherit inputs; };
+#       #   modules = [ 
+#       #     ./configuration.nix 
+#       #     inputs.home-manager.nixosModules.default
+#       #     ];
+#       # };
+#       nixosConfigurations = {
+#         hackyos = lib.nixosSystem {
+#         inherit system;
+#         modules = [ ./configuration.nix ];
+#       };
+#     };
+
+#     # home-manager = {
+#     #   # specialArgs = { inherit inputs; };
+#     #   users = {
+#     #     "username" = import ./home.nix;
+#     #   };
+#     # };
+#   # };
+# }
