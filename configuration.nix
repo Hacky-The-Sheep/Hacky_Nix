@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -7,6 +7,7 @@
       ./hardware/bluetooth.nix
       ./hardware/nvidia.nix
       ./system/fonts.nix
+      # inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.

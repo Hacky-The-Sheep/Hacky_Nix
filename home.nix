@@ -5,8 +5,10 @@
   # --- MODULARITY --- #
   imports = 
     [ 
+
       # Flake Inputs
       inputs.nix-colors.homeManagerModules.default
+
       # Terminal
       ./terminal/eza.nix
       ./terminal/fish.nix
@@ -14,11 +16,14 @@
       ./terminal/kitty.nix
       ./terminal/lf.nix
       ./terminal/zellij.nix
+
       # System
       ./system/gtk.nix
+
       # WM
       ./wm/hyprland.nix
       ./wm/waybar.nix
+
       # Apps
       ./apps/rofi.nix
       ./apps/dunst.nix
@@ -26,6 +31,7 @@
 
   # Set the colorscheme
   colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
+  # colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
 
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";

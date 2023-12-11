@@ -21,14 +21,17 @@
     nixosConfigurations = {
       hackyos = lib.nixosSystem {
         inherit system;
-        modules = [ ./configuration.nix ];
+        # extraSpecialArgs = { inherit inputs ;};
+        modules = [ 
+        ./configuration.nix
+        inputs.home-manager.nixosModules.default
+        ];
       };
     };
 
     homeConfigurations = {
       hacky = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit inputs ;};
         modules = [ ./home.nix ];
       };
     };
