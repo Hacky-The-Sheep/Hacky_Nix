@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, ... }:
+{ config, pkgs, ... }:
 
 {
   imports =
@@ -7,7 +7,6 @@
       ./hardware/bluetooth.nix
       ./hardware/nvidia.nix
       ./system/fonts.nix
-      inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -19,7 +18,7 @@
   services.logind.lidSwitchExternalPower = "ignore";
 
   # Networking
-  networking.hostName = "hackyos";
+  networking.hostName = "hacky_os";
   networking.networkmanager.enable = true;
   services.mullvad-vpn.enable = true;
   services.openssh.enable = true;
@@ -84,13 +83,6 @@
     description = "hacky";
     extraGroups = [ "networkmanager" "wheel" ];
     uid = 1000;
-  };
-
-  home-manager = {
-    specialArgs = { inherit inputs; };
-    users = {
-      "hacky" = import ./home.nix;
-    };
   };
 
   environment.systemPackages = with pkgs; [
