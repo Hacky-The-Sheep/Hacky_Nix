@@ -5,7 +5,7 @@
     enable = true;
     defaultEditor = true;
     settings = {
-      # theme = "catppuccin-mocha";
+      theme = "base16";
       editor = {
         line-number = "relative";
         bufferline = "multiple";
@@ -52,7 +52,7 @@
     }];
   };
   themes = {
-    base-16 = let
+    base16 = let
       base00 = "#${config.colorScheme.colors.base00}"; 
       base01 = "#${config.colorScheme.colors.base01}"; 
       base02 = "#${config.colorScheme.colors.base02}"; 
@@ -101,7 +101,7 @@
 
       "label" = base0C;
 
-      "punctuation" = base02;
+      "punctuation" = base05;
       "punctuation.special" = base0D;
 
       "keyword" = base0E;
@@ -148,30 +148,30 @@
       ##--- User Interface ---##
 
       "ui.background" = {
-        fg = base05; 
-        bg = base00;
+        # fg = base05; 
+        # bg = base00;
       };
 
       "ui.linenr" = { fg = base03; };
       "ui.linenr.selected" = { fg = base07; };
 
-      "ui.statusline" = { fg = base05; bg = base04; };
-      "ui.statusline.inactive" = { fg = base04; bg = base04; };
-      "ui.statusline.normal" = { fg = base00; bg = base07; modifiers = ["bold"]; };
-      "ui.statusline.insert" = { fg = base00; bg = base0B; modifiers = ["bold"]; };
-      "ui.statusline.select" = { fg = base00; bg = base0F; modifiers = ["bold"]; };
+      "ui.statusline" = { fg = base05; bg = base00; };
+      "ui.statusline.inactive" = { fg = base04; bg = base00; };
+      "ui.statusline.normal" = { fg = base00; bg = base00; modifiers = ["bold"]; };
+      "ui.statusline.insert" = { fg = base00; bg = base00; modifiers = ["bold"]; };
+      "ui.statusline.select" = { fg = base00; bg = base00; modifiers = ["bold"]; };
 
       "ui.popup" = { fg = base05; bg = base02; };
       "ui.window" = { fg = base01; };
       "ui.help" = { fg = base05; bg = base02; };
 
-      "ui.bufferline" = { fg = "subtext0"; bg = base04; };
+      "ui.bufferline" = { fg = base05; bg = base04; };
       "ui.bufferline.active" = { fg = base0E; bg = base00; underline = { color = base0E; style = "line"; }; };
       "ui.bufferline.background" = { bg = base01; };
 
       "ui.text" = base05;
-      "ui.text.focus" = { fg = base05; bg = base02; modifiers = ["bold"]; };
-      "ui.text.inactive" = { fg = base03; };
+      "ui.text.focus" = { fg = base04; bg = base05; modifiers = ["bold"]; };
+      "ui.text.inactive" = { fg = base04; };
 
       "ui.virtual" = base04;
       "ui.virtual.ruler" = { bg = base02; };
@@ -192,7 +192,7 @@
       "ui.cursor.insert" = { fg = base00; bg = "secondary_cursor_insert"; };
       "ui.cursor.select" = { fg = base00; bg = "secondary_cursor"; };
 
-      "ui.cursorline.primary" = { bg = base04; };
+      "ui.cursorline.primary" = { bg = base02; };
 
       "ui.highlight" = { bg = base03; modifiers = ["bold"]; };
 

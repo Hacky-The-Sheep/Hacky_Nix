@@ -16,7 +16,7 @@
       ./terminal/kitty.nix
       ./terminal/lf.nix
       ./terminal/zellij.nix
-      ./terminal/bat.nix
+      #./terminal/bat.nix
 
       # System
       ./system/gtk.nix
@@ -32,7 +32,7 @@
 
   # Set the colorscheme
   colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
-  # colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-medium;
+  # colorScheme = inputs.nix-colors.colorSchemes.solarized-dark;
 
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
