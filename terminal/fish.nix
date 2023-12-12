@@ -25,6 +25,7 @@
       hmu = "home-manager switch --flake .";
       nup = "sudo nixos-rebuild switch --flake .";
       up = "nixos-rebuild switch --upgrade";
+      clean = "nix-env --gc";
     };
   };
 }
