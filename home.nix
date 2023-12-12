@@ -17,6 +17,7 @@
       ./terminal/lf.nix
       ./terminal/zellij.nix
       ./terminal/bat.nix
+      ./terminal/gitui.nix
 
       # System
       ./system/gtk.nix
