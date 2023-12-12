@@ -5,8 +5,8 @@
       global = {
         origin = "top-center";
         transparency = 10;
-        width = 300;
-        height = 300;
+        width = 600;
+        height = 600;
         background = "#1e1e2e";
         foreground = "#cdd6f4";
         timeout = 10;
