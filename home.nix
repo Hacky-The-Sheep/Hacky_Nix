@@ -70,6 +70,7 @@
     slurp
     grim
     swappy
+    gitui
 
     # Coding
     go
