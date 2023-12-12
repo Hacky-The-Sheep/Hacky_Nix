@@ -7,6 +7,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     hyprland.url = "github:hyprwm/Hyprland";
     nix-colors.url = "github:misterio77/nix-colors";
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
@@ -21,7 +25,11 @@
     nixosConfigurations = {
       hackyos = lib.nixosSystem {
         inherit system;
-        modules = [ ./configuration.nix ];
+        modules = [ 
+        ./configuration.nix
+        inputs.hyprland.nixosModules.default
+        {programs.hyprland.enable = true;}
+        ];
       };
     };
 
