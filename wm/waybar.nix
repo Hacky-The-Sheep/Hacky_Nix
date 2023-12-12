@@ -150,7 +150,7 @@
             format-source = " {volume}%";
             format-source-muted = " Muted";
             on-scroll-up = "amixer -D pipewire sset Capture 5%+";
-            on-scroll-down = "amixer -D pipewire sset Capture 5%+";
+            on-scroll-down = "amixer -D pipewire sset Capture 5%-";
             scroll-step = 5;
           };
           "" = {
