@@ -28,6 +28,7 @@
       # Apps
       ./apps/rofi.nix
       ./apps/dunst.nix
+      ./apps/firefox.nix
     ];
 
   # Set the colorscheme
@@ -68,6 +69,7 @@
     dunst
     slurp
     grim
+    swappy
 
     # Coding
     go
