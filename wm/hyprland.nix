@@ -9,14 +9,17 @@ wayland.windowManager.hyprland = {
       "dunst"
       "waybar"
       "swww init"
-      "exec-once = swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/arch.jpeg"
+      "exec-once = swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Standing.jpg"
     ];
 
     # Set the default monitor
     monitor = "eDP-1, highrr, 0x0, 1";
 
+    # Check if the laptop lid is open
+    bindl = "switch:off:Lid Switch,exec,hyprctl keyword monitor 'eDP-1, highrr, 0x0, 1'";
+
     env = "XCURSOR_SIZE,24";
-  
+
     input = {
       kb_layout = "us";
       kb_options = "caps:ctrl";
@@ -30,8 +33,6 @@ wayland.windowManager.hyprland = {
       gaps_in = 9;
       gaps_out = 15;
       border_size = 2;
-      # col.active_border = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-      # col.inactive_border = "rgba(595959aa)";
       layout = "dwindle";
     };
     decoration = {
@@ -86,12 +87,12 @@ wayland.windowManager.hyprland = {
     ];
 
     ## -- Wallpaper shortcuts -- ##
-    "$w1" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/arch.jpeg";
+    "$w1" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Nix.png";
     "$w2" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Hardcoding.jpg";
     "$w3" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/pac.jpg";
     "$w4" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Porsche.png";
-    "$w5" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Tri_Arch.jpg";
-    "$w6" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Hills.png";
+    "$w5" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/programmer.gif";
+    "$w6" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Nix_3d.png";
     "$w7" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Kaiju.png";
     "$w8" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/art_flowers.png";
     "$w9" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/neon_zilla.jpg";
@@ -111,7 +112,7 @@ wayland.windowManager.hyprland = {
       "$mod, R, exec, rofi -show run"
       "$mod, P, pseudo, # dwindle"
       "$mod, O, togglesplit, # dwindle"
-      "$mod, S, exec, slurp | grim -g - - | wl-copy"
+      "$mod, S, exec, slurp | grim -g - - | swappy -f -"
       "$mod, L, exec, bash ~/sway.sh"
       "$mod, M, exec, bash ~/.config/hypr/scripts/mullvad.sh"
       "$mod, J, exec, rofimoji"
