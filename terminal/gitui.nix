@@ -17,15 +17,15 @@
       diff_file_added: #${config.colorScheme.colors.base0E},
       diff_file_removed: #${config.colorScheme.colors.base0F},
       diff_file_moved: #${config.colorScheme.colors.base0C},
-      diff_file_modified: #${config.colorSheme.colors.base0A},
+      diff_file_modified: #${config.colorScheme.colors.base0A},
       commit_hash: #${config.colorScheme.colors.base09},
       commit_time: #${config.colorScheme.colors.base0C},
       commit_author: #${config.colorScheme.colors.base0B},
       danger_fg: #${config.colorScheme.colors.base08},
       push_gauge_bg: #${config.colorScheme.colors.base0D},
       push_gauge_fg: Reset,
-      tag_fg: LightMagenta,
-      branch_fg: LightYellow,
+      tag_fg: #${config.colorScheme.colors.base0C},
+      branch_fg: #${config.colorScheme.colors.base09},
     )
   '';
   };
