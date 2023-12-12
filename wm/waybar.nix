@@ -50,23 +50,23 @@
 
         "custom/game" = {
           format = "Game";
-          on-click = "bash ~/.config/waybar/scripts/game_mode.sh";
+          on-click = "bash ~/scripts/game_mode.sh";
         };
 
         "custom/home" = {
           format = "Home";
-          on-click = "bash ~/.config/waybar/scripts/home_mode.sh";
+          on-click = "bash ~/scripts/home_mode.sh";
         };
 
         "custom/work" = {
           format = "Work";
-          on-click = "bash ~/.config/waybar/scripts/work_mode.sh";
+          on-click = "bash ~/scripts/work_mode.sh";
         };
 
         "user" = {
           format = "{user}";
           spacing = 4;
-          on-click = "bash ~/.config/waybar/scripts/power_menu.sh";
+          on-click = "bash ~/scripts/power_menu.sh";
         };
         
         "tray" = {
@@ -93,7 +93,7 @@
            min-length = 5;
           };
 
-          "network" = {
+          # "network" = {
             format = "{ifname}";
             format-wifi = "{essid}";
             format-ethernet = "{ipaddr}";
