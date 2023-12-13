@@ -1,5 +1,11 @@
 { pkgs, inputs, ... }:
 
+# ██       █████  ██████  
+# ██      ██   ██ ██   ██ 
+# ██      ███████ ██████  
+# ██      ██   ██ ██      
+# ███████ ██   ██ ██      
+
 {
 
   # --- MODULARITY --- #
@@ -18,6 +24,7 @@
       ./terminal/zellij.nix
       ./terminal/bat.nix
       ./terminal/gitui.nix
+      ./terminal/git.nix
 
       # System
       ./system/gtk.nix
@@ -77,7 +84,7 @@
     go
     rustc
     cargo
-    (python3.withPackages(ps: with ps; [ pandas requests numpy ruff mnamer]))
+    (python3.withPackages(ps: with ps; [ pandas requests numpy ruff mnamer ]))
 
     # "Work"
     libreoffice
@@ -94,12 +101,6 @@
  
   # Home Manager Version
   home.stateVersion = "23.11";
-
-  programs.git = {
-    enable = true;
-    userName = "Hacky-The-Sheep";
-    userEmail = "jon.nguyen7@protonmail.com";
-  };
 
   # Gnome Theming
   gtk.enable = true;

@@ -4,7 +4,6 @@
     shellAliases = {
       ei = "exit";
       python = "python3";
-      nb = "newsboat";
       cat = "bat";
 
       # Git
@@ -22,8 +21,19 @@
       zj = "zellij";
 
       # NixOS ❄
-      hmu = "home-manager switch --flake .";
-      nup = "sudo nixos-rebuild switch --flake .";
+      ## Laptop
+      lhmu = "home-manager switch --flake ./#laptop";
+      lnup = "sudo nixos-rebuild switch --flake ./#laptop";
+
+      ## Work Desktop
+      dhmu = "home-manager switch --flake ./#work_desktop";
+      dnup = "sudo nixos-rebuild switch --flake ./#work_desktop";
+
+      ## Server
+      shmu = "home-manager switch --flake ./#server";
+      snup = "sudo nixos-rebuild switch --flake ./#server";
+
+      ## General
       up = "nixos-rebuild switch --upgrade";
       clean = "nix-env --gc";
     };

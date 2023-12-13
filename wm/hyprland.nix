@@ -16,7 +16,7 @@ wayland.windowManager.hyprland = {
     monitor = "eDP-1, highrr, 0x0, 1";
 
     # Check if the laptop lid is open
-    bindl = "switch:off:Lid Switch,exec,hyprctl keyword monitor 'eDP-1, highrr, 0x0, 1'";
+    # bindl = "switch:off:Lid Switch,exec,hyprctl keyword monitor 'eDP-1, highrr, 0x0, 1'";
 
     env = "XCURSOR_SIZE,24";
 

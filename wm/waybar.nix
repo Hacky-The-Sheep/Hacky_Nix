@@ -93,7 +93,7 @@
            min-length = 5;
           };
 
-          # "network" = {
+          "network" = {
             format = "{ifname}";
             format-wifi = "{essid}";
             format-ethernet = "{ipaddr}";

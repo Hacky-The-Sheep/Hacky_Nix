@@ -1,11 +1,17 @@
 { config, pkgs, ... }:
 
+# ███████ ███████ ██████  ██    ██ ███████ ██████  
+# ██      ██      ██   ██ ██    ██ ██      ██   ██ 
+# ███████ █████   ██████  ██    ██ █████   ██████  
+#      ██ ██      ██   ██  ██  ██  ██      ██   ██ 
+# ███████ ███████ ██   ██   ████   ███████ ██   ██ 
+                                                 
 {
   imports =
     [
-      ./hardware-configuration.nix
-      ./hardware/bluetooth.nix
-      ./hardware/nvidia.nix
+      ./hosts/server/hardware-configuration.nix
+      # ./hardware/bluetooth.nix
+      # ./hardware/nvidia.nix
       ./system/fonts.nix
     ];
 
@@ -13,21 +19,14 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Laptop Settings
-  ## Set the screen to lock if the laptop is powered externally
-  services.logind.lidSwitchExternalPower = "ignore";
-
   # Networking
-  networking.hostName = "hacky_os";
+  networking.hostName = "nixos";
   networking.networkmanager.enable = true;
-  services.mullvad-vpn.enable = true;
+  # services.mullvad-vpn.enable = true;
   services.openssh.enable = true;
 
   # Set your time zone.
-  time.timeZone = "America/Matamoros";
-
-  # System76 😏
-  hardware.system76.enableAll = true;
+  time.timeZone = "America/Chicago";
 
   # Fish 🐡
   programs.fish.enable = true;
@@ -46,10 +45,10 @@
   };  
 
   # Cachix
-  nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };
+  # nix.settings = {
+  #   substituters = ["https://hyprland.cachix.org"];
+  #   trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  # };
 
   # Remove Gnome bloat
   environment.gnome.excludePackages = (with pkgs; [
@@ -91,11 +90,11 @@
     fish
     git
     home-manager
-    steam
-    discord
+    # steam
+    # discord
     zellij
     nil
-    synology-drive-client
+    # synology-drive-client
     gnomeExtensions.appindicator
 ];
 

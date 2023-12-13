@@ -1,10 +1,12 @@
 {
-  description = "Hacky's Flake";
+  description = "Jon's Flake";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
-    home-manager.url = "github:nix-community/home-manager/release-23.11";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager/release-23.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     hyprland.url = "github:hyprwm/Hyprland";
     nix-colors.url = "github:misterio77/nix-colors";
     firefox-addons = {
@@ -18,20 +20,39 @@
     let
       # ----- System Settings ----- #
       system = "x86_64-linux";      
-      lib = nixpkgs.lib;
+      # lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
 
     in {
+
     nixosConfigurations = {
-      hackyos = lib.nixosSystem {
+
+      laptop = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [ 
-        ./configuration.nix
-        inputs.hyprland.nixosModules.default
-        {programs.hyprland.enable = true;}
+          ./hosts/laptop/configuration.nix
+          inputs.hyprland.nixosModules.default
+          {programs.hyprland.enable = true;}
         ];
       };
-    };
+
+      work_desktop = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./hosts/work_desktop/configuration.nix
+            inputs.hyprland.nixosModules.default
+            {programs.hyprland.enable = true;}
+          ];
+        };
+
+      server = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            ./hosts/server/configuration.nix
+          ];
+        };
+      };
+
 
     homeConfigurations = {
       hacky = home-manager.lib.homeManagerConfiguration {
