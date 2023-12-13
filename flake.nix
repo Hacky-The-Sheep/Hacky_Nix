@@ -27,11 +27,22 @@
 
       nixosConfigurations = {
 
-        laptop = lib.nixosSystem {
-          # inherit system;
+        test = import ./hosts/laptop/configuration.nix {
+          inherit system;
           specialArgs = { inherit inputs; };
           modules = [ 
-            ../../hosts/laptop/configuration.nix
+            # ./hosts/laptop/configuration.nix
+            inputs.hyprland.nixosModules.default
+            inputs.home-manager.nixosModules.default
+            {programs.hyprland.enable = true;}
+          ];
+        };
+
+        laptop = lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs; };
+          modules = [ 
+            ./hosts/laptop/configuration.nix
             inputs.hyprland.nixosModules.default
             inputs.home-manager.nixosModules.default
             {programs.hyprland.enable = true;}
@@ -39,7 +50,7 @@
         };
 
         work_desktop = lib.nixosSystem {
-            # inherit system;
+            inherit system;
             specialArgs = { inherit inputs; };
             modules = [
               ./hosts/work_desktop/configuration.nix
@@ -50,7 +61,7 @@
           };
 
         server = lib.nixosSystem {
-            # inherit system;
+            inherit system;
             specialArgs = { inherit inputs; };
             modules = [
               ./hosts/server/configuration.nix
