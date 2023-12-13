@@ -79,6 +79,7 @@
     grim
     swappy
     gitui
+    cowsay
 
     # Coding
     go

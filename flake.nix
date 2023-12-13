@@ -15,25 +15,24 @@
     };
   };
 
-  outputs = { nixpkgs, home-manager, ...}@inputs: 
+  outputs = { self, nixpkgs, home-manager, ...}@inputs: 
     let
 
       # ----- System Settings ----- #
       system = "x86_64-linux";      
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
+      profile = "laptop";
 
-    in {
-
+    in {	
       nixosConfigurations = {
 
         laptop = lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit system inputs; };
           modules = [ 
             ./hosts/laptop/configuration.nix
             inputs.hyprland.nixosModules.default
-            inputs.home-manager.nixosModules.default
+            home-manager.nixosModules.default
             {programs.hyprland.enable = true;}
           ];
         };
@@ -45,11 +44,6 @@
               ./hosts/work_desktop/configuration.nix
               inputs.hyprland.nixosModules.default
               inputs.home-manager.nixosModules.default
-              home-manager.nixosModules.home-manager {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.hacky = import ./hosts/work_desktop/home.nix;
-              }
               {programs.hyprland.enable = true;}
             ];
           };

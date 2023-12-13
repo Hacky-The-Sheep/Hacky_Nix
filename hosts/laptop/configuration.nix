@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, lib, ... }:
 
 # ██       █████  ██████  
 # ██      ██   ██ ██   ██ 
@@ -15,7 +15,6 @@
       ../../hardware/system76.nix
       ../../hardware/laptop.nix
       ../../system/fonts.nix
-      inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -95,11 +94,12 @@
     steam
     discord
     zellij
+    home-manager
     nil
     synology-drive-client
     gnomeExtensions.appindicator
 ];
-  
+ 
   # System Version
   system.stateVersion = "23.11";
   
