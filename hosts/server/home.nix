@@ -16,18 +16,18 @@
       inputs.nix-colors.homeManagerModules.default
 
       # Terminal
-      ./terminal/eza.nix
-      ./terminal/fish.nix
-      ./terminal/helix.nix
-      ./terminal/kitty.nix
-      ./terminal/lf.nix
-      ./terminal/zellij.nix
-      ./terminal/bat.nix
-      ./terminal/gitui.nix
-      ./terminal/git.nix
+      ../../terminal/eza.nix
+      ../../terminal/fish.nix
+      ../../terminal/helix.nix
+      ../../terminal/kitty.nix
+      ../../terminal/lf.nix
+      ../../terminal/zellij.nix
+      ../../terminal/bat.nix
+      ../../terminal/gitui.nix
+      ../../terminal/git.nix
 
       # System
-      ./system/gtk.nix
+      ../../system/gtk.nix
 
       # WM
       # ./wm/hyprland.nix
@@ -36,7 +36,7 @@
       # Apps
       # ./apps/rofi.nix
       # ./apps/dunst.nix
-      ./apps/firefox.nix
+      ../../apps/firefox.nix
     ];
 
   # Set the colorscheme
@@ -53,7 +53,7 @@
 
     # Main
     # signal-desktop
-    # timeshift
+    timeshift
     # brave
     firefox
     # rofi
@@ -64,7 +64,7 @@
     catppuccin-gtk
 
     # Terminal Programs
-    # fastfetch
+    fastfetch
     helix
     lf
     htop
