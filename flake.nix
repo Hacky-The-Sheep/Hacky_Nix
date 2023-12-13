@@ -13,11 +13,11 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
   outputs = { nixpkgs, home-manager, ...}@inputs: 
     let
+
       # ----- System Settings ----- #
       system = "x86_64-linux";      
       lib = nixpkgs.lib;
@@ -26,17 +26,6 @@
     in {
 
       nixosConfigurations = {
-
-        test = import ./hosts/laptop/configuration.nix {
-          inherit system;
-          specialArgs = { inherit inputs; };
-          modules = [ 
-            # ./hosts/laptop/configuration.nix
-            inputs.hyprland.nixosModules.default
-            inputs.home-manager.nixosModules.default
-            {programs.hyprland.enable = true;}
-          ];
-        };
 
         laptop = lib.nixosSystem {
           inherit system;
