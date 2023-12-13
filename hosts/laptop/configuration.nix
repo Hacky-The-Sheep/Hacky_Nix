@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 # ██       █████  ██████  
 # ██      ██   ██ ██   ██ 
@@ -15,6 +15,7 @@
       ./hardware/system76.nix
       ./hardware/laptop.nix
       ./system/fonts.nix
+      inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -103,6 +104,14 @@
   # System Version
   system.stateVersion = "23.11";
 
+  # Home Manager
+  home-manager = {
+    specialArgs = { inherit inputs; };
+    users = {
+      "hacky" = import ./hosts/laptop/home.nix;
+    };
+  };
+  
   # Nix Flakes ❄️
   nix.package= pkgs.nixFlakes;
   nix.settings.experimental-features = ["nix-command" "flakes"];
