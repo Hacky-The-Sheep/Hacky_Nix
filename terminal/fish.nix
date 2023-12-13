@@ -22,16 +22,16 @@
 
       # NixOS ❄
       ## Laptop
-      lhmu = "home-manager switch --flake ./#laptop";
-      lnup = "sudo nixos-rebuild switch --flake ./#laptop";
+      lhmu = "home-manager switch --flake .#laptop";
+      lnup = "sudo nixos-rebuild switch --flake .#laptop";
 
       ## Work Desktop
-      dhmu = "home-manager switch --flake ./#work_desktop";
-      dnup = "sudo nixos-rebuild switch --flake ./#work_desktop";
+      dhmu = "home-manager switch --flake .#work_desktop";
+      dnup = "sudo nixos-rebuild switch --flake .#work_desktop";
 
       ## Server
-      shmu = "home-manager switch --flake ./#server";
-      snup = "sudo nixos-rebuild switch --flake ./#server";
+      shmu = "home-manager switch --flake .#server";
+      snup = "sudo nixos-rebuild switch --flake .#server";
 
       ## General
       up = "nixos-rebuild switch --upgrade";

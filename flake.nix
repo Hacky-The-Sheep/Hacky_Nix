@@ -29,16 +29,11 @@
 
         laptop = lib.nixosSystem {
           inherit system;
-          # specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs; };
           modules = [ 
             ./hosts/laptop/configuration.nix
             inputs.hyprland.nixosModules.default
-            # inputs.home-manager.nixosModules.default
-            home-manager.nixosModules.home-manager {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.hacky = import ./hosts/laptop/home.nix;
-            }
+            inputs.home-manager.nixosModules.default
             {programs.hyprland.enable = true;}
           ];
         };

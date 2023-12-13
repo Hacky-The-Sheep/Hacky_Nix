@@ -15,7 +15,6 @@
       ../../hardware/system76.nix
       ../../hardware/laptop.nix
       ../../system/fonts.nix
-      # inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -92,7 +91,6 @@
     wget
     fish
     git
-    # home-manager
     steam
     discord
     zellij
@@ -100,7 +98,7 @@
     synology-drive-client
     gnomeExtensions.appindicator
 ];
-
+  
   # System Version
   system.stateVersion = "23.11";
   
