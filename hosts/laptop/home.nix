@@ -40,8 +40,8 @@
     ];
 
   # Set the colorscheme
-  # colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
-  colorScheme = inputs.nix-colors.colorSchemes.catppuccin-latte;
+  colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
+  # colorScheme = inputs.nix-colors.colorSchemes.catppuccin-latte;
 
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
