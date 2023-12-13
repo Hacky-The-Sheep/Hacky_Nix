@@ -32,7 +32,6 @@
           modules = [ 
             ./hosts/laptop/configuration.nix
             inputs.hyprland.nixosModules.default
-            home-manager.nixosModules.default
             {programs.hyprland.enable = true;}
           ];
         };
@@ -43,7 +42,6 @@
             modules = [
               ./hosts/work_desktop/configuration.nix
               inputs.hyprland.nixosModules.default
-              inputs.home-manager.nixosModules.default
               {programs.hyprland.enable = true;}
             ];
           };
@@ -53,9 +51,15 @@
             specialArgs = { inherit inputs; };
             modules = [
               ./hosts/server/configuration.nix
-              inputs.home-manager.nixosModules.default
             ];
           };
         };
+	homeConfigurations = {
+      	hacky = home-manager.lib.homeManagerConfiguration {
+        	inherit pkgs;
+        	extraSpecialArgs = { inherit inputs ;};
+        	modules = [ ./hosts/laptop/home.nix ];
+      };
+    };
     };
   }
