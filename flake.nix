@@ -20,46 +20,52 @@
     let
       # ----- System Settings ----- #
       system = "x86_64-linux";      
-      # lib = nixpkgs.lib;
+      lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
 
     in {
 
-    nixosConfigurations = {
+      nixosConfigurations = {
 
-      laptop = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [ 
-          ./hosts/laptop/configuration.nix
-          inputs.hyprland.nixosModules.default
-          {programs.hyprland.enable = true;}
-        ];
-      };
-
-      work_desktop = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./hosts/work_desktop/configuration.nix
+        laptop = lib.nixosSystem {
+          # inherit system;
+          specialArgs = { inherit inputs; };
+          modules = [ 
+            ../../hosts/laptop/configuration.nix
             inputs.hyprland.nixosModules.default
+            inputs.home-manager.nixosModules.default
             {programs.hyprland.enable = true;}
           ];
         };
 
-      server = nixpkgs.lib.nixosSystem {
-          inherit system;
-          modules = [
-            ./hosts/server/configuration.nix
-          ];
+        work_desktop = lib.nixosSystem {
+            # inherit system;
+            specialArgs = { inherit inputs; };
+            modules = [
+              ./hosts/work_desktop/configuration.nix
+              inputs.hyprland.nixosModules.default
+              inputs.home-manager.nixosModules.default
+              {programs.hyprland.enable = true;}
+            ];
+          };
+
+        server = lib.nixosSystem {
+            # inherit system;
+            specialArgs = { inherit inputs; };
+            modules = [
+              ./hosts/server/configuration.nix
+              inputs.home-manager.nixosModules.default
+            ];
+          };
         };
-      };
 
 
-    homeConfigurations = {
-      hacky = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = { inherit inputs ;};
-        modules = [ ./home.nix ];
-      };
+      # homeConfigurations = {
+      #   hacky = home-manager.lib.homeManagerConfiguration {
+      #     inherit pkgs;
+      #     extraSpecialArgs = { inherit inputs ;};
+      #     modules = [ ./home.nix ];
+      #   };
+      # };
     };
-  };
-}
+  }
