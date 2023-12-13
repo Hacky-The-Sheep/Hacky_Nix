@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 # ██       █████  ██████  
 # ██      ██   ██ ██   ██ 
@@ -9,13 +9,13 @@
 {
   imports =
     [
-      ./hosts/laptop/hardware-configuration.nix
-      ./hardware/bluetooth.nix
-      ./hardware/nvidia.nix
-      ./hardware/system76.nix
-      ./hardware/laptop.nix
-      ./system/fonts.nix
-      inputs.home-manager.nixosModules.default
+      ../../hosts/laptop/hardware-configuration.nix
+      ../../hardware/bluetooth.nix
+      ../../hardware/nvidia.nix
+      ../../hardware/system76.nix
+      ../../hardware/laptop.nix
+      ../../system/fonts.nix
+      # inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
@@ -92,7 +92,7 @@
     wget
     fish
     git
-    home-manager
+    # home-manager
     steam
     discord
     zellij
@@ -103,14 +103,6 @@
 
   # System Version
   system.stateVersion = "23.11";
-
-  # Home Manager
-  home-manager = {
-    specialArgs = { inherit inputs; };
-    users = {
-      "hacky" = import ./hosts/laptop/home.nix;
-    };
-  };
   
   # Nix Flakes ❄️
   nix.package= pkgs.nixFlakes;
