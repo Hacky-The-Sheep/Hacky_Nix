@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 # ██       █████  ██████  
 # ██      ██   ██ ██   ██ 
@@ -15,6 +15,7 @@
       ../../hardware/system76.nix
       ../../hardware/laptop.nix
       ../../system/fonts.nix
+      inputs.home-manager.nixosModules.default
     ];
 
   # Bootloader.
