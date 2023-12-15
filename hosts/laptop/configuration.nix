@@ -38,13 +38,6 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-    displayManager.defaultSession = "gnome";
-  };  
 
   # Cachix
   nix.settings = {
@@ -52,12 +45,6 @@
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
-  # Remove Gnome bloat
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-photos
-    gnome-tour
-    epiphany
-  ]);
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -73,9 +60,37 @@
     pulse.enable = true;
   };
 
-  services.xserver.libinput.enable = true;
-  services.udev.packages = with pkgs; [
-    gnome.gnome-settings-daemon
+  # Enable the X11 windowing system.
+  services.xserver = {
+    enable = true;
+
+    # GNOME
+    # displayManager.gdm.enable = true;
+    # desktopManager.gnome.enable = true;
+    # displayManager.defaultSession = "gnome";
+
+    # KDE
+    displayManager.sddm.enable = true;
+    desktopManager.plasma5.enable = true;
+    displayManager.defaultSession = "plasmawayland";
+  };  
+
+  ## Remove Gnome bloat
+  # environment.gnome.excludePackages = (with pkgs; [
+  #   gnome-photos
+  #   gnome-tour
+  #   epiphany
+  # ]);
+  # services.xserver.libinput.enable = true;
+  # services.udev.packages = with pkgs; [
+  #   gnome.gnome-settings-daemon
+  # ];
+
+  ## Remove KDE bloat
+  environment.plasma5.excludePackages = with pkgs.libsForQt5; [
+    plasma-browser-integration
+    gwenview
+    elisa
   ];
 
   # Define a user account

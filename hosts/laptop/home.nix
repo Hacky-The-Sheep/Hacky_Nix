@@ -25,6 +25,7 @@
       ../../terminal/bat.nix
       ../../terminal/gitui.nix
       ../../terminal/git.nix
+      ../../terminal/btop.nix
 
       # System
       ../../system/gtk.nix
@@ -79,7 +80,7 @@
     grim
     swappy
     gitui
-    cowsay
+    btop
 
     # Coding
     go

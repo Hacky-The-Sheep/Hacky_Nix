@@ -25,6 +25,7 @@
       ../../terminal/bat.nix
       ../../terminal/gitui.nix
       ../../terminal/git.nix
+      ../../terminal/btop.nix
 
       # System
       ../../system/gtk.nix

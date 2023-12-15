@@ -22,7 +22,6 @@
       system = "x86_64-linux";      
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
-      profile = "laptop";
 
     in {	
       nixosConfigurations = {
