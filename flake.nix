@@ -35,7 +35,7 @@
           ];
         };
 
-        work_desktop = lib.nixosSystem {
+        desktop = lib.nixosSystem {
             inherit system;
             specialArgs = { inherit inputs; };
             modules = [
@@ -54,10 +54,20 @@
           };
         };
 	homeConfigurations = {
-      	hacky = home-manager.lib.homeManagerConfiguration {
+      	laptop = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;
         	extraSpecialArgs = { inherit inputs ;};
         	modules = [ ./hosts/laptop/home.nix ];
+      };
+      	server = home-manager.lib.homeManagerConfiguration {
+        	inherit pkgs;
+        	extraSpecialArgs = { inherit inputs ;};
+        	modules = [ ./hosts/server/home.nix ];
+      };
+      	desktop = home-manager.lib.homeManagerConfiguration {
+        	inherit pkgs;
+        	extraSpecialArgs = { inherit inputs ;};
+        	modules = [ ./hosts/desktop/home.nix ];
       };
     };
     };
