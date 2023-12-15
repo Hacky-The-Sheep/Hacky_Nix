@@ -21,14 +21,14 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Set your time zone.
+  time.timeZone = "America/Chicago";
+
   # Networking
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   services.mullvad-vpn.enable = true;
   services.openssh.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "America/Chicago";
 
   # Fish 🐡
   programs.fish.enable = true;
@@ -38,6 +38,9 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
+  # Virtualization
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
 
   # Cachix
   nix.settings = {
@@ -65,33 +68,33 @@
     enable = true;
 
     # GNOME
-    # displayManager.gdm.enable = true;
-    # desktopManager.gnome.enable = true;
-    # displayManager.defaultSession = "gnome";
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+    displayManager.defaultSession = "gnome";
 
     # KDE
-    displayManager.sddm.enable = true;
-    desktopManager.plasma5.enable = true;
-    displayManager.defaultSession = "plasmawayland";
+    # displayManager.sddm.enable = true;
+    # desktopManager.plasma5.enable = true;
+    # displayManager.defaultSession = "plasmawayland";
   };  
 
   ## Remove Gnome bloat
-  # environment.gnome.excludePackages = (with pkgs; [
-  #   gnome-photos
-  #   gnome-tour
-  #   epiphany
-  # ]);
-  # services.xserver.libinput.enable = true;
-  # services.udev.packages = with pkgs; [
-  #   gnome.gnome-settings-daemon
-  # ];
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-photos
+    gnome-tour
+    epiphany
+  ]);
+  services.xserver.libinput.enable = true;
+  services.udev.packages = with pkgs; [
+    gnome.gnome-settings-daemon
+  ];
 
   ## Remove KDE bloat
-  environment.plasma5.excludePackages = with pkgs.libsForQt5; [
-    plasma-browser-integration
-    gwenview
-    elisa
-  ];
+  # environment.plasma5.excludePackages = with pkgs.libsForQt5; [
+  #   plasma-browser-integration
+  #   gwenview
+  #   elisa
+  # ];
 
   # Define a user account
   users.users.hacky = {
@@ -113,6 +116,7 @@
     nil
     synology-drive-client
     gnomeExtensions.appindicator
+    gnome.gnome-boxes
 ];
  
   # System Version
