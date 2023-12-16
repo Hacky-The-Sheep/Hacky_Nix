@@ -13,3 +13,4 @@ simply comment out the packages/settings that are not in use.
 - [ ] Finish moving the theming to base16
 - [ ] Add language servers for helix editor
 - [ ] *Maybe* clean the file paths in the home-manager configs
+- [ ] Add screenshots
