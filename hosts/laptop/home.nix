@@ -56,6 +56,7 @@
     # Main
     fastfetch
     signal-desktop
+    simplex-chat-desktop
     timeshift
     brave
     firefox
@@ -81,6 +82,8 @@
     swappy
     gitui
     btop
+    swaylock
+    swayidle
 
     # Coding
     go
