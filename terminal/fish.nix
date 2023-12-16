@@ -8,6 +8,11 @@
     else\n
       zellij\n
     end\n
+
+    begin\n
+      eval (ssh-agent -c)\n
+      ssh-add ~/.ssh/id_ed25519\n
+    end &> /dev/null
     ";
 
     shellAliases = {
