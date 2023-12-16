@@ -7,7 +7,7 @@
     font.size = 15;
     shellIntegration.enableFishIntegration = true;
     settings = {
-      background_opacity = lib.mkForce "0.95";
+      background_opacity = lib.mkForce "0.90";
 
       # Theming
       background = "#${config.colorScheme.colors.base01}";
