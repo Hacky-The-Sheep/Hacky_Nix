@@ -1,6 +1,15 @@
 {
  programs.fish = {
     enable = true;
+
+    shellInit =
+    "
+    if set -q ZELLIJ\n
+    else\n
+      zellij\n
+    end\n
+    ";
+
     shellAliases = {
       ei = "exit";
       python = "python3";
