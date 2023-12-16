@@ -35,7 +35,8 @@
 
       ## General
       up = "nixos-rebuild switch --upgrade";
-      clean = "nix-env --gc";
+      clcon = "nix-env --delete-generations 14d";
+      gecon = "nix-store --gc";
     };
   };
 }
