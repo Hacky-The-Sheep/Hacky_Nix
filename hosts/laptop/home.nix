@@ -56,7 +56,6 @@
     # Main
     fastfetch
     signal-desktop
-    simplex-chat-desktop
     timeshift
     brave
     firefox
@@ -84,6 +83,7 @@
     btop
     swaylock
     swayidle
+    glow
 
     # Coding
     go
