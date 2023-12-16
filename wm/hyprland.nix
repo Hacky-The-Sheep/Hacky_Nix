@@ -38,6 +38,7 @@ wayland.windowManager.hyprland = {
     decoration = {
       rounding = 15;
       active_opacity = 0.95;
+      inactive_opacity = 0.80;
       drop_shadow = false;
   
       blur = {
