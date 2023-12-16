@@ -9,7 +9,7 @@
 {
   imports =
     [
-      ../../hosts/server/hardware-configuration.nix
+      # ../../hosts/server/hardware-configuration.nix
       # ./hardware/bluetooth.nix
       # ./hardware/nvidia.nix
       ../../system/fonts.nix
