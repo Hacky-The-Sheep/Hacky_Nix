@@ -30,8 +30,6 @@
           specialArgs = { inherit system inputs; };
           modules = [ 
             ./hosts/laptop/configuration.nix
-            inputs.hyprland.nixosModules.default
-            {programs.hyprland.enable = true;}
           ];
         };
 
@@ -40,8 +38,6 @@
             specialArgs = { inherit inputs; };
             modules = [
               ./hosts/work_desktop/configuration.nix
-              inputs.hyprland.nixosModules.default
-              {programs.hyprland.enable = true;}
             ];
           };
 
