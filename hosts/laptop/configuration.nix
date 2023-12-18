@@ -15,11 +15,17 @@
       ../../hardware/system76.nix
       ../../hardware/laptop.nix
       ../../system/fonts.nix
+
+      # Install language servers
+      ../../system/language_servers.nix
     ];
 
-  # Bootloader.
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # Kernel
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
@@ -48,7 +54,6 @@
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -71,11 +76,6 @@
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
     displayManager.defaultSession = "gnome";
-
-    # KDE
-    # displayManager.sddm.enable = true;
-    # desktopManager.plasma5.enable = true;
-    # displayManager.defaultSession = "plasmawayland";
   };  
 
   ## Remove Gnome bloat
@@ -88,13 +88,6 @@
   services.udev.packages = with pkgs; [
     gnome.gnome-settings-daemon
   ];
-
-  ## Remove KDE bloat
-  # environment.plasma5.excludePackages = with pkgs.libsForQt5; [
-  #   plasma-browser-integration
-  #   gwenview
-  #   elisa
-  # ];
 
   # Define a user account
   users.users.hacky = {
