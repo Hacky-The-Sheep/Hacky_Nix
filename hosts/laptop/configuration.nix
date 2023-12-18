@@ -15,9 +15,6 @@
       ../../hardware/system76.nix
       ../../hardware/laptop.nix
       ../../system/fonts.nix
-
-      # Install language servers
-      ../../system/language_servers.nix
     ];
 
   # Bootloader
@@ -109,7 +106,8 @@
     nil
     synology-drive-client
     gnomeExtensions.appindicator
-    gnome.gnome-boxes
+    python311Packages.python-lsp-server
+    rust-analyzer
 ];
  
   # System Version
