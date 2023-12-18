@@ -23,7 +23,11 @@
   networking.hostName = "nixos";
   networking.networkmanager.enable = true;
   # services.mullvad-vpn.enable = true;
-  services.openssh.enable = true;
+
+  services.openssh = {
+    enable = true;
+    passwordAuthentication = true;
+  };
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
