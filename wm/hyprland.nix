@@ -3,6 +3,9 @@ wayland.windowManager.hyprland = {
   enable = true;
   enableNvidiaPatches = true;
 
+  xwayland = { enable = true; };
+  systemd = { enable = true; };
+
   settings = {
     source = "mocha.conf";
     exec-once = [
