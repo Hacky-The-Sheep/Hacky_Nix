@@ -9,7 +9,8 @@ wayland.windowManager.hyprland = {
       "dunst"
       "waybar"
       "swww init"
-      "exec-once = swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Standing.jpg"
+      "synology-drive"
+      "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Stars.jpg"
     ];
 
     # Set the default monitor
@@ -38,7 +39,7 @@ wayland.windowManager.hyprland = {
     decoration = {
       rounding = 15;
       active_opacity = 0.95;
-      inactive_opacity = 0.80;
+      inactive_opacity = 0.92;
       drop_shadow = false;
   
       blur = {
@@ -85,18 +86,19 @@ wayland.windowManager.hyprland = {
       "opacity 0.9, obsidian"
       "opacity 0.8, discord"
       "opacity 0.8, spotify"
+      "opacity 0.8, kitty"
     ];
 
     ## -- Wallpaper shortcuts -- ##
-    "$w1" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Nix.png";
-    "$w2" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Hardcoding.jpg";
-    "$w3" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/pac.jpg";
+    "$w1" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/godzilla.jpg";
+    "$w2" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/evangelion.gif";
+    "$w3" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/snow.jpg";
     "$w4" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Porsche.png";
     "$w5" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/programmer.gif";
-    "$w6" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Nix_3d.png";
-    "$w7" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Kaiju.png";
+    "$w6" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/purple_mountain.jpg";
+    "$w7" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Mr_Robot.png";
     "$w8" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/art_flowers.png";
-    "$w9" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/neon_zilla.jpg";
+    "$w9" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Relax.jpg";
 
     ## -- Main Bind -- ##
     "$mod" = "SUPER";
