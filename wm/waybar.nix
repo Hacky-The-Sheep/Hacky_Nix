@@ -1,3 +1,5 @@
+{ config, ... }:
+
 {
   programs.waybar = {
     enable = true;
@@ -18,6 +20,7 @@
           "custom/game"
           "custom/home"
           "custom/work"
+          "custom/lap"
           ];
         modules-center = [
           "clock"
@@ -61,6 +64,11 @@
         "custom/work" = {
           format = "Work";
           on-click = "bash ~/scripts/work_mode.sh";
+        };
+
+        "custom/lap" = {
+          format = "Lap";
+          on-click = "bash ~/scripts/lap_mode.sh";
         };
 
         "user" = {
@@ -194,44 +202,44 @@
 
       window#waybar {
           background: rgba(21, 18, 27, 0);
-          color: #cdd6f4;
+          color: ${config.colorScheme.colors.base05};
       }
 
       tooltip {
-          background: #000000;
+          background: ${config.colorScheme.colors.base00};
           border-radius: 10px;
           border-width: 0px;
           border-style: solid;
-          border-color: #11111b;
+          border-color: ${config.colorScheme.colors.base01};
       }
 
       #workspaces button {
           padding: 2px;
           padding-left: 5px;
-          color: #6c7086;
+          color: ${config.colorScheme.colors.base04};
           margin-right: 5px;
           margin-left: 5px;
       }
 
       #workspaces button.active {
-          color: #f5e0dc;
+          color: ${config.colorScheme.colors.base06};
       }
 
       #workspaces button.focused {
-          color: #a6adc8;
-          background: #eba0ac;
+          color: ${config.colorScheme.colors.base0C};
+          background: ${config.colorScheme.colors.base08};
           border-radius: 10px;
       }
 
       #workspaces button.urgent {
-          color: #11111b;
-          background: #a6e3a1;
+          color: ${config.colorScheme.colors.base01};
+          background: ${config.colorScheme.colors.base0B};
           border-radius: 15px;
       }
 
       #workspaces button:hover {
-          background: #11111b;
-          color: #cdd6f4;
+          background: ${config.colorScheme.colors.base01};
+          color: ${config.colorScheme.colors.base05};
           border-radius: 15px;
       }
 
@@ -249,13 +257,14 @@
       #custom-game,
       #custom-work,
       #custom-home,
+      #custom-lap,
       #backlight {
-          background: #000000;
+          background: ${config.colorScheme.colors.base00};
           opacity: 1.0;
           padding: 0px 10px;
           margin: 0px 0px;
           margin-top: 5px;
-          border: 1px solid #181825;
+          border: 1px solid ${config.colorScheme.colors.base01};
       }
 
       #backlight {
@@ -268,7 +277,7 @@
       }
 
       #workspaces {
-          background: #000000;
+          background: ${config.colorSchemes.colors.base00};
           border-radius: 10px;
           margin-left: 0px;
           padding-right: 0px;
@@ -282,14 +291,14 @@
       }
 
       #clock {
-          color: #fab387;
+          color: ${config.colorSchemes.colors.base09};
           border-radius: 20px 20px 20px 20px;
           margin-left: 0px;
           border-right: 0px;
       }
 
       #network {
-          color: #f9e2af;
+          color: ${config.colorScheme.colors.base0A};
           border-radius: 10px 10px 10px 10px;
           border-left: 0px;
           border-right: 0px;
@@ -297,7 +306,7 @@
       }
 
       #memory {
-          color: #89b4fa;
+          color: ${config.colorScheme.colors.base0D};
           border-radius: 10px 10px 10px 10px;
           border-left: 0px;
           border-right: 0px;
@@ -305,7 +314,7 @@
       }
 
       #disk {
-          color: #a6e3a1;
+          color: ${config.colorScheme.colors.base0B};
           border-radius: 10px 10px 10px 10px;
           border-left: 0px;
           border-right: 0px;
@@ -314,7 +323,7 @@
 
 
       #bluetooth {
-          color: #89dceb;
+          color: ${config.colorScheme.colors.base07};
           border-radius: 10px 10px 10px 10px;
           margin-left: 10px;
       } 
@@ -326,13 +335,13 @@
       }
 
       #pulseaudio.microphone {
-          color: #89b4fa;
+          color: ${config.colorScheme.colors.base0D};
           border-left: 0px;
           border-right: 0px;
       }
 
       #battery {
-          color: #a6e3a1;
+          color: ${config.colorScheme.colors.base0B};
           border-radius: 10px 10px 10px 10px;
           margin-right: 10px;
           border-left: 0px;
@@ -357,7 +366,7 @@
       }
 
       #custom-game {
-          color: #a6e3a1;
+          color: ${config.colorScheme.colors.base0B};
           border-radius: 10px 10px 10px 10px;
           margin-left: 5px;
           margin-right: 5px;
@@ -371,7 +380,13 @@
           border-left: 5px;
       }
       #custom-work {
-          color: #cdd6f4;
+          color: ${config.colorScheme.colors.base05};
+          border-radius: 10px 10px 10px 10px;
+          margin-right: 5px;
+          border-left: 5px;
+      }
+      #custom-lap {
+          color: ${config.colorScheme.colors.base08};
           border-radius: 10px 10px 10px 10px;
           margin-right: 5px;
           border-left: 5px;
@@ -379,3 +394,4 @@
     '';
     };
 }
+
