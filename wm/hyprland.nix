@@ -3,8 +3,8 @@ wayland.windowManager.hyprland = {
   enable = true;
   enableNvidiaPatches = true;
 
-  xwayland = { enable = true; };
-  systemd = { enable = true; };
+  # xwayland = { enable = true; };
+  # systemd = { enable = true; };
 
   settings = {
     source = "mocha.conf";
@@ -12,6 +12,7 @@ wayland.windowManager.hyprland = {
       "dunst"
       "waybar"
       "swww init"
+      "NetworkManager"
       "synology-drive"
       "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Stars.jpg"
     ];
@@ -94,7 +95,7 @@ wayland.windowManager.hyprland = {
 
     ## -- Wallpaper shortcuts -- ##
     "$w1" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/godzilla.jpg";
-    "$w2" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/evangelion.gif";
+    "$w2" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/space.png";
     "$w3" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/snow.jpg";
     "$w4" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Porsche.png";
     "$w5" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/programmer.gif";
