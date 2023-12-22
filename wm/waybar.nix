@@ -1,5 +1,3 @@
-{ config, ... }:
-
 {
   programs.waybar = {
     enable = true;
@@ -20,7 +18,6 @@
           "custom/game"
           "custom/home"
           "custom/work"
-          "custom/lap"
           ];
         modules-center = [
           "clock"
@@ -66,11 +63,6 @@
           on-click = "bash ~/scripts/work_mode.sh";
         };
 
-        "custom/lap" = {
-          format = "Lap";
-          on-click = "bash ~/scripts/lap_mode.sh";
-        };
-
         "user" = {
           format = "{user}";
           spacing = 4;
@@ -91,9 +83,9 @@
           device = "intel_backlight";
           format = "{icon} {percent}%";
           format-icons = [
-            ""
-            ""
-            ""
+            "🌑"
+            "🌤️"
+            "☀️"
           ];
            on-scroll-up = "brightnessctl -q s 10%+";
            on-scroll-down = "brightnessctl -q s 10%-";
@@ -105,6 +97,7 @@
             format = "{ifname}";
             format-wifi = "{essid}";
             format-ethernet = "{ipaddr}";
+            on-click = "nm-applet";
           };
 
           "battery" = {
@@ -117,17 +110,17 @@
             format-charging = "  {capacity}%";
             format-plugged = "  {capacity}%";
             format-icons = [
-              ""
-              ""
-              ""
-              ""
-              ""
-              ""
-              ""
-              ""
-              ""
-              ""
-              ""
+              "☠️"
+              "😰"
+              "😓"
+              "😟"
+              "😓"
+              "🫣"
+              "😶"
+              "😐"
+              "🙂"
+              "😃"
+              "😁"
             ];
           };
 
@@ -137,7 +130,8 @@
             format-muted = " Muted";
             on-scroll-up = "amixer -D pipewire sset Master 5%+";
             on-scroll-down = "amixer -D pipewire sset Master 5%-";
-            scroll-step = 10;
+            on-click = "amixer set Master toggle";
+            scroll-step = 5;
             format-icons = {
               headphone = " ";
               hands-free = " ";
@@ -155,10 +149,11 @@
 
           "pulseaudio#microphone" = {
             format = "{format_source}";
-            format-source = " {volume}%";
-            format-source-muted = " Muted";
+            format-source = "📢 {volume}%";
+            format-source-muted = "🤐 Muted";
             on-scroll-up = "amixer -D pipewire sset Capture 5%+";
             on-scroll-down = "amixer -D pipewire sset Capture 5%-";
+            on-click = "amixer set Capture toggle";
             scroll-step = 5;
           };
           "" = {
@@ -194,7 +189,7 @@
       * {
           border: none;
           border-radius: 0;
-          font-family: "FiraCode Nerd Font";
+          font-family: "Iosevka";
           font-weight: bold;
           font-size: 13px;
           min-height: 0;
@@ -202,44 +197,44 @@
 
       window#waybar {
           background: rgba(21, 18, 27, 0);
-          color: ${config.colorScheme.colors.base05};
+          color: #cdd6f4;
       }
 
       tooltip {
-          background: ${config.colorScheme.colors.base00};
+          background: #000000;
           border-radius: 10px;
           border-width: 0px;
           border-style: solid;
-          border-color: ${config.colorScheme.colors.base01};
+          border-color: #11111b;
       }
 
       #workspaces button {
           padding: 2px;
           padding-left: 5px;
-          color: ${config.colorScheme.colors.base04};
+          color: #6c7086;
           margin-right: 5px;
           margin-left: 5px;
       }
 
       #workspaces button.active {
-          color: ${config.colorScheme.colors.base06};
+          color: #f5e0dc;
       }
 
       #workspaces button.focused {
-          color: ${config.colorScheme.colors.base0C};
-          background: ${config.colorScheme.colors.base08};
+          color: #a6adc8;
+          background: #eba0ac;
           border-radius: 10px;
       }
 
       #workspaces button.urgent {
-          color: ${config.colorScheme.colors.base01};
-          background: ${config.colorScheme.colors.base0B};
+          color: #11111b;
+          background: #a6e3a1;
           border-radius: 15px;
       }
 
       #workspaces button:hover {
-          background: ${config.colorScheme.colors.base01};
-          color: ${config.colorScheme.colors.base05};
+          background: #11111b;
+          color: #cdd6f4;
           border-radius: 15px;
       }
 
@@ -257,14 +252,13 @@
       #custom-game,
       #custom-work,
       #custom-home,
-      #custom-lap,
       #backlight {
-          background: ${config.colorScheme.colors.base00};
+          background: #000000;
           opacity: 1.0;
           padding: 0px 10px;
           margin: 0px 0px;
           margin-top: 5px;
-          border: 1px solid ${config.colorScheme.colors.base01};
+          border: 1px solid #181825;
       }
 
       #backlight {
@@ -277,7 +271,7 @@
       }
 
       #workspaces {
-          background: ${config.colorSchemes.colors.base00};
+          background: #000000;
           border-radius: 10px;
           margin-left: 0px;
           padding-right: 0px;
@@ -291,14 +285,14 @@
       }
 
       #clock {
-          color: ${config.colorSchemes.colors.base09};
+          color: #fab387;
           border-radius: 20px 20px 20px 20px;
           margin-left: 0px;
           border-right: 0px;
       }
 
       #network {
-          color: ${config.colorScheme.colors.base0A};
+          color: #f9e2af;
           border-radius: 10px 10px 10px 10px;
           border-left: 0px;
           border-right: 0px;
@@ -306,7 +300,7 @@
       }
 
       #memory {
-          color: ${config.colorScheme.colors.base0D};
+          color: #89b4fa;
           border-radius: 10px 10px 10px 10px;
           border-left: 0px;
           border-right: 0px;
@@ -314,7 +308,7 @@
       }
 
       #disk {
-          color: ${config.colorScheme.colors.base0B};
+          color: #a6e3a1;
           border-radius: 10px 10px 10px 10px;
           border-left: 0px;
           border-right: 0px;
@@ -323,7 +317,7 @@
 
 
       #bluetooth {
-          color: ${config.colorScheme.colors.base07};
+          color: #89dceb;
           border-radius: 10px 10px 10px 10px;
           margin-left: 10px;
       } 
@@ -335,13 +329,13 @@
       }
 
       #pulseaudio.microphone {
-          color: ${config.colorScheme.colors.base0D};
+          color: #89b4fa;
           border-left: 0px;
           border-right: 0px;
       }
 
       #battery {
-          color: ${config.colorScheme.colors.base0B};
+          color: #a6e3a1;
           border-radius: 10px 10px 10px 10px;
           margin-right: 10px;
           border-left: 0px;
@@ -366,7 +360,7 @@
       }
 
       #custom-game {
-          color: ${config.colorScheme.colors.base0B};
+          color: #a6e3a1;
           border-radius: 10px 10px 10px 10px;
           margin-left: 5px;
           margin-right: 5px;
@@ -380,13 +374,7 @@
           border-left: 5px;
       }
       #custom-work {
-          color: ${config.colorScheme.colors.base05};
-          border-radius: 10px 10px 10px 10px;
-          margin-right: 5px;
-          border-left: 5px;
-      }
-      #custom-lap {
-          color: ${config.colorScheme.colors.base08};
+          color: #cdd6f4;
           border-radius: 10px 10px 10px 10px;
           margin-right: 5px;
           border-left: 5px;
@@ -394,4 +382,3 @@
     '';
     };
 }
-
