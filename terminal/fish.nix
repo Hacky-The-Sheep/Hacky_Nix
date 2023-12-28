@@ -48,6 +48,10 @@
       shmu = "home-manager switch --flake .#server";
       snup = "sudo nixos-rebuild switch --flake .#server";
 
+      ## Home Desktop
+      hhmu = "home-manager switch --flake .#home_desktop";
+      hnup = "sudo nixos-rebuild switch --flake .#home_desktop";
+
       ## General
       # up = "nixos-rebuild switch --upgrade";
       clcon = "nix-env --delete-generations 14d";
