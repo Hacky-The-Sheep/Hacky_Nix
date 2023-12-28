@@ -3,9 +3,6 @@ wayland.windowManager.hyprland = {
   enable = true;
   enableNvidiaPatches = true;
 
-  # xwayland = { enable = true; };
-  # systemd = { enable = true; };
-
   settings = {
     source = "mocha.conf";
     exec-once = [
@@ -19,9 +16,6 @@ wayland.windowManager.hyprland = {
 
     # Set the default monitor
     monitor = "eDP-1, highrr, 0x0, 1";
-
-    # Check if the laptop lid is open
-    # bindl = "switch:off:Lid Switch,exec,hyprctl keyword monitor 'eDP-1, highrr, 0x0, 1'";
 
     env = "XCURSOR_SIZE,24";
 
@@ -94,7 +88,7 @@ wayland.windowManager.hyprland = {
     ];
 
     ## -- Wallpaper shortcuts -- ##
-    "$w1" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/godzilla.jpg";
+    "$w1" = "mpvpaper -o 'loop' '*' ~/Pictures/Wallpapers/Neon-Astronaut.mp4";
     "$w2" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/space.png";
     "$w3" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/snow.jpg";
     "$w4" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Porsche.png";
@@ -120,8 +114,7 @@ wayland.windowManager.hyprland = {
       "$mod, P, pseudo, # dwindle"
       "$mod, O, togglesplit, # dwindle"
       "$mod, S, exec, slurp | grim -g - - | swappy -f -"
-      "$mod, L, exec, bash ~/sway.sh"
-      "$mod, M, exec, bash ~/.config/hypr/scripts/mullvad.sh"
+      "$mod, L, exec, bash ~/scripts/swaylock.sh"
       "$mod, J, exec, rofimoji"
 
       ## --- Wallpaper Changes --- ##

@@ -15,8 +15,16 @@
       ../../hardware/system76.nix
       ../../hardware/laptop.nix
       ../../system/fonts.nix
+      ../../system/printers.nix
+      ../../system/gnome.nix
+
+      # Gaming
+      ../../apps/games.nix
     ];
 
+  # Needed to run swaylock
+  security.pam.services.swaylock = {};
+  
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -59,8 +67,14 @@
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
-  # Enable CUPS to print documents.
+  # Printing
   services.printing.enable = true;
+  services.printing.drivers = [ pkgs.brlaser ];
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
+  };
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -76,23 +90,13 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-
-    # GNOME
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
-    displayManager.defaultSession = "gnome";
-  };  
+  };
 
-  ## Remove Gnome bloat
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-photos
-    gnome-tour
-    epiphany
-  ]);
+  programs.dconf.enable = true;
+
   services.xserver.libinput.enable = true;
-  services.udev.packages = with pkgs; [
-    gnome.gnome-settings-daemon
-  ];
 
   # Define a user account
   users.users.hacky = {
@@ -113,9 +117,11 @@
     home-manager
     nil
     synology-drive-client
-    gnomeExtensions.appindicator
+    obsidian
     python311Packages.python-lsp-server
     rust-analyzer
+    networkmanager
+    networkmanagerapplet
 ];
  
   # System Version

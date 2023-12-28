@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ inputs, pkgs, ... }:
 
 # ██       █████  ██████  
 # ██      ██   ██ ██   ██ 
@@ -16,33 +16,24 @@
       inputs.nix-colors.homeManagerModules.default
 
       # Terminal
-      ../../terminal/eza.nix
-      ../../terminal/fish.nix
-      ../../terminal/helix.nix
-      ../../terminal/kitty.nix
-      ../../terminal/lf.nix
-      ../../terminal/zellij.nix
-      ../../terminal/bat.nix
-      ../../terminal/gitui.nix
-      ../../terminal/git.nix
-      ../../terminal/btop.nix
+      ../../terminal/install.nix
 
       # System
       ../../system/gtk.nix
 
-      # WM
+      # Hyprland
+      ../../apps/dunst.nix
+      ../../apps/rofi.nix
+      ../../terminal/swaylock.nix
       ../../wm/hyprland.nix
       ../../wm/waybar.nix
 
       # Apps
-      ../../apps/rofi.nix
-      ../../apps/dunst.nix
       ../../apps/firefox.nix
     ];
 
   # Set the colorscheme
   colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
-  # colorScheme = inputs.nix-colors.colorSchemes.catppuccin-latte;
 
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
@@ -54,42 +45,50 @@
   home.packages = with pkgs; [
 
     # Main
+    brave
+    cava
     fastfetch
+    firefox
+    kitty
     signal-desktop
     timeshift
-    brave
-    firefox
+    xdg-desktop-portal-hyprland
+
+    # Hyprland Packages
+    brightnessctl
+    dunst
+    grim
+    mpvpaper
     rofi
+    rofimoji
+    slurp
+    swappy
+    swaylock-effects
     swww
-    kitty
 
     # Catppuccin 😹
     catppuccin-gtk
 
     # Terminal Programs
-    helix
-    lf
-    htop
-    eza
-    yt-dlp
     bat
-    ripgrep
-    rofimoji
-    dunst
-    slurp
-    grim
-    swappy
-    gitui
     btop
-    swaylock
-    swayidle
-    glow
+    eza
+    gitui
+    helix
+    htop
+    lf
+    openvpn
+    ripgrep
+    vscode-langservers-extracted
+    yazi
+    yt-dlp
 
     # Coding
     go
     rustc
     cargo
-    (python3.withPackages(ps: with ps; [ pandas requests numpy ruff mnamer ]))
+    (python3.withPackages(ps: with ps; [ pandas requests numpy ruff ]))
+    mnamer
 
     # "Work"
     libreoffice
@@ -97,11 +96,11 @@
     remmina
     
     # Fun
-    rhythmbox
-    mpv
     inkscape
+    mpv
     obs-studio
     qbittorrent
+    rhythmbox
 ];
  
   # Home Manager Version

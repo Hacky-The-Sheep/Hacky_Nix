@@ -49,7 +49,7 @@
       snup = "sudo nixos-rebuild switch --flake .#server";
 
       ## General
-      up = "nixos-rebuild switch --upgrade";
+      # up = "nixos-rebuild switch --upgrade";
       clcon = "nix-env --delete-generations 14d";
       gecon = "nix-store --gc";
     };
