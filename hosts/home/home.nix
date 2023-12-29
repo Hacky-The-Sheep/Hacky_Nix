@@ -78,6 +78,7 @@
     lf
     openvpn
     ripgrep
+    spotify-tui
     starship
     vscode-langservers-extracted
     yazi
