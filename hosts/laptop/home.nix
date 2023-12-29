@@ -63,7 +63,7 @@
     rofimoji
     slurp
     swappy
-    swaylock-effects
+    # swaylock-effects
     swww
 
     # Catppuccin 😹

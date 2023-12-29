@@ -22,6 +22,9 @@
       python = "python3";
       cat = "bat";
 
+      # ZelliJ
+      notes = "zellij --layout ~/.dotfiles/layouts/notes.kdl";
+
       # Git
       ga = "git add";
       gs = "git status";
