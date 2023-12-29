@@ -1,0 +1,12 @@
+layout {
+	pane split_direction="vertical" {
+		pane command="hx" {
+			cwd "~/Documents/Obsidian/PKM"
+			args "."
+		}
+		pane split_direction="horizontal" {
+			pane command="cava"
+			pane command="fastfetch"
+		}
+	}
+}
