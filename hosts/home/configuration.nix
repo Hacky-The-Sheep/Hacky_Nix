@@ -10,7 +10,11 @@
 {
   imports =
     [
+<<<<<<< HEAD
       ../../hosts/home/hardware-configuration.nix
+=======
+      ../../hosts/home_desktop/hardware-configuration.nix
+>>>>>>> 302083749d0ae3986951c56e072ef65e7cc77d78
       ../../hardware/bluetooth.nix
       ../../hardware/system76.nix
       ../../system/fonts.nix
@@ -102,7 +106,11 @@
     home-manager
     nil
     synology-drive-client
+<<<<<<< HEAD
     # obsidian
+=======
+    obsidian
+>>>>>>> 302083749d0ae3986951c56e072ef65e7cc77d78
     python311Packages.python-lsp-server
     rust-analyzer
     networkmanager
