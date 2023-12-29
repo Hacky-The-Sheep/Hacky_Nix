@@ -16,16 +16,7 @@
       inputs.nix-colors.homeManagerModules.default
 
       # Terminal
-      ../../terminal/eza.nix
-      ../../terminal/fish.nix
-      ../../terminal/helix.nix
-      ../../terminal/kitty.nix
-      ../../terminal/lf.nix
-      ../../terminal/zellij.nix
-      ../../terminal/bat.nix
-      ../../terminal/gitui.nix
-      ../../terminal/git.nix
-      ../../terminal/btop.nix
+      ../../terminal/install.nix
 
       # System
       ../../system/gtk.nix

@@ -9,6 +9,7 @@
     ./helix.nix
     ./kitty.nix
     ./lf.nix
+    ./starship.nix
     ./yazi.nix
     ./zellij.nix
   ];

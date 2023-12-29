@@ -4,6 +4,8 @@
 
     shellInit =
     "
+    set -g fish_greeting \n
+
     if set -q ZELLIJ\n
     else\n
       zellij\n
@@ -47,6 +49,10 @@
       ## Server
       shmu = "home-manager switch --flake .#server";
       snup = "sudo nixos-rebuild switch --flake .#server";
+
+      ## Home Desktop
+      hhmu = "home-manager switch --flake .#home";
+      hnup = "sudo nixos-rebuild switch --flake .#home";
 
       ## General
       # up = "nixos-rebuild switch --upgrade";

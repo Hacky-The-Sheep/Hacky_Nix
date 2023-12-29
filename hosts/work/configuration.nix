@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 # ██     ██  ██████  ██████  ██   ██ 
 # ██     ██ ██    ██ ██   ██ ██  ██  
@@ -9,25 +9,22 @@
 {
   imports =
     [
-      ./hosts/work_desktop/hardware-configuration.nix
-      ./hardware/bluetooth.nix
-      ./hardware/nvidia.nix
-      ./hardware/system76.nix
-      ./system/fonts.nix
+      ../../hosts/work/hardware-configuration.nix
+      ../../hardware/bluetooth.nix
+      # ../../hardware/nvidia.nix
+      ../../system/printers.nix
+      ../../hardware/system76.nix
+      ../../system/fonts.nix
+      ../../system/gnome.nix
     ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Laptop Settings
-  ## Set the screen to lock if the laptop is powered externally
-  services.logind.lidSwitchExternalPower = "ignore";
-
   # Networking
-  networking.hostName = "nixos";
+  networking.hostName = "jonix";
   networking.networkmanager.enable = true;
-  # services.mullvad-vpn.enable = true;
   services.openssh.enable = true;
 
   # Set your time zone.
@@ -49,6 +46,12 @@
     displayManager.defaultSession = "gnome";
   };  
 
+  ## Enable
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland; 
+  };
+
   # Cachix
   nix.settings = {
     substituters = ["https://hyprland.cachix.org"];
@@ -62,8 +65,14 @@
     epiphany
   ]);
 
-  # Enable CUPS to print documents.
+  # Printing
   services.printing.enable = true;
+  services.printing.drivers = [ pkgs.brlaser ];
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
+  };
 
   # Enable sound with pipewire.
   sound.enable = true;
