@@ -54,13 +54,8 @@
       snup = "sudo nixos-rebuild switch --flake .#server";
 
       ## Home Desktop
-<<<<<<< HEAD
       hhmu = "home-manager switch --flake .#home";
       hnup = "sudo nixos-rebuild switch --flake .#home";
-=======
-      hhmu = "home-manager switch --flake .#home_desktop";
-      hnup = "sudo nixos-rebuild switch --flake .#home_desktop";
->>>>>>> 302083749d0ae3986951c56e072ef65e7cc77d78
 
       ## General
       # up = "nixos-rebuild switch --upgrade";
