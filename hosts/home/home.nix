@@ -24,7 +24,7 @@
       # Hyprland
       ../../apps/dunst.nix
       ../../apps/rofi.nix
-      ../../terminal/swaylock.nix
+      # ../../terminal/swaylock.nix
       ../../wm/hyprland.nix
       ../../wm/waybar.nix
 
@@ -62,7 +62,7 @@
     rofimoji
     slurp
     swappy
-    # swaylock-effects
+    swaylock-effects
     swww
 
     # Catppuccin 😹
