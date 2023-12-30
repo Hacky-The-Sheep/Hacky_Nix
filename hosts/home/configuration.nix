@@ -11,7 +11,6 @@
   imports =
     [
       ../../hosts/home/hardware-configuration.nix
-      ../../hosts/home_desktop/hardware-configuration.nix
       ../../hardware/bluetooth.nix
       ../../hardware/system76.nix
       ../../system/fonts.nix
@@ -92,6 +91,8 @@
     extraGroups = [ "networkmanager" "wheel" ];
     uid = 1000;
   };
+
+  nix.trustedUsers = [ "root" "@wheel"];
 
   environment.systemPackages = with pkgs; [
     vim
