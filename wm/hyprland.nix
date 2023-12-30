@@ -4,7 +4,7 @@ wayland.windowManager.hyprland = {
   enableNvidiaPatches = true;
 
   settings = {
-    source = "mocha.conf";
+    # source = "mocha.conf";
     exec-once = [
       "dunst"
       "waybar"
