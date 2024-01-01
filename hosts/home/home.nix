@@ -26,7 +26,7 @@
       ../../apps/rofi.nix
       # ../../terminal/swaylock.nix
       ../../wm/hyprland_home.nix
-      ../../wm/waybar.nix
+      ../../wm/waybar_home.nix
 
       # Apps
       ../../apps/firefox.nix
