@@ -49,7 +49,7 @@
         "memory" = {
           "interval" = 15;
           "format" = "{}%";
-          "max-length" = 10
+          "max-length" = 10;
         };
 
         "custom/home" = {
