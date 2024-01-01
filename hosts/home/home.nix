@@ -25,7 +25,7 @@
       ../../apps/dunst.nix
       ../../apps/rofi.nix
       # ../../terminal/swaylock.nix
-      ../../wm/hyprland.nix
+      ../../wm/hyprland_home.nix
       ../../wm/waybar.nix
 
       # Apps
