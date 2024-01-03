@@ -11,6 +11,42 @@
             name = "Bookmarks";
             toolbar = true;
             bookmarks = [   
+
+              # Folders
+              {
+                name = "Mr Robot";
+                bookmarks = [
+                  {
+                    name = "TryHackMe";
+                    keyword = "th";
+                    url = "https://tryhackme.com";
+                  }
+                  {
+                    name = "NIST";
+                    url = "https://www.nist.gov/cyberframework";
+                  }
+                  {
+                    name = "OWASP";
+                    url = "https://owasp.org/";
+                  }
+                ];
+              }
+              {
+                name = "Nix Sites";
+                bookmarks = [   
+                  {
+                    name = "MyNixOS";
+                    keyword = "nix";
+                    url = "https://mynixos.com/";
+                  }
+                  {
+                    name = "Nix Packages";
+                    url = "https://search.nixos.org/packages";
+                  }
+                ];
+              }
+
+              # Single Links
               {
                 name = "KeyMash";
                 keyword = "km";
@@ -37,11 +73,6 @@
                 keyword = "dm";
                 url = "https://app.destinyitemmanager.com/login";
               }
-              {
-                name = "MyNixOS";
-                keyword = "nix";
-                url = "https://mynixos.com/";
-              }
             ];
           }
         ];
@@ -56,6 +87,9 @@
         ];
 
       settings = {
+
+        # Dark Mode
+        "layout.css.prefers-color-scheme.content-override" = 0;
 
         "dom.security.https_only_mode" = true;
         "identity.fxaccounts.enabled" = true;
