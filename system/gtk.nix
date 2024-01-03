@@ -7,13 +7,16 @@
     theme = {
       name = "Catppuccin-Mocha-Standard-Sky-Dark";
       package = pkgs.catppuccin-gtk.override {
-        accents = ["blue"];
+        accents = [ "blue" ];
         size = "standard";
+        tweaks = [ "rimless" "black"];
+        variant = "mocha";
       };
     };
-    iconTheme = {
-      name = "Adwaita";
-      package = pkgs.gnome.adwaita-icon-theme;
+
+    cursorTheme = {
+      name = "Numix-Cursor";
+      package = pkgs.numix-cursor-theme;
     };
 
     gtk3.extraConfig = {
@@ -28,5 +31,16 @@
       '';
     };
   };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+    "org/gnome/shell/extensions/user-theme" = {
+      name = "Catppuccin-Mocha-Standard-Sky-Dark";
+    };
+  };
+
   home.sessionVariables.GTK_THEME = "Catppuccin-Mocha-Standard-Sky-Dark";
+
 }
