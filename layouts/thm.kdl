@@ -1,0 +1,9 @@
+layout {
+	pane split_direction="vertical" {
+		pane
+		pane command="sudo" {
+			cwd "~/Documents/TryHackMe"
+			args "openvpn" "hacky.the.sheep.ovpn"
+		}
+	}
+}
