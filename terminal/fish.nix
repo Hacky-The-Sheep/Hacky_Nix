@@ -24,6 +24,7 @@
 
       # ZelliJ
       notes = "zellij --layout ~/.dotfiles/layouts/notes.kdl";
+      thm = "zellij --layout ~/.dotfiles/layouts/thm.kdl";
 
       # Git
       ga = "git add";
