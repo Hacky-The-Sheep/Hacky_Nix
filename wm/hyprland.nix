@@ -4,15 +4,15 @@ wayland.windowManager.hyprland = {
   enableNvidiaPatches = true;
 
   settings = {
-    # source = "mocha.conf";
     exec-once = [
-      "dunst"
       "waybar"
+      "dunst"
       "swww init"
       "NetworkManager"
       "synology-drive"
       "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Stars.jpg"
     ];
+    source = "mocha.conf";
 
     # Set the default monitor
     monitor = "eDP-1, highrr, 0x0, 1";
@@ -93,10 +93,10 @@ wayland.windowManager.hyprland = {
     "$w3" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/snow.jpg";
     "$w4" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Porsche.png";
     "$w5" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/programmer.gif";
-    "$w6" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/purple_mountain.jpg";
+    "$w6" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/minecraft.png";
     "$w7" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Mr_Robot.png";
     "$w8" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/art_flowers.png";
-    "$w9" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Relax.jpg";
+    "$w9" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/leave_me.jpg";
 
     ## -- Main Bind -- ##
     "$mod" = "SUPER";
