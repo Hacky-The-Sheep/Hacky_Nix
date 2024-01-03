@@ -104,7 +104,7 @@
     home-manager
     nil
     synology-drive-client
-    # obsidian
+    obsidian
     python311Packages.python-lsp-server
     rust-analyzer
     networkmanager
