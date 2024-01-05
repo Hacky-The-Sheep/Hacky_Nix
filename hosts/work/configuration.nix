@@ -11,7 +11,7 @@
     [
       ../../hosts/work/hardware-configuration.nix
       ../../hardware/bluetooth.nix
-      # ../../hardware/nvidia.nix
+      ../../hardware/work_nvidia.nix
       ../../system/printers.nix
       ../../hardware/system76.nix
       ../../system/fonts.nix
@@ -105,7 +105,7 @@
     git
     home-manager
     steam
-    # discord
+    discord
     zellij
     nil
     synology-drive-client
