@@ -14,7 +14,7 @@
       ../../hardware/bluetooth.nix
       ../../hardware/system76.nix
       ../../system/fonts.nix
-      ../../system/gnome.nix
+      # ../../system/gnome.nix
     ];
 
   # Needed to run swaylock
@@ -48,8 +48,7 @@
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
-  # Hyprland
-  
+  # Hyprland  
   ## Enable
   programs.hyprland = {
     enable = true;
@@ -76,11 +75,27 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
+    # displayManager.gdm.enable = true;
+    # desktopManager.gnome.enable = true;
+    displayManager.sddm.enable = true;
+    desktopManager.plasma5.enable = true;
   };
 
+
   programs.dconf.enable = true;
+
+  # Remote Desktop
+  ## Enable
+  services.xrdp = {
+    enable = true;
+    defaultWindowManager = "startplasma-x11";
+    openFirewall = true;
+  };
+  ## Open Firewall Ports
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 9090 22 80 ];
+  };
 
   services.xserver.libinput.enable = true;
 
@@ -92,7 +107,7 @@
     uid = 1000;
   };
 
-  nix.trustedUsers = [ "root" "@wheel"];
+  nix.settings.trusted-users = [ "root" "@wheel"];
 
   environment.systemPackages = with pkgs; [
     vim
@@ -104,7 +119,7 @@
     home-manager
     nil
     synology-drive-client
-    obsidian
+    # obsidian
     python311Packages.python-lsp-server
     rust-analyzer
     networkmanager

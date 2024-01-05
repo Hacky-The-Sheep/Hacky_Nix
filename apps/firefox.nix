@@ -29,6 +29,10 @@
                     name = "OWASP";
                     url = "https://owasp.org/";
                   }
+                  {
+                    name = "OWASP Favicon DB";
+                    url = "https://wiki.owasp.org/index.php/OWASP_favicon_database";
+                  }
                 ];
               }
               {
