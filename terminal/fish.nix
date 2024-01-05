@@ -47,8 +47,8 @@
       lnup = "sudo nixos-rebuild switch --flake .#laptop";
 
       ## Work Desktop
-      dhmu = "home-manager switch --flake .#work_desktop";
-      dnup = "sudo nixos-rebuild switch --flake .#work_desktop";
+      whmu = "home-manager switch --flake .#work";
+      wnup = "sudo nixos-rebuild switch --flake .#work";
 
       ## Server
       shmu = "home-manager switch --flake .#server";
