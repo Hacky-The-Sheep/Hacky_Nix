@@ -33,6 +33,18 @@
                     name = "OWASP Favicon DB";
                     url = "https://wiki.owasp.org/index.php/OWASP_favicon_database";
                   }
+                  {
+                    name = "Wappalyzer";
+                    url = "https://www.wappalyzer.com/";
+                  }
+                  {
+                    name = "CRT";
+                    url = "https://crt.sh/";
+                  }
+                  {
+                    name = "Cert Lookup";
+                    url = "https://ui.ctsearch.entrust.com/ui/ctsearchui"; 
+                  }
                 ];
               }
               {
