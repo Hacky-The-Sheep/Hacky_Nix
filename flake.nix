@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
+    unstable.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -20,7 +21,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, base16, ...}@inputs: 
+  outputs = { self, nixpkgs, home-manager, base16, unstable, ...}@inputs: 
     let
 
       # ----- System Settings ----- #
@@ -61,7 +62,11 @@
           };
 
         home = lib.nixosSystem {
-          specialArgs = { inherit system inputs; };
+          specialArgs = { 
+            inherit system;
+            inherit inputs;
+            inherit unstable;
+          };
           modules = [ 
             base16.nixosModule
             { scheme = "${inputs.base16-scheme}/catppuccin-mocha"; }
@@ -88,7 +93,10 @@
       };
       	home = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;
-        	extraSpecialArgs = { inherit inputs ;};
+        	extraSpecialArgs = { 
+            inherit inputs; 
+            inherit unstable;
+            };
         	modules = [ ./hosts/home/home.nix ];
       };
     };
