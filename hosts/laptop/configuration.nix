@@ -17,6 +17,7 @@
       ../../system/fonts.nix
       ../../system/printers.nix
       ../../system/gnome.nix
+      ../../users/home/users.nix
 
       # Gaming
       ../../apps/games.nix
@@ -117,7 +118,7 @@
     home-manager
     nil
     synology-drive-client
-    obsidian
+    # obsidian
     python311Packages.python-lsp-server
     rust-analyzer
     networkmanager
