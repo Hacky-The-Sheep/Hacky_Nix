@@ -12,7 +12,6 @@
   imports = 
     [ 
 
-      # Flake Inputs
       inputs.nix-colors.homeManagerModules.default
 
       # Terminal
@@ -21,13 +20,13 @@
       # System
       ../../system/gtk.nix
 
-      # WM
+      # Hyprland
+      ../../apps/dunst.nix
+      ../../apps/rofi.nix
       ../../wm/hyprland.nix
       ../../wm/waybar.nix
 
       # Apps
-      ../../apps/rofi.nix
-      ../../apps/dunst.nix
       ../../apps/firefox.nix
     ];
 
@@ -43,33 +42,45 @@
   # Packages to install
   home.packages = with pkgs; [
 
+
     # Main
+    brave
+    cava
     fastfetch
+    firefox
+    kitty
     signal-desktop
     timeshift
-    brave
-    firefox
+    xdg-desktop-portal-hyprland
+
+    # Hyprland Packages
+    brightnessctl
+    dunst
+    grim
+    mpvpaper
     rofi
+    rofimoji
+    slurp
+    swappy
+    swaylock-effects
     swww
-    kitty
 
     # Catppuccin 😹
     catppuccin-gtk
 
     # Terminal Programs
-    helix
-    lf
-    htop
-    eza
-    yt-dlp
     bat
-    ripgrep
-    rofimoji
-    dunst
-    slurp
-    grim
-    swappy
+    btop
+    eza
     gitui
+    helix
+    htop
+    lf
+    openvpn
+    ripgrep
+    vscode-langservers-extracted
+    yazi
+    yt-dlp
 
     # Coding
     go
@@ -80,21 +91,18 @@
 
     # "Work"
     libreoffice
-    # mullvad-vpn
+    mullvad-vpn
     remmina
     
     # Fun
-    # rhythmbox
-    mpv
+    libsForQt5.kdenlive
     inkscape
-    # obs-studio
+    mpv
+    obs-studio
     # qbittorrent
+    # rhythmbox
 ];
  
   # Home Manager Version
   home.stateVersion = "23.11";
-
-  # Gnome Theming
-  gtk.enable = true;
-  
 }

@@ -96,6 +96,7 @@
     defaultWindowManager = "startplasma-x11";
     openFirewall = true;
   };
+
   ## Open Firewall Ports
   networking.firewall = {
     enable = true;

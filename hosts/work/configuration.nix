@@ -73,6 +73,19 @@
     nssmdns = true;
     openFirewall = true;
   };
+  
+  # RDP
+  ## A
+  services.xrdp = {
+    enable = true;
+    openFirewall = true;
+  };
+
+  ## Open Firewall Ports
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 9090 22 80 ];
+  };
 
   # Enable sound with pipewire.
   sound.enable = true;

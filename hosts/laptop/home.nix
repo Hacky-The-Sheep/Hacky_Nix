@@ -24,7 +24,6 @@
       # Hyprland
       ../../apps/dunst.nix
       ../../apps/rofi.nix
-      # ../../terminal/swaylock.nix
       ../../wm/hyprland.nix
       ../../wm/waybar.nix
 
@@ -105,8 +104,4 @@
  
   # Home Manager Version
   home.stateVersion = "23.11";
-
-  # Gnome Theming
-  gtk.enable = true;
-  
 }
