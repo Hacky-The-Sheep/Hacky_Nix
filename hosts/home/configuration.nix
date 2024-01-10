@@ -14,7 +14,12 @@
       ../../hardware/bluetooth.nix
       ../../hardware/system76.nix
       ../../system/fonts.nix
+<<<<<<< HEAD
       # ../../system/gnome.nix
+=======
+      ../../system/gnome.nix
+      # ../../users/home/users.nix
+>>>>>>> 1578a72 (uncomment files)
     ];
 
   # Needed to run swaylock
@@ -105,6 +110,11 @@
     description = "hacky";
     extraGroups = [ "networkmanager" "wheel" ];
     uid = 1000;
+  };
+  users.users.monkey = {
+    isNormalUser = true;
+    description = "monkey";
+    home = "/home/monkey";
   };
 
   nix.settings.trusted-users = [ "root" "@wheel"];
