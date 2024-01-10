@@ -56,7 +56,7 @@
 
       ## Home Desktop
       hhmu = "home-manager switch --flake .#home";
-      hnup = "sudo nixos-rebuild switch --flake .#home";
+      hnup = "sudo nix-channel --update && sudo nixos-rebuild switch --flake .#home";
 
       ## General
       # up = "nixos-rebuild switch --upgrade";
