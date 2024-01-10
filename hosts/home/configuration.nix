@@ -111,11 +111,12 @@
 
   environment.systemPackages = with pkgs; [
     vim
+    anytype
     wget
     fish
     git
     discord
-    zellij
+    # zellij
     home-manager
     nil
     synology-drive-client

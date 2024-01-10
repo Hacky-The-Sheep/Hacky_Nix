@@ -69,19 +69,17 @@
     catppuccin-gtk
 
     # Terminal Programs
-    bat
-    btop
-    eza
-    gitui
-    helix
-    htop
-    lf
+    # bat
+    # btop
+    # eza
+    # gitui
+    # helix
+    # lf
     openvpn
     ripgrep
-    spotify-tui
-    starship
+    # starship
     vscode-langservers-extracted
-    yazi
+    # yazi
     yt-dlp
 
     # Coding
@@ -89,7 +87,14 @@
     rustc
     cargo
     (python3.withPackages(ps: with ps; [ pandas requests numpy ruff ]))
-    mnamer
+
+    # Pentesting
+    ffuf
+    gobuster
+    john
+    nmap
+    rlwrap
+    thc-hydra
 
     # "Work"
     libreoffice
@@ -99,7 +104,7 @@
     mpv
     obs-studio
     qbittorrent
-    rhythmbox
+    # rhythmbox
 ];
  
   # Home Manager Version
