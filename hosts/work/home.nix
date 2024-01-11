@@ -18,13 +18,13 @@
       ../../terminal/install.nix
 
       # System
-      ../../system/gtk.nix
+      # ../../system/gtk.nix
 
       # Hyprland
       ../../apps/dunst.nix
       ../../apps/rofi.nix
-      ../../wm/hyprland.nix
-      ../../wm/waybar.nix
+      ../../wm/hyprland_work.nix
+      ../../wm/waybar_work.nix
 
       # Apps
       ../../apps/firefox.nix
@@ -66,7 +66,7 @@
     swww
 
     # Catppuccin 😹
-    catppuccin-gtk
+    # catppuccin-gtk
 
     # Terminal Programs
     bat
@@ -94,6 +94,14 @@
     mullvad-vpn
     remmina
     
+    # Pentesting
+    ffuf
+    gobuster
+    john
+    nmap
+    rlwrap
+    thc-hydra
+
     # Fun
     libsForQt5.kdenlive
     inkscape
