@@ -14,12 +14,9 @@
       ../../hardware/bluetooth.nix
       ../../hardware/system76.nix
       ../../system/fonts.nix
-<<<<<<< HEAD
       # ../../system/gnome.nix
-=======
-      ../../system/gnome.nix
+      ../../system/udev.nix
       # ../../users/home/users.nix
->>>>>>> 1578a72 (uncomment files)
     ];
 
   # Needed to run swaylock
@@ -109,7 +106,7 @@
   users.users.hacky = {
     isNormalUser = true;
     description = "hacky";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "plugdev"];
     uid = 1000;
   };
   users.users.monkey = {

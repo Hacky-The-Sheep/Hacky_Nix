@@ -110,7 +110,4 @@
   # Home Manager Version
   home.stateVersion = "23.11";
 
-  # Gnome Theming
-  gtk.enable = true;
-  
 }
