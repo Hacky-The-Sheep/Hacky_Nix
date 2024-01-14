@@ -18,6 +18,9 @@
       # ../../system/gnome.nix
     ];
 
+  # Needed to run swaylock
+  security.pam.services.swaylock = {};
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
