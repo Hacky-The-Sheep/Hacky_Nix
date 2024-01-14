@@ -24,7 +24,6 @@
       # Hyprland
       ../../apps/dunst.nix
       ../../apps/rofi.nix
-      # ../../terminal/swaylock.nix
       ../../wm/hyprland_home.nix
       ../../wm/waybar_home.nix
 
@@ -69,23 +68,13 @@
     catppuccin-gtk
 
     # Terminal Programs
-    # bat
-    # btop
-    # eza
-    # gitui
-    # helix
-    # lf
     openvpn
     ripgrep
-    # starship
     vscode-langservers-extracted
-    # yazi
     yt-dlp
 
     # Coding
     go
-    rustc
-    cargo
     (python3.withPackages(ps: with ps; [ pandas requests numpy ruff ]))
 
     # Pentesting
@@ -104,7 +93,8 @@
     mpv
     obs-studio
     qbittorrent
-    # rhythmbox
+    rhythmbox
+    spicetify-cli
 ];
  
   # Home Manager Version

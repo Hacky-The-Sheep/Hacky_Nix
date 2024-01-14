@@ -14,9 +14,8 @@
       ../../hardware/bluetooth.nix
       ../../hardware/system76.nix
       ../../system/fonts.nix
-      # ../../system/gnome.nix
       ../../system/udev.nix
-      # ../../users/home/users.nix
+      ../../system/gnome.nix
     ];
 
   # Needed to run swaylock
@@ -77,22 +76,21 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    # displayManager.gdm.enable = true;
-    # desktopManager.gnome.enable = true;
-    displayManager.sddm.enable = true;
-    desktopManager.plasma5.enable = true;
+    # displayManager.sddm.enable = true;
+    # desktopManager.plasma5.enable = true;
+    desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
   };
-
 
   programs.dconf.enable = true;
 
   # Remote Desktop
   ## Enable
-  services.xrdp = {
-    enable = true;
-    defaultWindowManager = "startplasma-x11";
-    openFirewall = true;
-  };
+  # services.xrdp = {
+    # enable = true;
+    # defaultWindowManager = "startplasma-x11";
+    # openFirewall = true;
+  # };
 
   ## Open Firewall Ports
   networking.firewall = {
@@ -109,6 +107,7 @@
     extraGroups = [ "networkmanager" "wheel" "plugdev"];
     uid = 1000;
   };
+
   users.users.monkey = {
     isNormalUser = true;
     description = "monkey";
@@ -118,20 +117,21 @@
   nix.settings.trusted-users = [ "root" "@wheel"];
 
   environment.systemPackages = with pkgs; [
-    vim
-    anytype
-    wget
+    cargo
+    discord
     fish
     git
-    discord
-    # zellij
     home-manager
-    nil
-    synology-drive-client
-    python311Packages.python-lsp-server
-    rust-analyzer
     networkmanager
     networkmanagerapplet
+    nil
+    python311Packages.python-lsp-server
+    rust-analyzer
+    rustc
+    spotify
+    synology-drive-client
+    vim
+    wget
 ];
  
   # System Version
