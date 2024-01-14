@@ -15,7 +15,7 @@
       ../../system/printers.nix
       ../../hardware/system76.nix
       ../../system/fonts.nix
-      # ../../system/gnome.nix
+      ../../system/gnome.nix
     ];
 
   # Needed to run swaylock
@@ -44,9 +44,8 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    displayManager.sddm.enable = true;
-    desktopManager.plasma5.enable = true;
-    displayManager.defaultSession = "plasmawayland";
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
   };  
 
   ## Enable
@@ -61,12 +60,12 @@
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
 
-  # # Remove Gnome bloat
-  # environment.gnome.excludePackages = (with pkgs; [
-  #   gnome-photos
-  #   gnome-tour
-  #   epiphany
-  # ]);
+  # Remove Gnome bloat
+  environment.gnome.excludePackages = (with pkgs; [
+    gnome-photos
+    gnome-tour
+    epiphany
+  ]);
 
   # Printing
   services.printing.enable = true;
@@ -79,11 +78,6 @@
   
   # RDP
   ## A
-  services.xrdp = {
-    enable = true;
-    defaultWindowManager = "startplasma-x11";
-    openFirewall = true;
-  };
 
   ## Open Firewall Ports
   networking.firewall = {
