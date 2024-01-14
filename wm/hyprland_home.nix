@@ -9,7 +9,7 @@ wayland.windowManager.hyprland = {
       "swww init"
       "NetworkManager"
       "synology-drive"
-      "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Stars.jpg"
+      "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/open_sourcerer.png"
     ];
     source = "mocha.conf";
 
@@ -87,15 +87,15 @@ wayland.windowManager.hyprland = {
     ];
 
     ## -- Wallpaper shortcuts -- ##
-    "$w1" = "mpvpaper -o 'loop' '*' ~/Pictures/Wallpapers/Neon-Astronaut.mp4";
-    "$w2" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/space.png";
-    "$w3" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/snow.jpg";
-    "$w4" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Porsche.png";
-    "$w5" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/programmer.gif";
+    "$w1" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/everblush.jpg";
+    "$w2" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/autumn.png";
+    "$w3" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/cozy.png";
+    "$w4" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/philips.png";
+    "$w5" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/godzilla_water.jpg";
     "$w6" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/minecraft.png";
-    "$w7" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Mr_Robot.png";
+    "$w7" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/plane.jpg";
     "$w8" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/art_flowers.png";
-    "$w9" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/leave_me.jpg";
+    "$w9" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/open_sourcerer.png";
 
     ## -- Main Bind -- ##
     "$mod" = "SUPER";
