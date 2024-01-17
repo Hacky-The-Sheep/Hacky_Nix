@@ -33,18 +33,19 @@
           "tray"
         ];
 
+
         "hyprland/window" = {
-          "format" = "{}";
+          "format" = "󰊠";
         };
 
         "hyprland/workspaces" = {
           "sort-by-name" = true;
           "format" = "{id}";
           "persistent-workspaces" = {
-            "1" = [];
-            "2" = [];
-            "3" = [];
-            "4" = [];
+            "1" = "󱙝";
+            "2" = "󱙝";
+            "3" = "󱙝";
+            "4" = "󱙝";
           };
         };
 
@@ -127,7 +128,7 @@
           "pulseaudio" = {
             format = "{icon} {volume}%";
             tooltip = true;
-            format-muted = " Muted";
+            format-muted = "󰝟 Muted";
             on-scroll-up = "amixer -D pipewire sset Master 5%+";
             on-scroll-down = "amixer -D pipewire sset Master 5%-";
             on-click = "amixer set Master toggle";
@@ -149,8 +150,8 @@
 
           "pulseaudio#microphone" = {
             format = "{format_source}";
-            format-source = "📢 {volume}%";
-            format-source-muted = "🤐 Muted";
+            format-source = " {volume}%";
+            format-source-muted = " Muted";
             on-scroll-up = "amixer -D pipewire sset Capture 5%+";
             on-scroll-down = "amixer -D pipewire sset Capture 5%-";
             on-click = "amixer set Capture toggle";
