@@ -16,7 +16,7 @@
         modules-left = [
           "hyprland/workspaces"
           "memory"
-          "custom/home"
+          "custom/work"
           ];
         modules-center = [
           "clock"
@@ -37,7 +37,7 @@
 
         "hyprland/workspaces" = {
           "sort-by-name" = true;
-          "format" = "{id}";
+          "format" = "󰊠";
           "persistent-workspaces" = {
             "1" = "󱙝";
             "2" = "󱙝";
@@ -52,9 +52,9 @@
           "max-length" = 10;
         };
 
-        "custom/home" = {
-          format = "Home";
-          on-click = "bash ~/scripts/home_mode.sh";
+        "custom/work" = {
+          format = "Work";
+          on-click = "bash ~/scripts/work_mode.sh";
         };
 
         "user" = {
@@ -208,7 +208,7 @@
       #tray,
       #memory,
       #user,
-      #custom-home,
+      #custom-work,
       #backlight {
           background: #000000;
           opacity: 1.0;
@@ -316,7 +316,7 @@
           margin-right: 5px;
       }
 
-      #custom-home {
+      #custom-work {
           color: #74c7ec;
           border-radius: 10px 10px 10px 10px;
           margin-right: 5px;
