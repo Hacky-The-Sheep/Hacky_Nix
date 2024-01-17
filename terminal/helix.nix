@@ -53,161 +53,196 @@
   };
   themes = {
     base16 = let
-      base00 = "#${config.colorScheme.colors.base00}"; 
-      base01 = "#${config.colorScheme.colors.base01}"; 
-      base02 = "#${config.colorScheme.colors.base02}"; 
-      base03 = "#${config.colorScheme.colors.base03}"; 
-      base04 = "#${config.colorScheme.colors.base04}"; 
-      base05 = "#${config.colorScheme.colors.base05}";
-      base06 = "#${config.colorScheme.colors.base06}"; 
-      base07 = "#${config.colorScheme.colors.base07}";
-      base08 = "#${config.colorScheme.colors.base08}";
-      base09 = "#${config.colorScheme.colors.base09}";
-      base0A = "#${config.colorScheme.colors.base0A}";
-      base0B = "#${config.colorScheme.colors.base0B}";
-      base0C = "#${config.colorScheme.colors.base0C}";
-      base0D = "#${config.colorScheme.colors.base0D}"; 
-      base0E = "#${config.colorScheme.colors.base0E}";
-      base0F = "#${config.colorScheme.colors.base0F}";
+      # mantle = "#${config.colorScheme.colors.mantle}"; 
+      # crust = "#${config.colorScheme.colors.crust}"; 
+      # surface0 = "#${config.colorScheme.colors.surface0}"; 
+      # surface1= "#${config.colorScheme.colors.surface1}"; 
+      # surface2 = "#${config.colorScheme.colors.surface2}"; 
+      # text = "#${config.colorScheme.colors.text}";
+      # base06 = "#${config.colorScheme.colors.base06}"; 
+      # overlay1 = "#${config.colorScheme.colors.overlay1}";
+      # overlay2 = "#${config.colorScheme.colors.overlay2}";
+      # peach = "#${config.colorScheme.colors.peach}";
+      # yellow = "#${config.colorScheme.colors.yellow}";
+      # green = "#${config.colorScheme.colors.green}";
+      # teal = "#${config.colorScheme.colors.teal}";
+      # sapphire = "#${config.colorScheme.colors.sapphire}"; 
+      # mauve = "#${config.colorScheme.colors.mauve}";
+      # pink = "#${config.colorScheme.colors.pink}";
+      rosewater = "#f5e0dc";
+      flamingo = "#f2cdcd";
+      pink = "#f5c2e7";
+      mauve = "#cba6f7";
+      red = "#f38ba8";
+      maroon = "#eba0ac";
+      peach = "#fab387";
+      yellow = "#f9e2af";
+      green = "#a6e3a1";
+      teal = "#94e2d5";
+      sky = "#89dceb";
+      sapphire = "#74c7ec";
+      blue = "#89b4fa";
+      lavender = "#b4befe";
+
+      text = "#cdd6f4";
+      subtext1 = "#bac2de";
+      subtext0 = "#a6adc8";
+      overlay2 = "#9399b2";
+      overlay1 = "#7f849c";
+      overlay0 = "#6c7086";
+      surface2 = "#585b70";
+      surface1 = "#45475a";
+      surface0 = "#313244";
+
+      base = "#1e1e2e";
+      mantle = "#181825";
+      crust = "#11111b";
+
+      # derived colors by blending existing palette colors
+      cursorline = "#2a2b3c";
+      secondary_cursor = "#b5a6a8";
+      secondary_cursor_normal = "#878ec0";
+      secondary_cursor_insert = "#7da87e";
 
     in {
 
       ## --- Syntax Highligthing ---##
-      "type" = base0A;
+      "type" = yellow;
 
-      "constructor" = base0D;
+      "constructor" = sapphire;
 
-      "constant" = base09;
-      "constant.builtin" = base09;
-      "constant.character" = base0C;
-      "constant.character.escape" = base0F;
+      "constant" = peach;
+      "constant.builtin" = peach;
+      "constant.character" = teal;
+      "constant.character.escape" = pink;
 
-      "string" = base0B;
-      "string.regexp" = base09;
-      "string.special" = base0D;
+      "string" = green;
+      "string.regexp" = peach;
+      "string.special" = blue;
 
       "comment" = {
-        fg = base07;
+        fg = overlay1;
         modifiers = [ "italic" ];
       };
 
-      "variable" = base05;
+      "variable" = text;
       "variable.parameter" = {
-        fg = base09;
+        fg = maroon;
         modifiers = [ "italic" ];
       };
-      "variable.builtin" = base08;
-      "variable.other.member" = base0C;
+      "variable.builtin" = red;
+      "variable.other.member" = teal;
 
-      "label" = base0C;
+      "label" = teal;
 
-      "punctuation" = base05;
-      "punctuation.special" = base0D;
+      "punctuation" = overlay2;
+      "punctuation.special" = sky;
 
-      "keyword" = base0E;
+      "keyword" = mauve;
       "keyword.control.conditional1" = {
-        fg = base0E;
+        fg = mauve
+;
         modifiers = [ "italic" ];
       };
 
-      "operator" = base0D;
+      "operator" = sky;
 
-      "function" = base0D;
-      "function.macro" = base0E;
+      "function" = blue;
+      "function.macro" = mauve;
 
-      "tag" = base0E;
-      "attribute" = base0D;
+      "tag" = mauve;
+      "attribute" = blue;
 
       "namespace" = {
-        fg = base0D;
+        fg = blue;
         modifiers = [ "italic" ];
       };
 
-      "special" = base0D;
+      "special" = blue;
       "markup.heading.marker" = { 
-        fg = base09; 
+        fg = peach; 
         modifiers = ["bold"];
       };
-      "markup.heading.1" = base07;
-      "markup.heading.2" = base0E;
-      "markup.heading.3" = base0B;
-      "markup.heading.4" = base0A;
-      "markup.heading.5" = base0F;
-      "markup.heading.6" = base0C;
-      "markup.list" = base0E;
+      "markup.heading.1" = lavender;
+      "markup.heading.2" = mauve;
+      "markup.heading.3" = green;
+      "markup.heading.4" = yellow;
+      "markup.heading.5" = pink;
+      "markup.heading.6" = teal;
+      "markup.list" = mauve;
       "markup.bold" = { modifiers = ["bold"]; };
       "markup.italic" = { modifiers = ["italic"]; };
-      "markup.link.url" = { fg = base0D; modifiers = ["italic" "underlined"]; };
-      "markup.link.text" = base0D;
-      "markup.raw" = base0F;
+      "markup.link.url" = { fg = blue; modifiers = ["italic" "underlined"]; };
+      "markup.link.text" = blue;
+      "markup.raw" = flamingo;
 
-      "diff.plus" = base0B;
-      "diff.minus" = base08;
-      "diff.delta" = base0D;
+      "diff.plus" = green;
+      "diff.minus" = red;
+      "diff.delta" = blue;
 
       ##--- User Interface ---##
 
       "ui.background" = {
-        # fg = base05; 
-        # bg = base00;
+        # fg = text; 
+        # bg = mantle;
       };
 
-      "ui.linenr" = { fg = base03; };
-      "ui.linenr.selected" = { fg = base07; };
+      "ui.linenr" = { fg = surface1; };
+      "ui.linenr.selected" = { fg = lavender; };
 
-      "ui.statusline" = { fg = base05; bg = base00; };
-      "ui.statusline.inactive" = { fg = base04; bg = base00; };
-      "ui.statusline.normal" = { fg = base00; bg = base00; modifiers = ["bold"]; };
-      "ui.statusline.insert" = { fg = base00; bg = base00; modifiers = ["bold"]; };
-      "ui.statusline.select" = { fg = base00; bg = base00; modifiers = ["bold"]; };
+      "ui.statusline" = { fg = subtext1; bg = mantle; };
+      "ui.statusline.inactive" = { fg = surface2; bg = mantle; };
+      "ui.statusline.normal" = { fg = mantle; bg = lavender; modifiers = ["bold"]; };
+      "ui.statusline.insert" = { fg = mantle; bg = green; modifiers = ["bold"]; };
+      "ui.statusline.select" = { fg = mantle; bg = flamingo; modifiers = ["bold"]; };
 
-      "ui.popup" = { fg = base05; bg = base02; };
-      "ui.window" = { fg = base01; };
-      "ui.help" = { fg = base05; bg = base02; };
+      "ui.popup" = { fg = text; bg = surface0; };
+      "ui.window" = { fg = crust; };
+      "ui.help" = { fg = overlay2; bg = surface0; };
 
-      "ui.bufferline" = { fg = base05; bg = base04; };
-      "ui.bufferline.active" = { fg = base0E; bg = base00; underline = { color = base0E; style = "line"; }; };
-      "ui.bufferline.background" = { bg = base01; };
+      "ui.bufferline" = { fg = subtext0; bg = mantle; };
+      "ui.bufferline.active" = { fg = mauve; bg = base; underline = { color = mauve; style = "line"; }; };
+      "ui.bufferline.background" = { bg = crust; };
 
-      "ui.text" = base05;
-      "ui.text.focus" = { fg = base04; bg = base05; modifiers = ["bold"]; };
-      "ui.text.inactive" = { fg = base04; };
+      "ui.text" = text;
+      "ui.text.focus" = { fg = surface2; bg = surface0; modifiers = ["bold"]; };
+      "ui.text.inactive" = { fg = overlay1; };
 
-      "ui.virtual" = base04;
-      "ui.virtual.ruler" = { bg = base02; };
-      "ui.virtual.indent-guide" = base02;
-      "ui.virtual.inlay-hint" = { fg = base03; bg = base04; };
+      "ui.virtual" = overlay0;
+      "ui.virtual.ruler" = { bg = surface0; };
+      "ui.virtual.indent-guide" = surface0;
+      "ui.virtual.inlay-hint" = { fg = surface1; bg = surface2; };
 
-      "ui.selection" = { bg = base03; };
+      "ui.selection" = { bg = surface1; };
 
-      "ui.cursor" = { fg = base00; bg = "secondary_cursor"; };
-      "ui.cursor.primary" = { fg = base00; bg = base0F; };
-      "ui.cursor.match" = { fg = base09; modifiers = ["bold"]; };
+      "ui.cursor" = { fg = base; bg = secondary_cursor; };
+      "ui.cursor.primary" = { fg = base; bg = rosewater; };
+      "ui.cursor.match" = { fg = peach; modifiers = ["bold"]; };
 
-      "ui.cursor.primary.normal" = { fg = base00; bg = base07; };
-      "ui.cursor.primary.insert" = { fg = base00; bg = base0B; };
-      "ui.cursor.primary.select" = { fg = base00; bg = base0F; };
+      "ui.cursor.primary.normal" = { fg = base; bg = lavender; };
+      "ui.cursor.primary.insert" = { fg = base; bg = green; };
+      "ui.cursor.primary.select" = { fg = base; bg = flamingo; };
 
-      "ui.cursor.normal" = { fg = base00; bg = "secondary_cursor_normal"; };
-      "ui.cursor.insert" = { fg = base00; bg = "secondary_cursor_insert"; };
-      "ui.cursor.select" = { fg = base00; bg = "secondary_cursor"; };
+      "ui.cursor.normal" = { fg = mantle; bg = secondary_cursor_normal; };
+      "ui.cursor.insert" = { fg = mantle; bg = secondary_cursor_insert; };
+      "ui.cursor.select" = { fg = mantle; bg = secondary_cursor; };
 
-      "ui.cursorline.primary" = { bg = base02; };
+      "ui.cursorline.primary" = { bg = cursorline; };
 
-      "ui.highlight" = { bg = base03; modifiers = ["bold"]; };
+      "ui.highlight" = { bg = surface1; modifiers = ["bold"]; };
 
-      "ui.menu" = { fg = base05; bg = base02; };
-      "ui.menu.selected" = { fg = base05; bg = base03; modifiers = ["bold"]; };
+      "ui.menu" = { fg = overlay2; bg = surface0; };
+      "ui.menu.selected" = { fg = text; bg = surface1; modifiers = ["bold"]; };
 
-      "diagnostic.error" = { underline = { color = base08; style = "curl"; }; };
-      "diagnostic.warning" = { underline = { color = base0A; style = "curl"; }; };
-      "diagnostic.info" = { underline = { color = base0C; style = "curl"; }; };
-      "diagnostic.hint" = { underline = { color = base0C; style = "curl"; }; };
+      "diagnostic.error" = { underline = { color = red; style = "curl"; }; };
+      "diagnostic.warning" = { underline = { color = yellow; style = "curl"; }; };
+      "diagnostic.info" = { underline = { color = sky; style = "curl"; }; };
+      "diagnostic.hint" = { underline = { color = teal; style = "curl"; }; };
 
-      error = base08;
-      warning = base0A;
-      info = base0C;
-      hint = base0C;
+      error = red;
+      warning = yellow;
+      info = sky;
+      hint = teal;
     };
   };
  };
