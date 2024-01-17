@@ -53,22 +53,6 @@
   };
   themes = {
     base16 = let
-      # mantle = "#${config.colorScheme.colors.mantle}"; 
-      # crust = "#${config.colorScheme.colors.crust}"; 
-      # surface0 = "#${config.colorScheme.colors.surface0}"; 
-      # surface1= "#${config.colorScheme.colors.surface1}"; 
-      # surface2 = "#${config.colorScheme.colors.surface2}"; 
-      # text = "#${config.colorScheme.colors.text}";
-      # base06 = "#${config.colorScheme.colors.base06}"; 
-      # overlay1 = "#${config.colorScheme.colors.overlay1}";
-      # overlay2 = "#${config.colorScheme.colors.overlay2}";
-      # peach = "#${config.colorScheme.colors.peach}";
-      # yellow = "#${config.colorScheme.colors.yellow}";
-      # green = "#${config.colorScheme.colors.green}";
-      # teal = "#${config.colorScheme.colors.teal}";
-      # sapphire = "#${config.colorScheme.colors.sapphire}"; 
-      # mauve = "#${config.colorScheme.colors.mauve}";
-      # pink = "#${config.colorScheme.colors.pink}";
       rosewater = "#f5e0dc";
       flamingo = "#f2cdcd";
       pink = "#f5c2e7";
