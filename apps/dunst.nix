@@ -10,8 +10,8 @@
         monitor = 0;
         width = 300;
         height = 600;
-        background = "#${config.colorScheme.colors.base01}";
-        foreground = "#${config.colorScheme.colors.base05}";
+        background = "#1E1E2E";
+        foreground = "CDD6F4";
         timeout = 10;
         font = "Iosevka 14";
         markup = "full";
