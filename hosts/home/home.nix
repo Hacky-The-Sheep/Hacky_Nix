@@ -12,9 +12,6 @@
   imports = 
 
     [
-
-      inputs.nix-colors.homeManagerModules.default
-
       # Terminal
       ../../terminal/install.nix
 
@@ -30,9 +27,6 @@
       # Apps
       ../../apps/firefox.nix
     ];
-
-  # Set the colorscheme
-  colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
 
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
@@ -51,6 +45,8 @@
     kitty
     signal-desktop
     xdg-desktop-portal-hyprland
+    librewolf
+    oh-my-fish
 
     # Hyprland Packages
     brightnessctl
@@ -95,6 +91,7 @@
     qbittorrent
     rhythmbox
     spicetify-cli
+    libsForQt5.elisa
 ];
  
   # Home Manager Version

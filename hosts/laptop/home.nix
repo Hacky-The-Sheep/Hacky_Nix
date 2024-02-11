@@ -12,9 +12,6 @@
   imports = 
 
     [
-
-      inputs.nix-colors.homeManagerModules.default
-
       # Terminal
       ../../terminal/install.nix
 

@@ -11,9 +11,6 @@
   # --- MODULARITY --- #
   imports = 
     [ 
-
-      inputs.nix-colors.homeManagerModules.default
-
       # Terminal
       ../../terminal/install.nix
 
@@ -44,14 +41,13 @@
 
 
     # Main
-    brave
     cava
     fastfetch
     firefox
     kitty
-    signal-desktop
     timeshift
     xdg-desktop-portal-hyprland
+    librewolf
 
     # Hyprland Packages
     brightnessctl

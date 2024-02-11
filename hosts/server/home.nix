@@ -11,10 +11,6 @@
   # --- MODULARITY --- #
   imports = 
     [ 
-
-      # Flake Inputs
-      inputs.nix-colors.homeManagerModules.default
-
       # Terminal
       ../../terminal/eza.nix
       ../../terminal/fish.nix
