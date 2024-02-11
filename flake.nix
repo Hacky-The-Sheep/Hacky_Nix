@@ -4,15 +4,12 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
     unstable.url = "nixpkgs/nixos-unstable";
+    hyprland.url = "github:hyprwm/Hyprland";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    hyprland.url = "github:hyprwm/Hyprland";
-    nix-colors.url = "github:misterio77/nix-colors";
-    base16.url = "github:SenchoPens/base16.nix";
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -21,7 +18,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, base16, unstable, ...}@inputs: 
+  outputs = { self, nixpkgs, home-manager, base16, unstable, hyprland, ...}@inputs: 
     let
 
       # ----- System Settings ----- #
@@ -69,6 +66,7 @@
           };
           modules = [ 
             base16.nixosModule
+            hyprland.homeManagerModules.default
             { scheme = "${inputs.base16-scheme}/catppuccin-mocha"; }
             ./hosts/home/configuration.nix
           ];
