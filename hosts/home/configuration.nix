@@ -76,21 +76,11 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    # displayManager.sddm.enable = true;
-    # desktopManager.plasma5.enable = true;
     desktopManager.gnome.enable = true;
     displayManager.gdm.enable = true;
   };
 
   programs.dconf.enable = true;
-
-  # Remote Desktop
-  ## Enable
-  # services.xrdp = {
-    # enable = true;
-    # defaultWindowManager = "startplasma-x11";
-    # openFirewall = true;
-  # };
 
   ## Open Firewall Ports
   networking.firewall = {
@@ -118,7 +108,6 @@
 
   environment.systemPackages = with pkgs; [
     cargo
-    discord
     fish
     git
     home-manager
@@ -128,7 +117,6 @@
     python311Packages.python-lsp-server
     rust-analyzer
     rustc
-    spotify
     synology-drive-client
     vim
     wget
