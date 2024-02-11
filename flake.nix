@@ -5,6 +5,7 @@
     nixpkgs.url = "nixpkgs/nixos-23.11";
     unstable.url = "nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
+    simplex.url = "github:simplex-chat/simplex-chat";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -18,7 +19,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, base16, unstable, hyprland, ...}@inputs: 
+  outputs = { self, nixpkgs, home-manager, unstable, hyprland, ...}@inputs: 
     let
 
       # ----- System Settings ----- #
@@ -32,8 +33,6 @@
         laptop = lib.nixosSystem {
           specialArgs = { inherit system inputs; };
           modules = [ 
-            base16.nixosModule
-            { scheme = "${inputs.base16-scheme}/catppuccin-mocha"; }
             ./hosts/laptop/configuration.nix
           ];
         };
@@ -42,8 +41,6 @@
             inherit system;
             specialArgs = { inherit inputs; };
             modules = [
-              base16.nixosModule
-              { scheme = "${inputs.base16-scheme}/catppuccin-mocha"; }
               ./hosts/work/configuration.nix
             ];
           };
@@ -52,8 +49,6 @@
             inherit system;
             specialArgs = { inherit inputs; };
             modules = [
-              base16.nixosModule
-              { scheme = "${inputs.base16-scheme}/catppuccin-mocha"; }
               ./hosts/server/configuration.nix
             ];
           };
@@ -65,9 +60,6 @@
             inherit unstable;
           };
           modules = [ 
-            base16.nixosModule
-            hyprland.homeManagerModules.default
-            { scheme = "${inputs.base16-scheme}/catppuccin-mocha"; }
             ./hosts/home/configuration.nix
           ];
         };
