@@ -60,9 +60,6 @@
     swaylock-effects
     swww
 
-    # Catppuccin 😹
-    catppuccin-gtk
-
     # Terminal Programs
     openvpn
     ripgrep

@@ -108,6 +108,7 @@
 
   environment.systemPackages = with pkgs; [
     cargo
+    catppuccin-gtk
     fish
     git
     home-manager
