@@ -87,15 +87,15 @@ wayland.windowManager.hyprland = {
     ];
 
     ## -- Wallpaper shortcuts -- ##
-    "$w1" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/everblush.jpg";
-    "$w2" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/autumn.png";
-    "$w3" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/cozy.png";
-    "$w4" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/philips.png";
-    "$w5" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/godzilla_water.jpg";
+    "$w1" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/pac.jpg";
+    "$w2" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/peach_nix.png";
+    "$w3" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/red_ship.jpg";
+    "$w4" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/autumn.png";
+    "$w5" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/programmer.gif";
     "$w6" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/minecraft.png";
-    "$w7" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/plane.jpg";
+    "$w7" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/open_sourcerer.png";
     "$w8" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/art_flowers.png";
-    "$w9" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/open_sourcerer.png";
+    "$w9" = "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/godzilla_water.jpg";
 
     ## -- Main Bind -- ##
     "$mod" = "SUPER";
