@@ -11,7 +11,7 @@ wayland.windowManager.hyprland = {
       "synology-drive"
       "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/open_sourcerer.png"
     ];
-    source = "mocha.conf";
+    source = "~/Hacky_Nix/themes/mocha.conf";
 
     # Set the default monitor
     monitor = "HDMI-A-1, highrr, 0x0, 1";
