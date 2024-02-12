@@ -39,14 +39,12 @@
 
     # Main
     brave
-    cava
     fastfetch
     firefox
     kitty
     signal-desktop
     xdg-desktop-portal-hyprland
-    librewolf
-    oh-my-fish
+    librewolf-unwrapped
 
     # Hyprland Packages
     brightnessctl
