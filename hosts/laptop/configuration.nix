@@ -110,6 +110,7 @@
   environment.systemPackages = with pkgs; [
     vim
     wget
+    catppuccin-gtk
     fish
     git
     steam

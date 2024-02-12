@@ -28,9 +28,6 @@
       ../../apps/firefox.nix
     ];
 
-  # Set the colorscheme
-  colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
-
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
 
@@ -61,9 +58,6 @@
     swappy
     swaylock-effects
     swww
-
-    # Catppuccin 😹
-    catppuccin-gtk
 
     # Terminal Programs
     bat
