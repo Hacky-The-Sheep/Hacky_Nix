@@ -38,7 +38,7 @@
 
 
     # Main
-    cava
+    brave
     fastfetch
     firefox
     kitty
