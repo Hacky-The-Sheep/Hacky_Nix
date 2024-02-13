@@ -83,7 +83,6 @@
     obs-studio
     qbittorrent
     rhythmbox
-    newsboat
 ];
  
   # Home Manager Version
