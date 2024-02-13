@@ -40,11 +40,9 @@
     # Main
     brave
     fastfetch
-    firefox
     kitty
     signal-desktop
     xdg-desktop-portal-hyprland
-    librewolf-unwrapped
 
     # Hyprland Packages
     brightnessctl
@@ -85,8 +83,7 @@
     obs-studio
     qbittorrent
     rhythmbox
-    spicetify-cli
-    libsForQt5.elisa
+    newsboat
 ];
  
   # Home Manager Version
