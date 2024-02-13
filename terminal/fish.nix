@@ -16,6 +16,7 @@
       ei = "exit";
       python = "python3";
       cat = "bat";
+      nb = "newsboat";
 
       # ZelliJ
       notes = "zellij --layout ~/.dotfiles/layouts/notes.kdl";
