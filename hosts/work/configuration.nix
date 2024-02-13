@@ -67,6 +67,10 @@
     epiphany
   ]);
 
+  # Virtualization
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
   # Printing
   services.printing.enable = true;
   services.printing.drivers = [ pkgs.brlaser ];
@@ -102,7 +106,7 @@
   users.users.hacky = {
     isNormalUser = true;
     description = "hacky";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "libvirtd"];
     uid = 1000;
   };
 

@@ -4,6 +4,7 @@ wayland.windowManager.hyprland = {
   enableNvidiaPatches = true;
 
   settings = {
+    source = "~/Hacky_Nix/themes/mocha.conf";
     exec-once = [
       "waybar"
       "dunst"
@@ -12,7 +13,6 @@ wayland.windowManager.hyprland = {
       "synology-drive"
       "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/Stars.jpg"
     ];
-    source = "~/Hacky_Nix/themes/mocha.conf";
 
     # Set the default monitor
     monitor = "HDMI-A-2, highrr, 0x0, 1";
@@ -32,6 +32,8 @@ wayland.windowManager.hyprland = {
       gaps_out = 15;
       border_size = 2;
       layout = "dwindle";
+      "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+      "col.inactive_border" = "rgba(595959aa)";
     };
     decoration = {
       rounding = 15;
