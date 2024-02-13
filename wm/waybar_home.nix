@@ -151,7 +151,7 @@
           border-radius: 0;
           font-family: "Iosevka";
           font-weight: bold;
-          font-size: 13px;
+          font-size: 17px;
           min-height: 0;
       }
 
