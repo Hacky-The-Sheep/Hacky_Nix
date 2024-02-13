@@ -37,6 +37,9 @@
   services.mullvad-vpn.enable = true;
   services.openssh.enable = true;
 
+  # Printing
+  services.printing.enable = true;
+  
   # Fish 🐡
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
