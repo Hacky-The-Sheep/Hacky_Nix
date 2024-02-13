@@ -76,9 +76,6 @@
     openFirewall = true;
   };
   
-  # RDP
-  ## A
-
   ## Open Firewall Ports
   networking.firewall = {
     enable = true;

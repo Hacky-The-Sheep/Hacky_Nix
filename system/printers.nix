@@ -19,15 +19,6 @@
           PageSize = "A4";
         };
       }
-      {
-        name = "Home Brother";
-        location = "Home";
-        deviceUri = "http://10.0.0.6";
-        model = "drv:///sample.drv/generic.ppd";
-        ppdOptions = {
-          PageSize = "A4";
-        };
-      }
     ];
     ensureDefaultPrinter = "TechDeckStudent";
   };
