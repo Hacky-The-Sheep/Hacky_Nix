@@ -39,6 +39,7 @@
 
   # Printing
   services.printing.enable = true;
+  services.printing.drivers = [ pkgs.brlaser ];
   
   # Fish 🐡
   programs.fish.enable = true;
