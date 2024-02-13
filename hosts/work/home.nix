@@ -101,7 +101,7 @@
     mpv
     obs-studio
     # qbittorrent
-    # rhythmbox
+    rhythmbox
 ];
  
   # Home Manager Version
