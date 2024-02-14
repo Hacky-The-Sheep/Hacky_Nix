@@ -25,7 +25,7 @@
       ../../wm/waybar.nix
 
       # Apps
-      ../../apps/firefox.nix
+      # ../../apps/firefox.nix
     ];
 
   home.username = "hacky";

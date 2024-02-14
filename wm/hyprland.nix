@@ -15,7 +15,7 @@ wayland.windowManager.hyprland = {
     source = "~/Hacky_Nix/themes/mocha.conf";
 
     # Set the default monitor
-    monitor = "eDP-1, highrr, 0x0, 1";
+    monitor = ", highrr, 0x0, 1";
 
     env = "XCURSOR_SIZE,24";
 
@@ -33,6 +33,8 @@ wayland.windowManager.hyprland = {
       gaps_out = 15;
       border_size = 2;
       layout = "dwindle";
+      "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+      "col.inactive_border" = "rgba(595959aa)";
     };
     decoration = {
       rounding = 15;

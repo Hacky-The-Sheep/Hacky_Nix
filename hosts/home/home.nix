@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 # ██╗  ██╗ ██████╗ ███╗   ███╗███████╗
 # ██║  ██║██╔═══██╗████╗ ████║██╔════╝
@@ -21,11 +21,11 @@
       # Hyprland
       ../../apps/dunst.nix
       ../../apps/rofi.nix
-      ../../wm/hyprland_home.nix
-      ../../wm/waybar_home.nix
+      ../../wm/hyprland.nix
+      ../../wm/waybar.nix
 
       # Apps
-      ../../apps/firefox.nix
+      # ../../apps/firefox.nix
     ];
 
   home.username = "hacky";

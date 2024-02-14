@@ -15,13 +15,13 @@
 
         modules-left = [
           "hyprland/workspaces"
-          "custom/game"
-          "custom/home"
-          "custom/work"
+          "memory"
           ];
+
         modules-center = [
           "clock"
         ];
+
         modules-right = [
           "network"
           "bluetooth"
@@ -33,35 +33,19 @@
           "tray"
         ];
 
-
         "hyprland/window" = {
           "format" = "󰊠";
         };
 
         "hyprland/workspaces" = {
           "sort-by-name" = true;
-          "format" = "{id}";
+          "format" = "󱙝";
           "persistent-workspaces" = {
             "1" = "󱙝";
             "2" = "󱙝";
             "3" = "󱙝";
             "4" = "󱙝";
           };
-        };
-
-        "custom/game" = {
-          format = "Game";
-          on-click = "bash ~/scripts/game_mode.sh";
-        };
-
-        "custom/home" = {
-          format = "Home";
-          on-click = "bash ~/scripts/home_mode.sh";
-        };
-
-        "custom/work" = {
-          format = "Work";
-          on-click = "bash ~/scripts/work_mode.sh";
         };
 
         "user" = {
@@ -192,7 +176,7 @@
           border-radius: 0;
           font-family: "Iosevka";
           font-weight: bold;
-          font-size: 13px;
+          font-size: 16px;
           min-height: 0;
       }
 
@@ -250,9 +234,6 @@
       #memory,
       #disk,
       #user,
-      #custom-game,
-      #custom-work,
-      #custom-home,
       #backlight {
           background: #000000;
           opacity: 1.0;
@@ -358,27 +339,6 @@
           color: #cba6f7;
           border-radius: 0px 10px 10px 0px;
           margin-right: 5px;
-      }
-
-      #custom-game {
-          color: #a6e3a1;
-          border-radius: 10px 10px 10px 10px;
-          margin-left: 5px;
-          margin-right: 5px;
-          border-left: 5px;
-
-      }
-      #custom-home {
-          color: #74c7ec;
-          border-radius: 10px 10px 10px 10px;
-          margin-right: 5px;
-          border-left: 5px;
-      }
-      #custom-work {
-          color: #cdd6f4;
-          border-radius: 10px 10px 10px 10px;
-          margin-right: 5px;
-          border-left: 5px;
       }
     '';
     };

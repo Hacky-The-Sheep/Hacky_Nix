@@ -15,7 +15,7 @@ wayland.windowManager.hyprland = {
     ];
 
     # Set the default monitor
-    monitor = "HDMI-A-2, highrr, 0x0, 1";
+    monitor = ", highrr, 0x0, 1";
 
     env = "WLR_NO_HARDWARE_CURSORS, 1";
 

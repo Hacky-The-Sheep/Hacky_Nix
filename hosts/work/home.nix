@@ -20,11 +20,11 @@
       # Hyprland
       ../../apps/dunst.nix
       ../../apps/rofi.nix
-      ../../wm/hyprland_work.nix
-      ../../wm/waybar_work.nix
+      ../../wm/hyprland.nix
+      ../../wm/waybar.nix
 
       # Apps
-      ../../apps/firefox.nix
+      # ../../apps/firefox.nix
     ];
 
   home.username = "hacky";
