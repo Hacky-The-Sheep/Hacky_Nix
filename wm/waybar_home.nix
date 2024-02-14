@@ -37,7 +37,7 @@
 
         "hyprland/workspaces" = {
           "sort-by-name" = true;
-          "format" = "{id}";
+          "format" = "󱙝";
           "persistent-workspaces" = {
             "1" = "󱙝";
             "2" = "󱙝";

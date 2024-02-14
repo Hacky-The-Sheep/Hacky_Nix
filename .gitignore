@@ -1,0 +1,4 @@
+hosts/home/hardware-configuration.nix
+hosts/work/hardware-configuration.nix
+hosts/server/hardware-configuration.nix
+hosts/laptop/hardware-configuration.nix
