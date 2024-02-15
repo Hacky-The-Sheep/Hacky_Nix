@@ -70,6 +70,7 @@
   # Virtualization
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
 
   # Printing
   services.printing.enable = true;
@@ -119,6 +120,7 @@
     home-manager
     go
     gopls
+    makemkv
     nil
     rustc
     steam

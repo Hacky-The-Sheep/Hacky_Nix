@@ -93,6 +93,7 @@
     inkscape
     mpv
     obs-studio
+    handbrake
     # qbittorrent
     rhythmbox
 ];
