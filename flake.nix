@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
-    unstable.url = "nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
     simplex.url = "github:simplex-chat/simplex-chat";
 
@@ -19,9 +18,8 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, unstable, hyprland, ...}@inputs: 
+  outputs = { self, nixpkgs, home-manager, hyprland, ...}@inputs: 
     let
-
       # ----- System Settings ----- #
       system = "x86_64-linux";      
       lib = nixpkgs.lib;
@@ -39,7 +37,9 @@
 
         work = lib.nixosSystem {
             inherit system;
-            specialArgs = { inherit inputs; };
+            specialArgs = { 
+              inherit inputs;
+            };
             modules = [
               ./hosts/work/configuration.nix
             ];
