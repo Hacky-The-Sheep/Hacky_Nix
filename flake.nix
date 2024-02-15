@@ -84,7 +84,6 @@
         	inherit pkgs;
         	extraSpecialArgs = { 
             inherit inputs; 
-            inherit unstable;
             };
         	modules = [ ./hosts/home/home.nix ];
       };
