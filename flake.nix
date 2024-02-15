@@ -57,7 +57,6 @@
           specialArgs = { 
             inherit system;
             inherit inputs;
-            inherit unstable;
           };
           modules = [ 
             ./hosts/home/configuration.nix
