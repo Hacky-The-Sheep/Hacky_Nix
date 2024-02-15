@@ -75,13 +75,6 @@
     yazi
     yt-dlp
 
-    # Coding
-    go
-    rustc
-    cargo
-    (python3.withPackages(ps: with ps; [ pandas requests numpy ruff ]))
-    mnamer
-
     # "Work"
     libreoffice
     mullvad-vpn

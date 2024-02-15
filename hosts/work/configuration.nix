@@ -111,17 +111,21 @@
   };
 
   environment.systemPackages = with pkgs; [
-    vim
-    wget
+    cargo
+    delve
+    discord
     fish
     git
     home-manager
-    steam
-    discord
-    zellij
+    go
+    gopls
     nil
+    rustc
+    steam
     synology-drive-client
-    gnomeExtensions.appindicator
+    vim
+    wget
+    zellij
 ];
 
   # System Version
