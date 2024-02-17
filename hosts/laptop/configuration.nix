@@ -111,15 +111,20 @@
   nix.settings.trusted-users = [ "root" "@wheel"];
 
   environment.systemPackages = with pkgs; [
+    brave
     cargo
     delve
+    fastfetch
     fish
     git
-    home-manager
     go
     gopls
+    home-manager
+    kitty
+    libreoffice
     nil
     rustc
+    signal-desktop
     synology-drive-client
     vim
     wget
