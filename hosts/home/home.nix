@@ -23,9 +23,6 @@
       ../../apps/rofi.nix
       ../../wm/hyprland.nix
       ../../wm/waybar.nix
-
-      # Apps
-      # ../../apps/firefox.nix
     ];
 
   home.username = "hacky";
@@ -43,6 +40,7 @@
     kitty
     signal-desktop
     xdg-desktop-portal-hyprland
+    simplex-chat-desktop
 
     # Hyprland Packages
     brightnessctl
