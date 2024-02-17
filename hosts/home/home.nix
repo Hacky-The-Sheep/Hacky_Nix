@@ -62,10 +62,6 @@
     vscode-langservers-extracted
     yt-dlp
 
-    # Coding
-    go
-    (python3.withPackages(ps: with ps; [ pandas requests numpy ruff ]))
-
     # Pentesting
     ffuf
     gobuster

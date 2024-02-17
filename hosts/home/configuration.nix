@@ -112,19 +112,18 @@
 
   environment.systemPackages = with pkgs; [
     cargo
-    catppuccin-gtk
+    delve
     fish
     git
     home-manager
-    networkmanager
-    networkmanagerapplet
+    go
+    gopls
     nil
-    python311Packages.python-lsp-server
-    rust-analyzer
     rustc
     synology-drive-client
     vim
     wget
+    zellij
 ];
  
   # System Version
