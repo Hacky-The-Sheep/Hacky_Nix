@@ -9,7 +9,7 @@
 {
   imports =
     [
-      ../../hosts/laptop/hardware-configuration.nix
+      ../../hosts/nvid_laptop/hardware-configuration.nix
       ../../hardware/bluetooth.nix
       ../../hardware/nvidia.nix
       ../../hardware/system76.nix
@@ -108,22 +108,24 @@
   };
 
   environment.systemPackages = with pkgs; [
-    vim
-    wget
+    cargo
     catppuccin-gtk
-    fish
-    git
-    steam
+    delve
     discord
-    zellij
+    git
+    go
+    gopls
     home-manager
-    nil
-    synology-drive-client
-    # obsidian
-    python311Packages.python-lsp-server
-    rust-analyzer
     networkmanager
     networkmanagerapplet
+    nil
+    python311Packages.python-lsp-server
+    rust-analyzer
+    rustc
+    synology-drive-client
+    vim
+    vscode-langservers-extracted
+    wget
 ];
  
   # System Version

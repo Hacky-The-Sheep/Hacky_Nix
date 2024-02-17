@@ -23,9 +23,6 @@
       ../../apps/rofi.nix
       ../../wm/hyprland.nix
       ../../wm/waybar.nix
-
-      # Apps
-      # ../../apps/firefox.nix
     ];
 
   home.username = "hacky";
@@ -69,16 +66,8 @@
     lf
     openvpn
     ripgrep
-    vscode-langservers-extracted
     yazi
     yt-dlp
-
-    # Coding
-    go
-    rustc
-    cargo
-    (python3.withPackages(ps: with ps; [ pandas requests numpy ruff ]))
-    mnamer
 
     # "Work"
     libreoffice
