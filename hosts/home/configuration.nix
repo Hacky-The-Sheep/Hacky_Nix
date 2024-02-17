@@ -10,7 +10,8 @@
 {
   imports =
     [
-      ../../hosts/home/hardware-configuration.nix
+      # ../../hosts/home/hardware-configuration.nix
+      "/etc/nixos/hardware-configuration.nix"
       ../../hardware/bluetooth.nix
       ../../hardware/system76.nix
       ../../system/fonts.nix

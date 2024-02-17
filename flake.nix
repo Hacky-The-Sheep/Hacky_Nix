@@ -28,10 +28,17 @@
     in {	
       nixosConfigurations = {
 
+        nvid_laptop = lib.nixosSystem {
+          specialArgs = { inherit system inputs; };
+          modules = [ 
+            ./hosts/nvid_laptop/configuration.nix
+          ];
+        };
+
         laptop = lib.nixosSystem {
           specialArgs = { inherit system inputs; };
           modules = [ 
-            ./hosts/laptop/configuration.nix
+            ./hosts/home/configuration.nix
           ];
         };
 
@@ -65,10 +72,15 @@
       };
 
 	homeConfigurations = {
+      	nvid_laptop = home-manager.lib.homeManagerConfiguration {
+        	inherit pkgs;
+        	extraSpecialArgs = { inherit inputs ;};
+        	modules = [ ./hosts/nvid_laptop/home.nix ];
+      };
       	laptop = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;
         	extraSpecialArgs = { inherit inputs ;};
-        	modules = [ ./hosts/laptop/home.nix ];
+        	modules = [ ./hosts/home/home.nix ];
       };
       	server = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;
