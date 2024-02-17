@@ -38,7 +38,7 @@
         laptop = lib.nixosSystem {
           specialArgs = { inherit system inputs; };
           modules = [ 
-            ./hosts/home/configuration.nix
+            ./hosts/laptop/configuration.nix
           ];
         };
 
