@@ -69,6 +69,14 @@
     yazi
     yt-dlp
 
+    # Pentesting
+    ffuf
+    gobuster
+    john
+    nmap
+    rlwrap
+    thc-hydra
+
     # "Work"
     libreoffice
     mullvad-vpn
