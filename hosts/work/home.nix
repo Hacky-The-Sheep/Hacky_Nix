@@ -71,6 +71,7 @@
     lf
     openvpn
     ripgrep
+    sops
     vscode-langservers-extracted
     yazi
     yt-dlp
