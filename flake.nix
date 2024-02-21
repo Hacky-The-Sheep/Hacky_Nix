@@ -18,7 +18,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ...}@inputs: 
+  outputs = { self, nixpkgs, home-manager, hyprland, simplex, ...}@inputs: 
     let
       # ----- System Settings ----- #
       system = "x86_64-linux";      
@@ -48,6 +48,9 @@
               inherit inputs;
             };
             modules = [
+              hyprland.nixosModules.default
+              simplex.nixosModules.default
+              {programs.hyprland.enable = true;}
               ./hosts/work/configuration.nix
             ];
           };
@@ -66,6 +69,8 @@
             inherit inputs;
           };
           modules = [ 
+            hyprland.nixosModules.default
+            {programs.hyprland.enable = true;}
             ./hosts/home/configuration.nix
           ];
         };

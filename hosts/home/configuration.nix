@@ -53,12 +53,12 @@
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
-  # Hyprland  
-  ## Enable
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland; 
-  };
+  # # Hyprland  
+  # ## Enable
+  # programs.hyprland = {
+  #   enable = true;
+  #   package = inputs.hyprland.packages.${pkgs.system}.hyprland; 
+  # };
   
   ## Cachix
   nix.settings = {

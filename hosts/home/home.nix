@@ -40,7 +40,6 @@
     kitty
     signal-desktop
     xdg-desktop-portal-hyprland
-    simplex-chat-desktop
 
     # Hyprland Packages
     brightnessctl
