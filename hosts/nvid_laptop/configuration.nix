@@ -11,7 +11,7 @@
     [
       ../../hosts/nvid_laptop/hardware-configuration.nix
       ../../hardware/bluetooth.nix
-      ../../hardware/nvidia.nix
+      # ../../hardware/nvidia.nix
       ../../hardware/system76.nix
       ../../hardware/laptop.nix
       ../../system/fonts.nix
