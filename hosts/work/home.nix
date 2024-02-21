@@ -44,7 +44,6 @@
     kitty
     timeshift
     xdg-desktop-portal-hyprland
-    librewolf
 
     # Hyprland Packages
     brightnessctl
@@ -69,6 +68,7 @@
     helix
     htop
     lf
+    ollama
     openvpn
     ripgrep
     sops
@@ -95,7 +95,6 @@
     mpv
     obs-studio
     handbrake
-    # qbittorrent
     rhythmbox
 ];
  
