@@ -76,6 +76,7 @@
     obs-studio
     qbittorrent
     rhythmbox
+    qFlipper
 ];
  
   # Home Manager Version
