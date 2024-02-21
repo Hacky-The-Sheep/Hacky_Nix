@@ -98,7 +98,7 @@
   users.users.hacky = {
     isNormalUser = true;
     description = "hacky";
-    extraGroups = [ "networkmanager" "wheel" "plugdev"];
+    extraGroups = [ "networkmanager" "wheel" "plugdev" "dialout"];
     uid = 1000;
   };
 
