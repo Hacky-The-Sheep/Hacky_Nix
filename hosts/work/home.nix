@@ -80,6 +80,7 @@
     libreoffice
     mullvad-vpn
     remmina
+    gnome-network-displays
     
     # Pentesting
     ffuf
