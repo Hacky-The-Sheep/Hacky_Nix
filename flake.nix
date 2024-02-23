@@ -4,7 +4,6 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
     hyprland.url = "github:hyprwm/Hyprland";
-    simplex.url = "github:simplex-chat/simplex-chat";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -18,7 +17,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, simplex, ...}@inputs: 
+  outputs = { self, nixpkgs, home-manager, hyprland, ...}@inputs: 
     let
       # ----- System Settings ----- #
       system = "x86_64-linux";      
@@ -49,7 +48,6 @@
             };
             modules = [
               hyprland.nixosModules.default
-              simplex.nixosModules.default
               {programs.hyprland.enable = true;}
               ./hosts/work/configuration.nix
             ];
