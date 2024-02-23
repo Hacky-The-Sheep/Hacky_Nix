@@ -44,6 +44,7 @@
     kitty
     timeshift
     xdg-desktop-portal-hyprland
+    signal-desktop
 
     # Hyprland Packages
     brightnessctl
