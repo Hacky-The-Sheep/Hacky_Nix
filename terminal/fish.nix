@@ -17,6 +17,7 @@
       python = "python3";
       cat = "bat";
       nb = "newsboat";
+      hack = "cd ~/Documents/tryhackme/";
 
       # ZelliJ
       notes = "zellij --layout ~/.dotfiles/layouts/notes.kdl";
