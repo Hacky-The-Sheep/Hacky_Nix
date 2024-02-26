@@ -1,5 +1,3 @@
-{ config, ... }:
-
 {
   services.dunst = {
     enable = true;
@@ -10,8 +8,10 @@
         monitor = 0;
         width = 300;
         height = 600;
-        background = "#1E1E2E";
-        foreground = "CDD6F4";
+        frame_color = "#f5c2e7";
+        separator_color= "frame";
+        background = "#1e1e2e";
+        foreground = "#fab387";
         timeout = 10;
         font = "Iosevka 14";
         markup = "full";
