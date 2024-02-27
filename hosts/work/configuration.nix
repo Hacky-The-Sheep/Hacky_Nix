@@ -112,6 +112,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    age
     cargo
     delve
     discord
@@ -123,6 +124,7 @@
     makemkv
     nil
     python3
+    python-language-server
     rustc
     steam
     synology-drive-client
