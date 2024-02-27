@@ -124,7 +124,7 @@
     makemkv
     nil
     python3
-    python-language-server
+    python-lsp-server
     rustc
     steam
     synology-drive-client
