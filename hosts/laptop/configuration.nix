@@ -123,6 +123,7 @@
     kitty
     libreoffice
     nil
+    python3
     rustc
     signal-desktop
     synology-drive-client
