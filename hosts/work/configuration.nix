@@ -122,6 +122,7 @@
     gopls
     makemkv
     nil
+    python3
     rustc
     steam
     synology-drive-client
