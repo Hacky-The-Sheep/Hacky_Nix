@@ -135,6 +135,13 @@
   # System Version
   system.stateVersion = "23.11";
 
+  # Sops
+  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+  sops.age.keyFile = "/home/hacky/.config/sops/age/keys.txt";
+  sops.secrets.example-key = { };
+  sops.secrets."myservice/my_subdir/my_secret" = { };
+
   # Nix Flakes ❄️
   nix.package= pkgs.nixFlakes;
   nix.settings.experimental-features = ["nix-command" "flakes"];
