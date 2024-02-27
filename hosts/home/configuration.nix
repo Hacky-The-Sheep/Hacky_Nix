@@ -132,6 +132,7 @@
   # Sops
   sops.defaultSopsFile = ./secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
+  sops.age.keyFile = "/home/hacky/.config/sops/age/keys.txt";
   
   # Nix Flakes ❄️
   nix.package= pkgs.nixFlakes;
