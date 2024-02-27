@@ -9,11 +9,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1708920243,
-        "narHash": "sha256-vAl9OpUSTySUoASlGUIn9rcl4fQ1RmnMWhzE47ePf8k=",
+        "lastModified": 1709006625,
+        "narHash": "sha256-QxBqMkGbxKjDym5keWaZG/pVgDl+V2//6C6/V2JzDWc=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "5890c1604631ece220d9c5d121e8e35962041d1b",
+        "rev": "ef5ffffab80806a4c20e54966a39fcb0649b0381",
         "type": "gitlab"
       },
       "original": {
@@ -69,11 +69,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1708968051,
-        "narHash": "sha256-EkRf32ZKV2QAyDDaD98jc+EGxCQR5b+uGwpuNkH1Z+o=",
+        "lastModified": 1709045487,
+        "narHash": "sha256-AJ6Xeau/j7O2ApwGUGADJc8S74EgVQpxFaQzp0ainjU=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "f7a34534873bf499fc1a04a5fa25ada03c4ee415",
+        "rev": "98034fea3c1d5c1836bcc3b523cf1089dd5ac502",
         "type": "github"
       },
       "original": {
@@ -148,6 +148,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-stable": {
+      "locked": {
+        "lastModified": 1708819810,
+        "narHash": "sha256-1KosU+ZFXf31GPeCBNxobZWMgHsSOJcrSFA6F2jhzdE=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "89a2a12e6c8c6a56c72eb3589982c8e2f89c70ea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "release-23.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1708831307,
@@ -163,12 +179,48 @@
         "type": "indirect"
       }
     },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1708751719,
+        "narHash": "sha256-0uWOKSpXJXmXswOvDM5Vk3blB74apFB6rNGWV5IjoN0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "f63ce824cd2f036216eb5f637dfef31e1a03ee89",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "firefox-addons": "firefox-addons",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "sops-nix": "sops-nix"
+      }
+    },
+    "sops-nix": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3",
+        "nixpkgs-stable": "nixpkgs-stable"
+      },
+      "locked": {
+        "lastModified": 1708987867,
+        "narHash": "sha256-k2lDaDWNTU5sBVHanYzjDKVDmk29RHIgdbbXu5sdzBA=",
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "rev": "a1c8de14f60924fafe13aea66b46157f0150f4cf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mic92",
+        "repo": "sops-nix",
+        "type": "github"
       }
     },
     "systems": {
