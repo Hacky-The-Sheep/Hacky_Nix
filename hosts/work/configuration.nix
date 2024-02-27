@@ -136,7 +136,7 @@
   system.stateVersion = "23.11";
 
   # Sops
-  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.defaultSopsFile = ../../secrets/secrets.yaml;
   sops.defaultSopsFormat = "yaml";
   sops.age.keyFile = "/home/hacky/.config/sops/age/keys.txt";
   sops.secrets.example-key = { };
