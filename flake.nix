@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
     hyprland.url = "github:hyprwm/Hyprland";
+    sops-nix.url = "github:Mic92/sops-nix";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -17,7 +18,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, ...}@inputs: 
+  outputs = { self, nixpkgs, home-manager, hyprland, sops-nix, ...}@inputs: 
     let
       # ----- System Settings ----- #
       system = "x86_64-linux";      
@@ -29,7 +30,7 @@
 
         nvid_laptop = lib.nixosSystem {
           specialArgs = { inherit system inputs; };
-          modules = [ 
+          modules = [
             ./hosts/nvid_laptop/configuration.nix
           ];
         };
@@ -37,6 +38,7 @@
         laptop = lib.nixosSystem {
           specialArgs = { inherit system inputs; };
           modules = [ 
+              sops-nix.nixosModules.sops
             ./hosts/laptop/configuration.nix
           ];
         };
@@ -48,6 +50,7 @@
             };
             modules = [
               hyprland.nixosModules.default
+              sops-nix.nixosModules.sops
               {programs.hyprland.enable = true;}
               ./hosts/work/configuration.nix
             ];
@@ -68,6 +71,7 @@
           };
           modules = [ 
             hyprland.nixosModules.default
+            sops-nix.nixosModules.sops
             {programs.hyprland.enable = true;}
             ./hosts/home/configuration.nix
           ];
