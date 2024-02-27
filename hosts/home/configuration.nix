@@ -128,6 +128,10 @@
  
   # System Version
   system.stateVersion = "23.11";
+
+  # Sops
+  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
   
   # Nix Flakes ❄️
   nix.package= pkgs.nixFlakes;
