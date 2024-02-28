@@ -56,7 +56,6 @@
     # Terminal Programs
     openvpn
     ripgrep
-    vscode-langservers-extracted
     yt-dlp
 
     # Pentesting

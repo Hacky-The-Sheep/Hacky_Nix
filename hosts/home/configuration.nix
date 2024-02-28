@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 # ██╗  ██╗ ██████╗ ███╗   ███╗███████╗
 # ██║  ██║██╔═══██╗████╗ ████║██╔════╝
@@ -16,6 +16,7 @@
       ../../system/fonts.nix
       ../../system/udev.nix
       ../../system/gnome.nix
+      ../../system/language_servers.nix
     ];
 
   # Needed to run swaylock
@@ -117,7 +118,6 @@
     git
     home-manager
     go
-    gopls
     nil
     rustc
     synology-drive-client
