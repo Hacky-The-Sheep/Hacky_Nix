@@ -119,6 +119,7 @@
     home-manager
     go
     nil
+    python3
     rustc
     synology-drive-client
     vim
