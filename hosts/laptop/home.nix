@@ -33,7 +33,6 @@
     fastfetch
     kitty
     signal-desktop
-    xdg-desktop-portal-hyprland
 
     # Hyprland Packages
     # brightnessctl
@@ -66,10 +65,8 @@
     
     # Fun
     mpv
-    obs-studio
     qbittorrent
     rhythmbox
-    qFlipper
 ];
  
   # Home Manager Version

@@ -12,7 +12,6 @@
     [
       ../../hosts/laptop/hardware-configuration.nix
       ../../hardware/bluetooth.nix
-      ../../hardware/system76.nix
       ../../system/fonts.nix
       ../../system/udev.nix
       ../../system/gnome.nix
@@ -32,7 +31,7 @@
   time.timeZone = "America/Chicago";
 
   # Networking
-  networking.hostName = "homenix";
+  networking.hostName = "nixworks";
   networking.networkmanager.enable = true;
   services.mullvad-vpn.enable = true;
   services.openssh.enable = true;
@@ -114,7 +113,6 @@
     brave
     cargo
     delve
-    fastfetch
     fish
     git
     go
