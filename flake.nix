@@ -81,29 +81,27 @@
 	homeConfigurations = {
       	nvid_laptop = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;
-        	extraSpecialArgs = { inherit inputs ;};
+        	extraSpecialArgs = { inherit inputs; };
         	modules = [ ./hosts/nvid_laptop/home.nix ];
       };
       	laptop = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;
-        	extraSpecialArgs = { inherit inputs ;};
+        	extraSpecialArgs = { inherit inputs; };
         	modules = [ ./hosts/laptop/home.nix ];
       };
       	server = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;
-        	extraSpecialArgs = { inherit inputs ;};
+        	extraSpecialArgs = { inherit inputs; };
         	modules = [ ./hosts/server/home.nix ];
       };
       	work = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;
-        	extraSpecialArgs = { inherit inputs ;};
+        	extraSpecialArgs = { inherit inputs; };
         	modules = [ ./hosts/work/home.nix ];
       };
       	home = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;
-        	extraSpecialArgs = { 
-            inherit inputs; 
-            };
+        	extraSpecialArgs = { inherit inputs; };
         	modules = [ ./hosts/home/home.nix ];
       };
     };
