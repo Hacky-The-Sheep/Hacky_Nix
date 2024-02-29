@@ -29,22 +29,9 @@
   home.packages = with pkgs; [
 
     # Main
-    brave
     fastfetch
     kitty
     signal-desktop
-
-    # Hyprland Packages
-    # brightnessctl
-    # dunst
-    # grim
-    # mpvpaper
-    # rofi
-    # rofimoji
-    # slurp
-    # swappy
-    # swaylock-effects
-    # swww
 
     # Terminal Programs
     openvpn
@@ -60,7 +47,7 @@
     thc-hydra
 
     # "Work"
-    libreoffice
+    # libreoffice
     mullvad-vpn
     
     # Fun
