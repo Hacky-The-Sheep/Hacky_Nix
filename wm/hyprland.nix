@@ -8,6 +8,7 @@ wayland.windowManager.hyprland = {
       "waybar"
       "dunst"
       "swww init"
+      "polkit_gnome"
       "NetworkManager"
       "synology-drive"
       "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/cat_wave.png"
