@@ -16,6 +16,7 @@
       ../../hardware/system76.nix
       ../../system/fonts.nix
       ../../system/gnome.nix
+      ../../system/language_servers.nix
     ];
 
   # Needed to run swaylock
@@ -120,12 +121,10 @@
     git
     home-manager
     go
-    gopls
+    # gopls
     makemkv
     nil
-    python3
-    python311Packages.python-lsp-server
-    rustc
+    # rustc
     steam
     synology-drive-client
     vim
