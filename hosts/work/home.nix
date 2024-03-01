@@ -51,6 +51,7 @@
     dunst
     grim
     mpvpaper
+    polkit_gnome
     rofi
     rofimoji
     slurp
