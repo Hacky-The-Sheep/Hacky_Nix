@@ -39,12 +39,6 @@
   # users.defaultUserShell = pkgs.fish;
   # environment.shells = with pkgs; [ fish ];
 
-  # # NuShell 🐚
-  # programs.nushell.enable = true;
-  # users.defaultUserShell = pkgs.nushell;
-  # environment.shells = with pkgs; [ nushell ];
-
-
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -116,6 +110,7 @@
     description = "hacky";
     extraGroups = [ "networkmanager" "wheel" "libvirtd"];
     uid = 1000;
+    shell = pkgs.nushell;
   };
 
   environment.systemPackages = with pkgs; [
