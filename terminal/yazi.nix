@@ -2,7 +2,7 @@
   programs.yazi = {
     enable = true;
     enableFishIntegration = true;
-    enableNushellIntergration = true;
+    enableNushellIntegration = true;
 
     settings = {
       log = {
