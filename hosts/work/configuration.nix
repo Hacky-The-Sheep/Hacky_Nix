@@ -34,10 +34,16 @@
   # Set your time zone.
   time.timeZone = "America/Chicago";
 
-  # Fish 🐡
-  programs.fish.enable = true;
-  users.defaultUserShell = pkgs.fish;
-  environment.shells = with pkgs; [ fish ];
+  # # Fish 🐡
+  # programs.fish.enable = true;
+  # users.defaultUserShell = pkgs.fish;
+  # environment.shells = with pkgs; [ fish ];
+
+  # # NuShell 🐚
+  programs.nushell.enable = true;
+  users.defaultUserShell = pkgs.nushell;
+  environment.shells = with pkgs; [ nushell ];
+
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -117,7 +123,7 @@
     cargo
     delve
     discord
-    fish
+    # fish
     git
     home-manager
     go
