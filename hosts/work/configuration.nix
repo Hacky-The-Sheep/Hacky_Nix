@@ -40,9 +40,9 @@
   # environment.shells = with pkgs; [ fish ];
 
   # # NuShell 🐚
-  programs.nushell.enable = true;
-  users.defaultUserShell = pkgs.nushell;
-  environment.shells = with pkgs; [ nushell ];
+  # programs.nushell.enable = true;
+  # users.defaultUserShell = pkgs.nushell;
+  # environment.shells = with pkgs; [ nushell ];
 
 
   # Select internationalisation properties.
