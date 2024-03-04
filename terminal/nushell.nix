@@ -1,10 +1,6 @@
 {
   programs.nushell = {
     enable = true;
-
-    starship = {
-      enable = true;
-    };
     
     shellAliases = {
       ei = "exit";
