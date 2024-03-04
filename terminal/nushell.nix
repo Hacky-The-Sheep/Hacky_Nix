@@ -1,6 +1,22 @@
 {
   programs.nushell = {
     enable = true;
+
+    configFile = {
+      text = ''
+        let $config = {
+          def --env ya [] {
+            yazi --cwd-file $tmp
+            let cwd = (cat -- $tmp)
+            if $cwd != "" and $cwd != $env.PWD {
+              cd $cwd
+            }
+            rm -f $tmp
+          }
+          use /home/hacky/.cache/starship/init.nu
+          '';
+        };
+    };
     
     shellAliases = {
       ei = "exit";
