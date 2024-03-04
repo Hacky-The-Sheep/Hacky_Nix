@@ -2,21 +2,15 @@
   programs.nushell = {
     enable = true;
 
-    configFile = {
-      text = ''
-        let $config = {
-          def --env ya [] {
-            yazi --cwd-file $tmp
-            let cwd = (cat -- $tmp)
-            if $cwd != "" and $cwd != $env.PWD {
-              cd $cwd
-            }
-            rm -f $tmp
-          }
-          use /home/hacky/.cache/starship/init.nu
-          '';
-    };
-    
+    configFile.source = ../../config.nu;
+
+    extraConfig = 
+    ''
+    $env.config = {
+        show_banner: false,
+    }
+    '';
+
     shellAliases = {
       ei = "exit";
       python = "python3";
