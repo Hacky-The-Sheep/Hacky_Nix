@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, pkgs-unstable, ... }:
 
 # ██     ██  ██████  ██████  ██   ██ 
 # ██     ██ ██    ██ ██   ██ ██  ██  
@@ -110,10 +110,11 @@
     description = "hacky";
     extraGroups = [ "networkmanager" "wheel" "libvirtd"];
     uid = 1000;
-    shell = pkgs.nushell;
+    shell = pkgs-unstable.nushell;
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = 
+  (with pkgs; [
     age
     cargo
     delve
@@ -131,7 +132,14 @@
     vim
     wget
     zellij
-];
+    ])
+
+  ++
+
+  (with pkgs-unstable; [
+    simplex-chat-desktop
+    nushell
+  ]);
 
   # System Version
   system.stateVersion = "23.11";

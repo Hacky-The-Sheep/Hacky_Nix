@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     hyprland.url = "github:hyprwm/Hyprland";
     sops-nix.url = "github:Mic92/sops-nix";
 
@@ -15,15 +16,15 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, sops-nix, ...}@inputs: 
+  outputs = { self, nixpkgs, home-manager, hyprland, sops-nix, nixpkgs-unstable, ...}@inputs: 
     let
       # ----- System Settings ----- #
       system = "x86_64-linux";      
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
+      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
 
     in {	
       nixosConfigurations = {
@@ -47,6 +48,7 @@
             inherit system;
             specialArgs = { 
               inherit inputs;
+              inherit pkgs-unstable;
             };
             modules = [
               hyprland.nixosModules.default
