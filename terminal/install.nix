@@ -3,7 +3,8 @@
     ./bat.nix
     ./btop.nix
     ./eza.nix
-    ./fish.nix
+    # ./fish.nix
+    ./nushell.nix
     ./git.nix
     ./gitui.nix
     ./helix.nix
