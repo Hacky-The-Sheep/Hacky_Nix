@@ -15,7 +15,6 @@
           }
           use /home/hacky/.cache/starship/init.nu
           '';
-        };
     };
     
     shellAliases = {
