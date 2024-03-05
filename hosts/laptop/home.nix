@@ -29,6 +29,7 @@
   home.packages = with pkgs; [
 
     # Main
+    brave
     fastfetch
     kitty
     signal-desktop
