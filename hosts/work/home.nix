@@ -24,7 +24,7 @@
       ../../wm/waybar.nix
 
       # Apps
-      # ../../apps/firefox.nix
+      ../../apps/firefox.nix
     ];
 
   home.username = "hacky";
@@ -40,9 +40,9 @@
     # Main
     brave
     fastfetch
-    firefox
+    # firefox
     kitty
-    timeshift
+    # timeshift
     xdg-desktop-portal-hyprland
     signal-desktop
 

@@ -129,6 +129,7 @@
     go
     # gopls
     makemkv
+    microsoft-edge
     nil
     # rustc
     steam
