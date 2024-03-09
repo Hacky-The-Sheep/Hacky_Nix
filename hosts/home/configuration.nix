@@ -43,9 +43,9 @@
   services.printing.drivers = [ pkgs.brlaser ];
   
   # Fish 🐡
-  # programs.fish.enable = true;
-  # users.defaultUserShell = pkgs.fish;
-  # environment.shells = with pkgs; [ fish ];
+  programs.fish.enable = true;
+  users.defaultUserShell = pkgs.fish;
+  environment.shells = with pkgs; [ fish ];
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -112,7 +112,7 @@
     home-manager
     go
     nil
-    python3
+    # python3
     rustc
     synology-drive-client
     vim
