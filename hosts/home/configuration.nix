@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 # ██╗  ██╗ ██████╗ ███╗   ███╗███████╗
 # ██║  ██║██╔═══██╗████╗ ████║██╔════╝
@@ -104,7 +104,8 @@
 
   nix.settings.trusted-users = [ "root" "@wheel"];
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = 
+  ( with pkgs; [
     cargo
     delve
     # fish
@@ -118,7 +119,13 @@
     vim
     wget
     zellij
-];
+  ])
+
+  ++
+
+  (with pkgs-unstable; [
+    obsidian
+  ]);
  
   # System Version
   system.stateVersion = "23.11";
