@@ -41,7 +41,11 @@
         };
 
         laptop = lib.nixosSystem {
-          specialArgs = { inherit system inputs; };
+          specialArgs = { 
+            inherit system; 
+            inherit inputs; 
+            inherit pkgs-unstable;
+          };
           modules = [ 
               sops-nix.nixosModules.sops
             ./hosts/laptop/configuration.nix

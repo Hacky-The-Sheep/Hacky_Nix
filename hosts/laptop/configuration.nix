@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 # ██╗  ██╗ ██████╗ ███╗   ███╗███████╗
 # ██║  ██║██╔═══██╗████╗ ████║██╔════╝
@@ -94,25 +94,26 @@
 
   nix.settings.trusted-users = [ "root" "@wheel"];
 
-  environment.systemPackages = with pkgs; [
-    brave
+  environment.systemPackages = 
+  ( with pkgs; [
     cargo
     delve
-    # fish
     git
-    go
-    # gopls
     home-manager
-    kitty
-    libreoffice
+    go
     nil
     rustc
-    signal-desktop
     synology-drive-client
     vim
     wget
     zellij
-];
+  ])
+
+  ++
+
+  (with pkgs-unstable; [
+    obsidian
+  ]);
  
   # System Version
   system.stateVersion = "23.11";
