@@ -1,9 +1,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = '''
-[┌───────────────────](yellow)
-[│](green)-> $directory$rust$python$golang
-[│](blue)-> $username-> $hostname$os $git_status
+[│](blue)$hostname$os$username$git_status-> $directory$rust$python$golang
 [└─>](lavender) 
 '''
 
