@@ -2,7 +2,7 @@
 
 format = '''
 [│](blue)$hostname$os$username$git_status-> $directory$rust$python$golang
-[└─>](lavender) 
+[└─>](yellow) 
 '''
 
 add_newline = true
