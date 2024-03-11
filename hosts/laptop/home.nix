@@ -33,6 +33,7 @@
     fastfetch
     kitty
     signal-desktop
+    pop
 
     # Terminal Programs
     openvpn
