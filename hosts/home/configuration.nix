@@ -124,6 +124,7 @@
   ++
 
   (with pkgs-unstable; [
+    goreleaser
     obsidian
   ]);
  
