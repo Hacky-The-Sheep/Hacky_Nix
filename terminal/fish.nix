@@ -34,7 +34,7 @@
       ydl = "yt-dlp --prefer-ffmpeg --merge-output-format mkv ";
       ymp4 = "yt-dlp --prefer-ffmpeg --merge-output-format mp4 ";
       ymp3 = "yt-dlp --extract-audio --audio-format mp3 ";
-      ls = "exa --color --icons";
+      ls = "nu -c ls";
       sls = "exa -a --color --icons";
       zj = "zellij";
 
