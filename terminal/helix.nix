@@ -29,6 +29,7 @@
         esc = [ "collapse_selection" "keep_primary_selection"];
         C-space = "signature_help";
         X = "extend_line_up";
+        C-l = "extend_to_line_end";
       };
       keys.normal.space = {
         w = ":write";
