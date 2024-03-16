@@ -51,6 +51,7 @@
     # "Work"
     # libreoffice
     mullvad-vpn
+    remmina
     
     # Fun
     mpv
