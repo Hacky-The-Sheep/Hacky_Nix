@@ -13,6 +13,7 @@
       ../../hardware/bluetooth.nix
       ../../hardware/work_nvidia.nix
       ../../system/printers.nix
+      ../../system/udev.nix
       ../../hardware/system76.nix
       ../../system/fonts.nix
       ../../system/gnome.nix
@@ -112,7 +113,7 @@
   users.users.hacky = {
     isNormalUser = true;
     description = "hacky";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd"];
+    extraGroups = [ "networkmanager" "wheel" "plugdev" "dialout"];
     uid = 1000;
     # shell = pkgs-unstable.nushell;
   };
