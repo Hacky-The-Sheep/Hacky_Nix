@@ -58,6 +58,7 @@
     openvpn
     ripgrep
     yt-dlp
+    cobra-cli
 
     # Pentesting
     ffuf
