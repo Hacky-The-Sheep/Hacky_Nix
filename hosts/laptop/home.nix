@@ -49,8 +49,8 @@
     thc-hydra
 
     # "Work"
-    # libreoffice
-    mullvad-vpn
+    libreoffice
+    # mullvad-vpn
     remmina
     
     # Fun
