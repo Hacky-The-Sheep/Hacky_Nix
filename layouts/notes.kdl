@@ -1,11 +1,10 @@
 layout {
 	pane split_direction="vertical" {
-		pane command="hx" {
+		pane command="glow" {
 			cwd "~/Documents/Obsidian/PKM"
 			args "."
 		}
 		pane split_direction="horizontal" {
-			pane command="cava"
 		}
 	}
 }
