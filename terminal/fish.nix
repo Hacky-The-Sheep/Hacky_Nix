@@ -20,8 +20,8 @@
       hack = "cd ~/Documents/TryHackMe/";
 
       # ZelliJ
-      notes = "zellij --layout ~/.dotfiles/layouts/notes.kdl";
-      thm = "zellij --layout ~/.dotfiles/layouts/thm.kdl";
+      notes = "zellij --layout ~/Hacky_Nix/layouts/notes.kdl";
+      thm = "zellij --layout ~/Hacky_Nix/layouts/thm.kdl";
 
       # Git
       ga = "git add";
