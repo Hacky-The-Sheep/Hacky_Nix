@@ -41,6 +41,7 @@
     signal-desktop
     xdg-desktop-portal-hyprland
     pop
+    glow
 
     # Hyprland Packages
     brightnessctl
