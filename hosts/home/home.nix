@@ -35,6 +35,7 @@
   home.packages = with pkgs; [
 
     # Main
+    alacritty
     brave
     fastfetch
     kitty
