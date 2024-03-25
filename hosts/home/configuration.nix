@@ -21,6 +21,9 @@
 
   # Needed to run swaylock
   security.pam.services.swaylock = {};
+
+  # Gnome Keyring for Hyprland
+  security.pam.services.login.enableGnomeKeyring = true;
   
   # Bootloader
   boot.loader.systemd-boot.enable = true;
