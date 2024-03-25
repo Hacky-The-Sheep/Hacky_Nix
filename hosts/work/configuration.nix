@@ -35,14 +35,14 @@
   # Set your time zone.
   time.timeZone = "America/Chicago";
 
-  # # Fish 🐡
-  # programs.fish.enable = true;
-  # users.defaultUserShell = pkgs.fish;
-  # environment.shells = with pkgs; [ fish ];
+  # Fish 🐡
+  programs.fish.enable = true;
+  users.defaultUserShell = pkgs.fish;
+  environment.shells = with pkgs; [ fish ];
 
-  # NuShell 🐡
-  users.defaultUserShell = pkgs-unstable.nushell;
-  environment.shells = with pkgs-unstable; [ nushell ];
+  # # NuShell 🐡
+  # users.defaultUserShell = pkgs-unstable.nushell;
+  # environment.shells = with pkgs-unstable; [ nushell ];
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -144,7 +144,7 @@
 
   (with pkgs-unstable; [
     simplex-chat-desktop
-    nushell
+    # nushell
   ]);
 
   # System Version

@@ -4,7 +4,6 @@
     ./btop.nix
     ./eza.nix
     ./fish.nix
-    ./nushell.nix
     ./git.nix
     ./gitui.nix
     ./helix.nix
