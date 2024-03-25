@@ -40,6 +40,7 @@
     # Main
     brave
     fastfetch
+    glow
     # firefox
     kitty
     # timeshift
