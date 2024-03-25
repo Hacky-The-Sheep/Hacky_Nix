@@ -95,6 +95,7 @@
     # Fun
     libsForQt5.kdenlive
     inkscape
+    gimp
     mpv
     obs-studio
     handbrake
