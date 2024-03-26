@@ -140,6 +140,7 @@
     synology-drive-client
     vim
     wget
+    wineWowPackages.stable
     zellij
     ])
 
