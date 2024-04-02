@@ -40,14 +40,15 @@
     # Main
     brave
     fastfetch
-    glow
     # firefox
+    glow
     kitty
-    # timeshift
     pandoc
-    xdg-desktop-portal-hyprland
-    texliveSmall
     signal-desktop
+    texliveSmall
+    # timeshift
+    xdg-desktop-portal-hyprland
+    zathura
 
     # Hyprland Packages
     brightnessctl
