@@ -19,6 +19,9 @@
       nb = "newsboat";
       hack = "cd ~/Documents/TryHackMe/";
 
+      # Markdown -> PDF
+      pd = "pandoc -f markdown-implicit_figures -t latex -o";
+
       # ZelliJ
       notes = "zellij --layout ~/Hacky_Nix/layouts/notes.kdl";
       thm = "zellij --layout ~/Hacky_Nix/layouts/thm.kdl";

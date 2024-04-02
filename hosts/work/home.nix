@@ -46,6 +46,7 @@
     # timeshift
     pandoc
     xdg-desktop-portal-hyprland
+    texliveSmall
     signal-desktop
 
     # Hyprland Packages
