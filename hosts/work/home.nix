@@ -44,6 +44,7 @@
     # firefox
     kitty
     # timeshift
+    pandoc
     xdg-desktop-portal-hyprland
     signal-desktop
 
