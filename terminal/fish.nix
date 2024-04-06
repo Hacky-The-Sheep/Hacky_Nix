@@ -59,7 +59,6 @@
       hnup = "sudo nix-channel --update && sudo nixos-rebuild switch --flake .#home";
 
       ## General
-      # up = "nixos-rebuild switch --upgrade";
       clcon = "nix-env --delete-generations 14d";
       gecon = "nix-store --gc";
     };
