@@ -24,7 +24,6 @@
       system = "x86_64-linux";      
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
-      # pkgs-unstable = nixpkgs-unstable.legacyPackages.${system; config.allowUnfree=true;};
       pkgs-unstable = import nixpkgs-unstable {
         system = "x86_64-linux";
         config.allowUnfree=true;
