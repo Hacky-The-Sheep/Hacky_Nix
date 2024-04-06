@@ -50,7 +50,7 @@
 
     # "Work"
     libreoffice
-    # mullvad-vpn
+    mullvad-vpn
     remmina
     
     # Fun
