@@ -112,7 +112,7 @@
   ++
 
   (with pkgs-unstable; [
-    obsidian
+    simplex-chat-desktop
   ]);
  
   # System Version
