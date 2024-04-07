@@ -38,6 +38,7 @@
     brave
     fastfetch
     kitty
+    pandoc
     signal-desktop
     xdg-desktop-portal-hyprland
     pop
