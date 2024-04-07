@@ -37,12 +37,13 @@
     # Main
     brave
     fastfetch
+    glow
     kitty
     pandoc
-    signal-desktop
-    xdg-desktop-portal-hyprland
     pop
-    glow
+    signal-desktop
+    texliveSmall
+    xdg-desktop-portal-hyprland
 
     # Hyprland Packages
     brightnessctl
