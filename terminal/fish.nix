@@ -20,6 +20,7 @@
       hack = "cd ~/Documents/TryHackMe/";
 
       # Markdown -> PDF
+      ## ...latex -o OUTFILE.pdf YOUR-FILE.md
       pd = "pandoc -f markdown-implicit_figures -t latex -o";
 
       # ZelliJ
