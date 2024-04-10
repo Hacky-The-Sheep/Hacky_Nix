@@ -117,7 +117,7 @@ wayland.windowManager.hyprland = {
       "$mod, P, pseudo, # dwindle"
       "$mod, O, togglesplit, # dwindle"
       "$mod, S, exec, slurp | grim -g - - | swappy -f -"
-      "$mod, L, exec, bash ~/scripts/swaylock.sh"
+      "$mod, L, exec, bash ~/Scripts/swaylock.sh"
       "$mod, J, exec, rofimoji"
 
       ## --- Wallpaper Changes --- ##
