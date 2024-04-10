@@ -119,6 +119,7 @@
     # python3
     rustc
     synology-drive-client
+    wineWowPackages.stable
     vim
     wget
     zellij
