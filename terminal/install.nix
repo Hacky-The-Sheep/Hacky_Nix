@@ -10,6 +10,7 @@
     ./kitty.nix
     ./lf.nix
     ./newsboat.nix
+    ./neovim.nix
     ./starship.nix
     ./yazi.nix
     ./zellij.nix
