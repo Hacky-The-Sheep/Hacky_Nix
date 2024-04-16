@@ -1,5 +1,10 @@
 {
   programs.neovim = {
-    enable = true;   
+    enable = true;
+
+    extraConfig = ''
+      set number relativenumber
+    '';
+
   };
 }
