@@ -9,7 +9,6 @@
         bufferline = "multiple";
         cursorline = true;
         auto-format = true;
-        popup-border = "all";
       };
       editor.statusline = {
         left = [ "mode" "spinner" "read-only-indicator" "file-modification-indicator"];
