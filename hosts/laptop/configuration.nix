@@ -113,6 +113,7 @@
 
   (with pkgs-unstable; [
     simplex-chat-desktop
+    helix
   ]);
  
   # System Version
