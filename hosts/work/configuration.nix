@@ -133,6 +133,7 @@
     go
     # gopls
     makemkv
+    microsoft-edge
     microsoft-edge-dev
     nil
     # rustc
