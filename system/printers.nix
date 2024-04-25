@@ -4,7 +4,7 @@
       {
         name = "TechDeckStudent";
         location = "Work";
-        deviceUri = "http://10.0.2.10";
+        deviceUri = "http://10.66.1.1";
         model = "drv:///sample.drv/generic.ppd";
         ppdOptions = {
           PageSize = "A4";
