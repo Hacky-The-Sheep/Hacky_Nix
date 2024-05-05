@@ -17,6 +17,7 @@
 
       # System
       ../../system/gtk.nix
+      ../../apps/chromium.nix
 
       # Hyprland
       ../../apps/dunst.nix
@@ -43,6 +44,7 @@
     pop
     signal-desktop
     texliveSmall
+    ungoogled-chromium
     xdg-desktop-portal-hyprland
 
     # Hyprland Packages
