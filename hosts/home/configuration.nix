@@ -85,6 +85,14 @@
 
   programs.dconf.enable = true;
 
+  # RDP
+
+  services.xrdp = {
+    enable = true;
+    defaultWindowManager = "startplasma-x11";
+    openFirewall = true;
+  };
+  
   ## Open Firewall Ports
   networking.firewall = {
     enable = true;
