@@ -41,6 +41,9 @@
     thunderbird
     ungoogled-chromium
 
+    # KDE
+    partition-manager
+    
     # Terminal Programs
     openvpn
     ripgrep
