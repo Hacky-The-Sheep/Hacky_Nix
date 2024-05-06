@@ -15,7 +15,7 @@
       ../../terminal/install.nix
 
       # System
-      ../../system/gtk.nix
+      # ../../system/gtk.nix
 
       # Hyprland
       ../../apps/dunst.nix
@@ -46,7 +46,6 @@
     pandoc
     signal-desktop
     texliveSmall
-    # timeshift
     xdg-desktop-portal-hyprland
     zathura
 

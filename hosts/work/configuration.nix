@@ -16,15 +16,15 @@
       ../../system/udev.nix
       ../../hardware/system76.nix
       ../../system/fonts.nix
-      ../../system/gnome.nix
+      # ../../system/gnome.nix
       ../../system/language_servers.nix
     ];
 
   # Needed to run swaylock
   security.pam.services.swaylock = {};
 
-  # Gnome Keyring for Hyprland
-  security.pam.services.login.enableGnomeKeyring = true;
+  # # Gnome Keyring for Hyprland
+  # security.pam.services.login.enableGnomeKeyring = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -43,31 +43,44 @@
   users.defaultUserShell = pkgs.fish;
   environment.shells = with pkgs; [ fish ];
 
-  # # NuShell 🐡
-  # users.defaultUserShell = pkgs-unstable.nushell;
-  # environment.shells = with pkgs-unstable; [ nushell ];
-
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Enable the X11 windowing system.
+  # services.xserver = {
+  #   enable = true;
+  #   displayManager.gdm.enable = true;
+  #   desktopManager.gnome.enable = true;
+  # };  
+
+  # KDE
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-  };  
+    displayManager.sddm.enable = true;
+    desktopManager.plasma5.enable = true;
+  };
+
+  programs.dconf.enable = true;
+
+  # RDP
+
+  services.xrdp = {
+    enable = true;
+    defaultWindowManager = "startplasma-x11";
+    openFirewall = true;
+  };
 
   ## Enable
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland; 
-  };
+  # programs.hyprland = {
+  #   enable = true;
+  #   package = inputs.hyprland.packages.${pkgs.system}.hyprland; 
+  # };
 
   # Cachix
-  nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };
+  # nix.settings = {
+  #   substituters = ["https://hyprland.cachix.org"];
+  #   trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  # };
 
   # Remove Gnome bloat
   environment.gnome.excludePackages = (with pkgs; [
@@ -118,7 +131,6 @@
     description = "hacky";
     extraGroups = [ "networkmanager" "wheel" "plugdev" "dialout"];
     uid = 1000;
-    # shell = pkgs-unstable.nushell;
   };
 
   environment.systemPackages = 
@@ -136,6 +148,8 @@
     microsoft-edge-dev
     nil
     # rustc
+    libsForQt5.kpmcore
+    partition-manager
     steam
     synology-drive-client
     vim
@@ -148,18 +162,10 @@
 
   (with pkgs-unstable; [
     simplex-chat-desktop
-    # nushell
   ]);
 
   # System Version
   system.stateVersion = "23.11";
-
-  # Sops
-  sops.defaultSopsFile = ../../secrets/secrets.yaml;
-  sops.defaultSopsFormat = "yaml";
-  sops.age.keyFile = "/home/hacky/.config/sops/age/keys.txt";
-  sops.secrets.example-key = { };
-  sops.secrets."myservice/my_subdir/my_secret" = { };
 
   # Nix Flakes ❄️
   nix.package= pkgs.nixFlakes;
