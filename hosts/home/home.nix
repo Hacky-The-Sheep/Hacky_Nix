@@ -38,6 +38,7 @@
     pop
     signal-desktop
     texliveSmall
+    thunderbird
     ungoogled-chromium
 
     # Terminal Programs
