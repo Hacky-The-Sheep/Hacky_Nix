@@ -107,21 +107,23 @@
     home = "/home/monkey";
   };
 
+  # Partition Manager
+  services.dbus.packages = [pkgs.libsForQt5.kpmcore];
+
   nix.settings.trusted-users = [ "root" "@wheel"];
 
   environment.systemPackages = 
   ( with pkgs; [
     cargo
     delve
-    # fish
     git
     home-manager
     go
     nil
-    # python3
+    libsForQt5.kpmcore
+    partition-manager
     rustc
     synology-drive-client
-    wineWowPackages.stable
     vim
     wget
     zellij
@@ -130,20 +132,12 @@
   ++
 
   (with pkgs-unstable; [
-    # gnome.gnome-shell
-    # gnome.nautilus
-    # gnome.gvfs
     goreleaser
     obsidian
   ]);
  
   # System Version
   system.stateVersion = "23.11";
-
-  # Sops
-  # sops.defaultSopsFile = ./secrets/secrets.yaml;
-  # sops.defaultSopsFormat = "yaml";
-  # sops.age.keyFile = "/home/hacky/.config/sops/age/keys.txt";
   
   # Nix Flakes ❄️
   nix.package= pkgs.nixFlakes;
