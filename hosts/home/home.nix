@@ -16,8 +16,8 @@
       ../../terminal/install.nix
 
       # System
-      ../../system/gtk.nix
-      ../../apps/chromium.nix
+      # ../../system/gtk.nix
+      # ../../apps/chromium.nix
     ];
 
   home.username = "hacky";
