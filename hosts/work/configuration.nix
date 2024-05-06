@@ -139,7 +139,7 @@
     cargo
     delve
     discord
-    # fish
+    fish
     git
     home-manager
     go

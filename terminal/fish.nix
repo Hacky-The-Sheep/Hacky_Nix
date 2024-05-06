@@ -5,11 +5,6 @@
     shellInit =
     "
     set -g fish_greeting \n
-
-    begin\n
-      eval (ssh-agent -c)\n
-      ssh-add ~/.ssh/id_ed25519\n
-    end &> /dev/null
     ";
 
     shellAliases = {

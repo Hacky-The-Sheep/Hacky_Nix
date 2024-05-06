@@ -124,6 +124,7 @@
   ( with pkgs; [
     cargo
     delve
+    fish
     git
     home-manager
     go

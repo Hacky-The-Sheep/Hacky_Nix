@@ -13,6 +13,6 @@
     ./neovim.nix
     ./starship.nix
     ./yazi.nix
-    ./zellij.nix
+    # ./zellij.nix
   ];
 }
