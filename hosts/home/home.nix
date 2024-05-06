@@ -17,7 +17,7 @@
 
       # System
       # ../../system/gtk.nix
-      # ../../apps/chromium.nix
+      ../../apps/firefox.nix
     ];
 
   home.username = "hacky";
