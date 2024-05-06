@@ -15,7 +15,7 @@
       ../../hardware/system76.nix
       ../../system/fonts.nix
       ../../system/udev.nix
-      ../../system/gnome.nix
+      # ../../system/gnome.nix
       ../../system/language_servers.nix
     ];
 
@@ -23,7 +23,7 @@
   security.pam.services.swaylock = {};
 
   # Gnome Keyring for Hyprland
-  security.pam.services.login.enableGnomeKeyring = true;
+  # security.pam.services.login.enableGnomeKeyring = true;
   
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -57,12 +57,6 @@
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
   
-  ## Cachix
-  nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };
-
   # Enable sound with pipewire.
   sound.enable = true;
   hardware.pulseaudio.enable = false;
@@ -75,10 +69,18 @@
   };
 
   # Enable the X11 windowing system.
+  # Gnome
+  # services.xserver = {
+  #   enable = true;
+  #   desktopManager.gnome.enable = true;
+  #   displayManager.gdm.enable = true;
+  # };
+
+  # KDE
   services.xserver = {
     enable = true;
-    desktopManager.gnome.enable = true;
-    displayManager.gdm.enable = true;
+    displayManager.sddm.enable = true;
+    desktopManager.plasma5.enable = true;
   };
 
   programs.dconf.enable = true;
@@ -128,6 +130,9 @@
   ++
 
   (with pkgs-unstable; [
+    # gnome.gnome-shell
+    # gnome.nautilus
+    # gnome.gvfs
     goreleaser
     obsidian
   ]);
@@ -136,9 +141,9 @@
   system.stateVersion = "23.11";
 
   # Sops
-  sops.defaultSopsFile = ./secrets/secrets.yaml;
-  sops.defaultSopsFormat = "yaml";
-  sops.age.keyFile = "/home/hacky/.config/sops/age/keys.txt";
+  # sops.defaultSopsFile = ./secrets/secrets.yaml;
+  # sops.defaultSopsFormat = "yaml";
+  # sops.age.keyFile = "/home/hacky/.config/sops/age/keys.txt";
   
   # Nix Flakes ❄️
   nix.package= pkgs.nixFlakes;

@@ -19,11 +19,11 @@
       ../../system/gtk.nix
       ../../apps/chromium.nix
 
-      # Hyprland
-      ../../apps/dunst.nix
-      ../../apps/rofi.nix
-      ../../wm/hyprland.nix
-      ../../wm/waybar.nix
+      # # Hyprland
+      # ../../apps/dunst.nix
+      # ../../apps/rofi.nix
+      # ../../wm/hyprland.nix
+      # ../../wm/waybar.nix
     ];
 
   home.username = "hacky";
@@ -45,19 +45,19 @@
     signal-desktop
     texliveSmall
     ungoogled-chromium
-    xdg-desktop-portal-hyprland
+    # xdg-desktop-portal-hyprland
 
     # Hyprland Packages
-    brightnessctl
-    dunst
-    grim
-    mpvpaper
-    rofi
-    rofimoji
-    slurp
-    swappy
-    swaylock-effects
-    swww
+    # brightnessctl
+    # dunst
+    # grim
+    # mpvpaper
+    # rofi
+    # rofimoji
+    # slurp
+    # swappy
+    # swaylock-effects
+    # swww
 
     # Terminal Programs
     openvpn

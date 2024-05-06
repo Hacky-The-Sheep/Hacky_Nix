@@ -4,8 +4,8 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
-    hyprland.url = "github:hyprwm/Hyprland";
-    sops-nix.url = "github:Mic92/sops-nix";
+    # hyprland.url = "github:hyprwm/Hyprland";
+    # sops-nix.url = "github:Mic92/sops-nix";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -18,7 +18,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprland, sops-nix, nixpkgs-unstable, ...}@inputs: 
+  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, ...}@inputs: 
     let
       # ----- System Settings ----- #
       system = "x86_64-linux";      
@@ -46,7 +46,6 @@
             inherit pkgs-unstable;
           };
           modules = [ 
-              sops-nix.nixosModules.sops
             ./hosts/laptop/configuration.nix
           ];
         };
@@ -58,9 +57,6 @@
               inherit pkgs-unstable;
             };
             modules = [
-              hyprland.nixosModules.default
-              sops-nix.nixosModules.sops
-              {programs.hyprland.enable = true;}
               ./hosts/work/configuration.nix
             ];
           };
@@ -80,9 +76,6 @@
             inherit pkgs-unstable;
           };
           modules = [ 
-            hyprland.nixosModules.default
-            sops-nix.nixosModules.sops
-            {programs.hyprland.enable = true;}
             ./hosts/home/configuration.nix
           ];
         };
