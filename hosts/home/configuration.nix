@@ -15,7 +15,7 @@
       ../../hardware/system76.nix
       ../../system/fonts.nix
       ../../system/udev.nix
-      # ../../system/gnome.nix
+      ../../system/gnome.nix
       ../../system/language_servers.nix
     ];
 
@@ -23,7 +23,7 @@
   security.pam.services.swaylock = {};
 
   # Gnome Keyring for Hyprland
-  # security.pam.services.login.enableGnomeKeyring = true;
+  security.pam.services.login.enableGnomeKeyring = true;
   
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -70,28 +70,28 @@
 
   # Enable the X11 windowing system.
   # Gnome
-  # services.xserver = {
-  #   enable = true;
-  #   desktopManager.gnome.enable = true;
-  #   displayManager.gdm.enable = true;
-  # };
-
-  # KDE
   services.xserver = {
     enable = true;
-    displayManager.sddm.enable = true;
-    desktopManager.plasma5.enable = true;
+    desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
   };
+
+  # KDE
+  # services.xserver = {
+  #   enable = true;
+  #   displayManager.sddm.enable = true;
+  #   desktopManager.plasma5.enable = true;
+  # };
 
   programs.dconf.enable = true;
 
   # RDP
 
-  services.xrdp = {
-    enable = true;
-    defaultWindowManager = "startplasma-x11";
-    openFirewall = true;
-  };
+  # services.xrdp = {
+  #   enable = true;
+  #   defaultWindowManager = "startplasma-x11";
+  #   openFirewall = true;
+  # };
   
   ## Open Firewall Ports
   networking.firewall = {
@@ -128,8 +128,6 @@
     home-manager
     go
     nil
-    libsForQt5.kpmcore
-    partition-manager
     rustc
     synology-drive-client
     vim
