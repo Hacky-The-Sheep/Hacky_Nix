@@ -57,6 +57,7 @@
     # "Work"
     libreoffice
     mullvad-vpn
+    putty
     
     # Fun
     mpv

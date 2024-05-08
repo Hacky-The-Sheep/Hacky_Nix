@@ -101,7 +101,6 @@
     git
     home-manager
     go
-    gnomeExtensions.app-icons-taskbar
     nil
     rustc
     synology-drive-client
