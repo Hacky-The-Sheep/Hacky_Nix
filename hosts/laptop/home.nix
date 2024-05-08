@@ -51,6 +51,7 @@
     # "Work"
     libreoffice
     mullvad-vpn
+    putty
     remmina
     
     # Fun
