@@ -34,15 +34,12 @@
     fastfetch
     glow
     kitty
+    ollama
     pandoc
     pop
     signal-desktop
     texliveSmall
     thunderbird
-    ungoogled-chromium
-
-    # KDE
-    partition-manager
     
     # Terminal Programs
     openvpn

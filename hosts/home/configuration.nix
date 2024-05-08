@@ -140,6 +140,7 @@
   (with pkgs-unstable; [
     goreleaser
     obsidian
+    simplex-chat-desktop
   ]);
  
   # System Version
