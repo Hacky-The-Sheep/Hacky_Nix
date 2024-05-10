@@ -112,8 +112,20 @@
   ++
 
   (with pkgs-unstable; [
-    simplex-chat-desktop
+    gnome.gdm
+    gnome.gnome-control-center
+    gnome.gnome-disk-utility
+    gnome.gnome-keyring
+    gnome.gnome-session
+    gnome.gnome-settings-daemon
+    gnome.gnome-shell
+    gnome.gnome-tweaks
+    gnome.gvfs
+    gnome.mutter
+    gnome.nautilus
+    gnome.sushi
     helix
+    simplex-chat-desktop
   ]);
  
   # System Version
