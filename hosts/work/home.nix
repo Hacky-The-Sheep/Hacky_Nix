@@ -15,7 +15,7 @@
       ../../terminal/install.nix
 
       # System
-      # ../../system/gtk.nix
+      ../../system/gtk.nix
 
       # Hyprland
       ../../apps/dunst.nix
@@ -96,7 +96,6 @@
     thc-hydra
 
     # Fun
-    libsForQt5.kdenlive
     inkscape
     gimp
     mpv

@@ -1,4 +1,4 @@
-{ pkgs, inputs, pkgs-unstable, ... }:
+{ pkgs, pkgs-unstable, ... }:
 
 # ██     ██  ██████  ██████  ██   ██ 
 # ██     ██ ██    ██ ██   ██ ██  ██  
@@ -16,15 +16,15 @@
       ../../system/udev.nix
       ../../hardware/system76.nix
       ../../system/fonts.nix
-      # ../../system/gnome.nix
+      ../../system/gnome.nix
       ../../system/language_servers.nix
     ];
 
   # Needed to run swaylock
   security.pam.services.swaylock = {};
 
-  # # Gnome Keyring for Hyprland
-  # security.pam.services.login.enableGnomeKeyring = true;
+  # Gnome Keyring for Hyprland
+  security.pam.services.login.enableGnomeKeyring = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -47,28 +47,28 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Enable the X11 windowing system.
-  # services.xserver = {
-  #   enable = true;
-  #   displayManager.gdm.enable = true;
-  #   desktopManager.gnome.enable = true;
-  # };  
-
-  # KDE
   services.xserver = {
     enable = true;
-    displayManager.sddm.enable = true;
-    desktopManager.plasma5.enable = true;
-  };
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+  };  
+
+  # KDE
+  # services.xserver = {
+  #   enable = true;
+  #   displayManager.sddm.enable = true;
+  #   desktopManager.plasma5.enable = true;
+  # };
 
   programs.dconf.enable = true;
 
   # RDP
 
-  services.xrdp = {
-    enable = true;
-    defaultWindowManager = "startplasma-x11";
-    openFirewall = true;
-  };
+  # services.xrdp = {
+  #   enable = true;
+  #   defaultWindowManager = "startplasma-x11";
+  #   openFirewall = true;
+  # };
 
   ## Enable
   # programs.hyprland = {
@@ -148,8 +148,6 @@
     microsoft-edge-dev
     nil
     # rustc
-    libsForQt5.kpmcore
-    partition-manager
     steam
     synology-drive-client
     vim
