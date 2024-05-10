@@ -6,6 +6,7 @@
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     # hyprland.url = "github:hyprwm/Hyprland";
     # sops-nix.url = "github:Mic92/sops-nix";
+    catppuccin.url = "github:catppuccin/nix";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -18,7 +19,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixpkgs-unstable, ...}@inputs: 
+  outputs = { self, nixpkgs, catppuccin, home-manager, nixpkgs-unstable, ...}@inputs: 
     let
       # ----- System Settings ----- #
       system = "x86_64-linux";      
@@ -100,7 +101,10 @@
       	work = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;
         	extraSpecialArgs = { inherit inputs; };
-        	modules = [ ./hosts/work/home.nix ];
+        	modules = [ 
+            catppuccin.homeManagerModules.catppuccin
+            ./hosts/work/home.nix 
+            ];
       };
       	home = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;

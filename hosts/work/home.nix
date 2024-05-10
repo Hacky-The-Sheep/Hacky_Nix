@@ -15,7 +15,7 @@
       ../../terminal/install.nix
 
       # System
-      ../../system/gtk.nix
+      # ../../system/gtk.nix
 
       # Hyprland
       ../../apps/dunst.nix
@@ -26,6 +26,9 @@
       # Apps
       ../../apps/firefox.nix
     ];
+
+  # Catppuccin
+  catppuccin.flavour = "mocha";
 
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
