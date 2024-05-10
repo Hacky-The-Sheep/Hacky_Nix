@@ -44,7 +44,7 @@
 
       ## Work Desktop
       whmu = "home-manager switch --flake .#work";
-      wnup = "sudo nixos-rebuild switch --flake .#work";
+      wnup = "sudo nix-channel --update && sudo nixos-rebuild switch --flake .#work";
 
       ## Server
       shmu = "home-manager switch --flake .#server";
