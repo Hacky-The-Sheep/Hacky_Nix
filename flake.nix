@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     # hyprland.url = "github:hyprwm/Hyprland";
     # sops-nix.url = "github:Mic92/sops-nix";
     catppuccin.url = "github:catppuccin/nix";
@@ -19,7 +20,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, catppuccin, home-manager, nixpkgs-unstable, ...}@inputs: 
+  outputs = { self, nixpkgs, catppuccin, home-manager, nixos-hardware, nixpkgs-unstable, ...}@inputs: 
     let
       # ----- System Settings ----- #
       system = "x86_64-linux";      
@@ -47,6 +48,7 @@
             inherit pkgs-unstable;
           };
           modules = [ 
+            nixos-hardware.nixosModules.framework-13-7040-amd
             ./hosts/laptop/configuration.nix
           ];
         };

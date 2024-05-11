@@ -13,10 +13,10 @@
 
     [
       # Terminal
-      ../../terminal/install.nix
+      # ../../terminal/install.nix
 
       # System
-      ../../system/gtk.nix
+      # ../../system/gtk.nix
     ];
 
   home.username = "hacky";
