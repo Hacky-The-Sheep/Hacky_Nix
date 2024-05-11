@@ -127,7 +127,6 @@
     gnome.nautilus
     gnome.sushi
     helix
-    insync
     simplex-chat-desktop
     synology-drive-client
   ]);
