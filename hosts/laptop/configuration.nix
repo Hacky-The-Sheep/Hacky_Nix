@@ -103,7 +103,6 @@
     go
     nil
     rustc
-    synology-drive-client
     vim
     wget
     zellij
@@ -126,6 +125,7 @@
     gnome.sushi
     helix
     simplex-chat-desktop
+    synology-drive-client
   ]);
  
   # System Version
