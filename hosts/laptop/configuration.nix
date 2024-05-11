@@ -25,6 +25,9 @@
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # Framework
+  services.fwupd.enable = true;
+  
   # Set your time zone.
   time.timeZone = "America/Chicago";
 

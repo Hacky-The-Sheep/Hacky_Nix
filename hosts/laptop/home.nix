@@ -35,6 +35,9 @@
     signal-desktop
     pop
 
+    # Test
+    insync
+    
     # Terminal Programs
     openvpn
     ripgrep

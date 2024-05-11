@@ -91,7 +91,9 @@
       	laptop = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;
         	extraSpecialArgs = { inherit inputs; };
-        	modules = [ ./hosts/laptop/home.nix ];
+        	modules = [ 
+            catppuccin.homeManagerModules.catppuccin
+          ./hosts/laptop/home.nix ];
       };
       	server = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;
