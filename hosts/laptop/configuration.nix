@@ -1,4 +1,4 @@
-{ pkgs-unstable, ... }:
+{ pkgs, pkgs-stable, ... }:
 
 # ██╗  ██╗ ██████╗ ███╗   ███╗███████╗
 # ██║  ██║██╔═══██╗████╗ ████║██╔════╝
@@ -23,7 +23,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   
   # Kernel
-  boot.kernelPackages = pkgs-unstable.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Framework
   services.fwupd.enable = true;
@@ -39,12 +39,12 @@
 
   # Printing
   services.printing.enable = true;
-  services.printing.drivers = [ pkgs-unstable.brlaser ];
+  services.printing.drivers = [ pkgs-stable.brlaser ];
   
   # Fish 🐡
   programs.fish.enable = true;
-  users.defaultUserShell = pkgs-unstable.fish;
-  environment.shells = with pkgs-unstable; [ fish ];
+  users.defaultUserShell = pkgs.fish;
+  environment.shells = with pkgs; [ fish ];
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -92,7 +92,7 @@
   nix.settings.trusted-users = [ "root" "@wheel"];
 
   environment.systemPackages = 
-  ( with pkgs-unstable; [
+  ( with pkgs; [
     baobab
     cargo
     delve
@@ -127,9 +127,9 @@
   system.stateVersion = "24.05";
   
   # Nix Flakes ❄️
-  nix.package= pkgs-unstable.nixFlakes;
+  nix.package= pkgs.nixFlakes;
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
 
-  # catppuccin.flavour = "mocha";
+  catppuccin.flavour = "mocha";
 }
