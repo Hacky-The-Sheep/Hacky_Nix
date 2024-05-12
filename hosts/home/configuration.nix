@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, pkgs-stable, ... }:
 
 # ██╗  ██╗ ██████╗ ███╗   ███╗███████╗
 # ██║  ██║██╔═══██╗████╗ ████║██╔════╝
@@ -121,7 +121,7 @@
   nix.settings.trusted-users = [ "root" "@wheel"];
 
   environment.systemPackages = 
-  ( with pkgs; [
+  ( with pkgs-stable; [
     cargo
     delve
     fish
@@ -138,7 +138,7 @@
 
   ++
 
-  (with pkgs-unstable; [
+  (with pkgs; [
     goreleaser
     obsidian
     simplex-chat-desktop
