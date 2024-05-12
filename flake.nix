@@ -5,9 +5,9 @@
     # nixpkgs.url = "nixpkgs/nixos-23.11";
     nixpkgs.url = "nixpkgs/nixos-unstable";
 
-    nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "nixpkgs/nixos-23.11";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    # hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland";
     # sops-nix.url = "github:Mic92/sops-nix";
     catppuccin.url = "github:catppuccin/nix";
 
@@ -22,13 +22,13 @@
     };
   };
 
-  outputs = { self, nixpkgs, catppuccin, home-manager, nixos-hardware, nixpkgs-unstable, ...}@inputs: 
+  outputs = { self, nixpkgs, catppuccin, home-manager, nixos-hardware, nixpkgs-stable, ...}@inputs: 
     let
       # ----- System Settings ----- #
       system = "x86_64-linux";      
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${system};
-      pkgs-unstable = import nixpkgs-unstable {
+      pkgs-stable = import nixpkgs-stable {
         system = "x86_64-linux";
         config.allowUnfree=true;
       };
@@ -47,7 +47,7 @@
           specialArgs = { 
             inherit system; 
             inherit inputs; 
-            inherit pkgs-unstable;
+            inherit pkgs-stable;
           };
           modules = [ 
             nixos-hardware.nixosModules.framework-13-7040-amd
@@ -60,7 +60,7 @@
             inherit system;
             specialArgs = { 
               inherit inputs;
-              inherit pkgs-unstable;
+              inherit pkgs-stable;
             };
             modules = [
               ./hosts/work/configuration.nix
@@ -79,7 +79,7 @@
           specialArgs = { 
             inherit system;
             inherit inputs;
-            inherit pkgs-unstable;
+            inherit pkgs-stable;
           };
           modules = [ 
             ./hosts/home/configuration.nix
@@ -97,7 +97,7 @@
         	inherit pkgs;
         	extraSpecialArgs = { 
             inherit inputs; 
-            inherit pkgs-unstable; 
+            inherit pkgs-stable; 
           };
         	modules = [ 
             catppuccin.homeManagerModules.catppuccin

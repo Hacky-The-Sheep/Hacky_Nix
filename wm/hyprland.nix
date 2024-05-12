@@ -2,6 +2,7 @@
 wayland.windowManager.hyprland = {
   enable = true;
   enableNvidiaPatches = true;
+  catppuccin.enable = true;
 
   settings = {
     exec-once = [
@@ -13,7 +14,7 @@ wayland.windowManager.hyprland = {
       "synology-drive"
       "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/cat_wave.png"
     ];
-    source = "~/Hacky_Nix/themes/mocha.conf";
+    # source = "~/Hacky_Nix/themes/mocha.conf";
 
     # Set the default monitor
     monitor = ", highrr, 0x0, 1";
