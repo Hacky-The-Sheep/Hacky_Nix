@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs-unstable, ... }:
 
 # ██╗  ██╗ ██████╗ ███╗   ███╗███████╗
 # ██║  ██║██╔═══██╗████╗ ████║██╔════╝
@@ -13,20 +13,24 @@
 
     [
       # Terminal
-      # ../../terminal/install.nix
+      ../../terminal/install.nix
 
       # System
-      # ../../system/gtk.nix
+      ../../system/gtk.nix
     ];
 
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
 
+  xdg.enable = true;
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-    
+
+  # catppuccin.flavour = "mocha";
+  
   # Packages to install
-  home.packages = with pkgs; [
+  home.packages = with pkgs-unstable; [
 
     # Main
     brave
@@ -36,7 +40,6 @@
     pop
 
     # Test
-    insync
     
     # Terminal Programs
     openvpn
@@ -64,6 +67,6 @@
 ];
  
   # Home Manager Version
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
 
 }

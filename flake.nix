@@ -2,7 +2,9 @@
   description = "Jon's Flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-23.11";
+    # nixpkgs.url = "nixpkgs/nixos-23.11";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
+
     nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     # hyprland.url = "github:hyprwm/Hyprland";
@@ -10,7 +12,7 @@
     catppuccin.url = "github:catppuccin/nix";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -49,6 +51,7 @@
           };
           modules = [ 
             nixos-hardware.nixosModules.framework-13-7040-amd
+            catppuccin.nixosModules.catppuccin
             ./hosts/laptop/configuration.nix
           ];
         };
@@ -92,7 +95,10 @@
       };
       	laptop = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;
-        	extraSpecialArgs = { inherit inputs; };
+        	extraSpecialArgs = { 
+            inherit inputs; 
+            inherit pkgs-unstable; 
+          };
         	modules = [ 
             catppuccin.homeManagerModules.catppuccin
           ./hosts/laptop/home.nix ];

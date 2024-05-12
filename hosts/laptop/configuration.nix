@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs-unstable, ... }:
 
 # ██╗  ██╗ ██████╗ ███╗   ███╗███████╗
 # ██║  ██║██╔═══██╗████╗ ████║██╔════╝
@@ -21,9 +21,9 @@
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
+  
   # Kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs-unstable.linuxPackages_latest;
 
   # Framework
   services.fwupd.enable = true;
@@ -39,12 +39,12 @@
 
   # Printing
   services.printing.enable = true;
-  services.printing.drivers = [ pkgs.brlaser ];
+  services.printing.drivers = [ pkgs-unstable.brlaser ];
   
   # Fish 🐡
   programs.fish.enable = true;
-  users.defaultUserShell = pkgs.fish;
-  environment.shells = with pkgs; [ fish ];
+  users.defaultUserShell = pkgs-unstable.fish;
+  environment.shells = with pkgs-unstable; [ fish ];
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -89,31 +89,14 @@
     uid = 1000;
   };
 
-  users.users.monkey = {
-    isNormalUser = true;
-    description = "monkey";
-    home = "/home/monkey";
-  };
-
   nix.settings.trusted-users = [ "root" "@wheel"];
 
   environment.systemPackages = 
-  ( with pkgs; [
+  ( with pkgs-unstable; [
+    baobab
     cargo
     delve
     git
-    home-manager
-    go
-    nil
-    rustc
-    vim
-    wget
-    zellij
-  ])
-
-  ++
-
-  (with pkgs-unstable; [
     gnome.gdm
     gnome.gnome-control-center
     gnome.gnome-disk-utility
@@ -125,17 +108,28 @@
     gnome.gvfs
     gnome.mutter
     gnome.nautilus
+    gnome.simple-scan
     gnome.sushi
+    go
     helix
+    home-manager
+    nil
+    rustc
     simplex-chat-desktop
     synology-drive-client
+    tracker
+    vim
+    wget
+    zellij
   ]);
  
   # System Version
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
   
   # Nix Flakes ❄️
-  nix.package= pkgs.nixFlakes;
+  nix.package= pkgs-unstable.nixFlakes;
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
+
+  # catppuccin.flavour = "mocha";
 }
