@@ -1,4 +1,4 @@
-{ pkgs-unstable, ... }:
+{ pkgs, ... }:
 
 # ██╗  ██╗ ██████╗ ███╗   ███╗███████╗
 # ██║  ██║██╔═══██╗████╗ ████║██╔════╝
@@ -30,7 +30,7 @@
   # catppuccin.flavour = "mocha";
   
   # Packages to install
-  home.packages = with pkgs-unstable; [
+  home.packages = with pkgs; [
 
     # Main
     brave
