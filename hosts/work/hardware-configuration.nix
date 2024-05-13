@@ -24,6 +24,11 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
+  fileSystems."/home/hacky/syn_mov" =
+    { device = "/dev/disk/by-uuid/56c86dd8-b8a7-412d-b0df-05f72b581283";
+      fsType = "ext4";
+    };
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
