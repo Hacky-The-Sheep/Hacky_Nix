@@ -2,9 +2,10 @@
 wayland.windowManager.hyprland = {
   enable = true;
   enableNvidiaPatches = true;
+  catppuccin.enable = true;
 
   settings = {
-    source = "~/Hacky_Nix/themes/mocha.conf";
+    # source = "~/Hacky_Nix/themes/mocha.conf";
     exec-once = [
       "waybar"
       "dunst"
