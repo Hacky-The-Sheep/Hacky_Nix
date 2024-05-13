@@ -172,7 +172,6 @@
     gnome.mutter
     gnome.nautilus
     gnome.sushi
-    haskellPackages.wacom-daemon
   ]);
 
   # System Version
