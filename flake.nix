@@ -82,6 +82,7 @@
             inherit pkgs-stable;
           };
           modules = [ 
+            catppuccin.nixosModules.catppuccin
             ./hosts/home/configuration.nix
           ];
         };
@@ -119,7 +120,10 @@
       	home = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;
         	extraSpecialArgs = { inherit inputs; };
-        	modules = [ ./hosts/home/home.nix ];
+        	modules = [ 
+            catppuccin.homeManagerModules.catppuccin
+            ./hosts/home/home.nix 
+          ];
       };
     };
   };
