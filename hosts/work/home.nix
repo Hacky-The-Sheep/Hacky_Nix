@@ -30,6 +30,9 @@
   # Catppuccin
   catppuccin.flavour = "mocha";
 
+  # Must be enabled for cat/nix to work
+  xdg.enable = true;
+
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
 
