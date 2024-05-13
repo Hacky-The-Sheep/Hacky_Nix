@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }:
+{ pkgs, ... }:
 
 # ██     ██  ██████  ██████  ██   ██ 
 # ██     ██ ██    ██ ██   ██ ██  ██  
@@ -158,7 +158,7 @@
 
   ++
 
-  (with pkgs-unstable; [
+  (with pkgs; [
     simplex-chat-desktop
     gnome.gdm
     gnome.gnome-control-center

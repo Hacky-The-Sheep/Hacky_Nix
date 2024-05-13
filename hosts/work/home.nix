@@ -18,7 +18,7 @@
       # ../../system/gtk.nix
 
       # Hyprland
-      ../../apps/dunst.nix
+      # ../../apps/dunst.nix
       ../../apps/rofi.nix
       ../../wm/hyprland.nix
       ../../wm/waybar.nix
