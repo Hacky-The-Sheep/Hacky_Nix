@@ -23,6 +23,9 @@
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
 
+  # Must be enabled for cat/nix to work
+  xdg.enable = true;
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
     
