@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-stable, ... }:
 
 # ██     ██  ██████  ██████  ██   ██ 
 # ██     ██ ██    ██ ██   ██ ██  ██  
@@ -134,7 +134,7 @@
   };
 
   environment.systemPackages = 
-  (with pkgs; [
+  (with pkgs-stable; [
     age
     cargo
     delve
@@ -172,6 +172,7 @@
     gnome.mutter
     gnome.nautilus
     gnome.sushi
+    haskellPackages.wacom-daemon
   ]);
 
   # System Version
