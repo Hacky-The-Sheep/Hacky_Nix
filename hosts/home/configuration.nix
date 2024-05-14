@@ -99,7 +99,7 @@
     allowedTCPPorts = [ 9090 22 80 ];
   };
 
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Define a user account
   users.users.hacky = {
