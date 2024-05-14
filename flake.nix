@@ -8,7 +8,6 @@
     nixpkgs-stable.url = "nixpkgs/nixos-23.11";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     hyprland.url = "github:hyprwm/Hyprland";
-    # sops-nix.url = "github:Mic92/sops-nix";
     catppuccin.url = "github:catppuccin/nix";
 
     home-manager = {
