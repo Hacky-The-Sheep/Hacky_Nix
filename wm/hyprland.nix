@@ -1,7 +1,7 @@
 {
 wayland.windowManager.hyprland = {
   enable = true;
-  enableNvidiaPatches = true;
+  # enableNvidiaPatches = true;
   catppuccin.enable = true;
 
   settings = {

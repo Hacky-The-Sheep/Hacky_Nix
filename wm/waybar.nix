@@ -1,6 +1,7 @@
 {
   programs.waybar = {
     enable = true;
+    catppucin.enable = true;
 
     # -- The Bar -- #
     settings = {

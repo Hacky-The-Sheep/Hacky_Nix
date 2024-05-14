@@ -18,6 +18,12 @@
       # System
       ../../system/gtk.nix
       ../../apps/firefox.nix
+
+      # Hyprland
+      ../../apps/dunst.nix
+      ../../apps/rofi.nix
+      ../../wm/hyprland.nix
+      ../../wm/waybar.nix
     ];
 
   home.username = "hacky";
@@ -43,6 +49,18 @@
     signal-desktop
     texliveSmall
     thunderbird
+    
+    # Hyprland
+    brightnessctl
+    dunst
+    grim
+    mpvpaper
+    rofi
+    rofimoji
+    slurp
+    swappy
+    swaylock-effects
+    swww
     
     # Terminal Programs
     openvpn
