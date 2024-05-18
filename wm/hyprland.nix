@@ -1,7 +1,6 @@
 {
 wayland.windowManager.hyprland = {
   enable = true;
-  # enableNvidiaPatches = true;
   catppuccin.enable = true;
 
   settings = {
@@ -14,7 +13,6 @@ wayland.windowManager.hyprland = {
       "synology-drive"
       "swww img --transition-type wipe --transition-angle 30 --transition-step 90 ~/Pictures/Wallpapers/cat_wave.png"
     ];
-    # source = "~/Hacky_Nix/themes/mocha.conf";
 
     # Set the default monitor
     monitor = ", highrr, 0x0, 1";
@@ -118,7 +116,7 @@ wayland.windowManager.hyprland = {
       "$mod, P, pseudo, # dwindle"
       "$mod, O, togglesplit, # dwindle"
       "$mod, S, exec, slurp | grim -g - - | swappy -f -"
-      "$mod, L, exec, bash ~/Scripts/swaylock.sh"
+      "$mod, L, exec, bash ~/scripts/swaylock.sh"
       "$mod, J, exec, rofimoji"
 
       ## --- Wallpaper Changes --- ##

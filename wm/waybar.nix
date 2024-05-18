@@ -27,7 +27,6 @@
           "network"
           "bluetooth"
           "battery"
-          "backlight"
           "pulseaudio"
           "pulseaudio#microphone"
           "user"
@@ -35,17 +34,17 @@
         ];
 
         "hyprland/window" = {
-          "format" = "󰊠";
+          "format" = " ";
         };
 
         "hyprland/workspaces" = {
           "sort-by-name" = true;
-          "format" = "󱙝";
+          "format" = " ";
           "persistent-workspaces" = {
-            "1" = "󱙝";
-            "2" = "󱙝";
-            "3" = "󱙝";
-            "4" = "󱙝";
+            "1" = " ";
+            "2" = " ";
+            "3" = " ";
+            "4" = " ";
           };
         };
 
@@ -61,7 +60,7 @@
         };
         
         "clock" = {
-          format = "{: %I:%M    %b %e, %y}";
+          format = "{:%I:%M    %b %e, %y}";
           interval = 60;
         };
 
