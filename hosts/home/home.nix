@@ -50,6 +50,7 @@
     signal-desktop
     texliveSmall
     thunderbird
+    ungoogled-chromium
     
     # Hyprland
     brightnessctl
