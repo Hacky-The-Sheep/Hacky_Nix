@@ -43,7 +43,8 @@
     fastfetch
     glow
     kitty
-    ollama
+    # ollama
+    monero-gui
     pandoc
     pop
     signal-desktop
