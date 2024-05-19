@@ -44,6 +44,7 @@
     glow
     kitty
     # ollama
+    librewolf
     monero-gui
     pandoc
     pop
