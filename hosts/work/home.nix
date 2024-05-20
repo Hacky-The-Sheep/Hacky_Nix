@@ -46,9 +46,9 @@
     # Main
     brave
     fastfetch
-    # firefox
     glow
     kitty
+    librewolf
     pandoc
     signal-desktop
     texliveSmall
@@ -67,9 +67,6 @@
     swappy
     swaylock-effects
     swww
-
-    # Catppuccin 😹
-    # catppuccin-gtk
 
     # Terminal Programs
     bat
