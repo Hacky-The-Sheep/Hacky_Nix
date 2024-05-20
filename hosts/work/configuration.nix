@@ -26,6 +26,25 @@
   # Gnome Keyring for Hyprland
   security.pam.services.login.enableGnomeKeyring = true;
 
+  # Samba
+  services.samba = {
+    enable = true;
+    openFirewall = true;
+    securityType = "user";
+    shares = {
+      public = {
+        path = "/home/hacky/syn_mov";
+        "guest ok" = "yes";
+      };
+    };
+  };
+
+  services.samba-wsdd = {
+    enable = true;
+    openFirewall = true;
+  };
+  networking.firewall.allowPing = true;
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
