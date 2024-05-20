@@ -99,7 +99,7 @@
   services.printing.drivers = [ pkgs.brlaser ];
   services.avahi = {
     enable = true;
-    nssmdns = true;
+    nssmdns4 = true;
     openFirewall = true;
   };
   
@@ -120,7 +120,7 @@
     pulse.enable = true;
   };
 
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
   services.udev.packages = with pkgs; [
     gnome.gnome-settings-daemon
   ];
