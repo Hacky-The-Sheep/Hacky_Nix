@@ -19,6 +19,15 @@
           PageSize = "A4";
         };
       }
+      {
+        name = "Toshiba_Color";
+        location = "Work";
+        deviceUri = "http://10.0.2.74";
+        model = "drv:///sample.drv/generic.ppd";
+        ppdOptions = {
+          PageSize = "A4";
+        };
+      }
     ];
     ensureDefaultPrinter = "TechDeckStudent";
   };
