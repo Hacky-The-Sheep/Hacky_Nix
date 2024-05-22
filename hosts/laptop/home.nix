@@ -36,11 +36,10 @@
     brave
     fastfetch
     kitty
+    librewolf
     signal-desktop
     pop
 
-    # Test
-    
     # Terminal Programs
     openvpn
     ripgrep
