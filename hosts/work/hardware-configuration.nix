@@ -8,7 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "thunderbolt" "xhci_pci" "ahci" "usbhid" "usb_storage" "uas" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "nvme" "thunderbolt" "xhci_pci" "ahci" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
@@ -21,24 +21,7 @@
   fileSystems."/boot" =
     { device = "/dev/disk/by-uuid/59D6-630E";
       fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
     };
-
-  fileSystems."/home/hacky/syn_mov" =
-  { device = "/dev/disk/by-uuid/56c86dd8-b8a7-412d-b0df-05f72b581283";
-    fsType = "ext4";
-  };
-
-  fileSystems."/home/hacky/syn_tv" =
-  { device = "/dev/disk/by-uuid/33d1ab80-659d-4c9f-aa12-e0fd30a4c20c";
-    fsType = "ext4";
-  };
-
-  fileSystems."/home/hacky/syn_games" =
-  { device = "/dev/disk/by-uuid/ce9af1fa-1fa2-4a2e-8edb-dff502898156";
-    fsType = "ext4";
-  };
-
 
   swapDevices = [ ];
 
