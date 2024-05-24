@@ -172,6 +172,7 @@
     vim
     wget
     wineWowPackages.stable
+    xmrig
     zellij
     ])
 
