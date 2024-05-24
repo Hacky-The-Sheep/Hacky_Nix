@@ -52,6 +52,7 @@
     texliveSmall
     thunderbird
     ungoogled-chromium
+    xmrig
     
     # Hyprland
     brightnessctl
