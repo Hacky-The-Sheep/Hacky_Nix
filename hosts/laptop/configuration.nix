@@ -131,5 +131,5 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
 
-  catppuccin.flavour = "mocha";
+  catppuccin.flavor = "mocha";
 }
