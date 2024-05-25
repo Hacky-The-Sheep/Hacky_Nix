@@ -2,6 +2,7 @@
 
 {
  environment.systemPackages = with pkgs; [
+  clippy
   marksman
   rust-analyzer
   rustc
