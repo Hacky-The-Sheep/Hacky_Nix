@@ -1,5 +1,5 @@
 {
-  catppuccin.flavour = "mocha";
+  catppuccin.flavor = "mocha";
   
   programs.btop = {
     enable = true;

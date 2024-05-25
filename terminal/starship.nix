@@ -1,7 +1,7 @@
 { pkgs, ... }: 
 
 {
-  catppuccin.flavour = "mocha";
+  catppuccin.flavor = "mocha";
   
   programs.starship = {
     enable = true;
