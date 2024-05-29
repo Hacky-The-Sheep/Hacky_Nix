@@ -39,12 +39,13 @@
   home.packages = with pkgs; [
 
     # Main
+    alacritty
     brave
     fastfetch
     glow
     kitty
     # ollama
-    librewolf
+    # librewolf
     monero-gui
     pandoc
     pop
@@ -53,6 +54,12 @@
     thunderbird
     ungoogled-chromium
     xmrig
+    
+    # Testing!
+    typst
+    typstfmt
+    typst-lsp
+    typst-live
     
     # Hyprland
     brightnessctl
