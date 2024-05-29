@@ -11,7 +11,7 @@
     [
       ../../hosts/work/hardware-configuration.nix
       ../../hardware/bluetooth.nix
-      ../../hardware/work_nvidia.nix
+      # ../../hardware/work_nvidia.nix
       ../../system/printers.nix
       ../../system/udev.nix
       ../../hardware/system76.nix
@@ -70,24 +70,14 @@
     enable = true;
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
+    videoDrivers = [ "amdgpu" ];
   };  
 
-  # KDE
-  # services.xserver = {
-  #   enable = true;
-  #   displayManager.sddm.enable = true;
-  #   desktopManager.plasma5.enable = true;
-  # };
+  hardware.opengl.extraPackages = with pkgs; [
+  rocmPackages.clr.icd
+  ];
 
   programs.dconf.enable = true;
-
-  # RDP
-
-  # services.xrdp = {
-  #   enable = true;
-  #   defaultWindowManager = "startplasma-x11";
-  #   openFirewall = true;
-  # };
 
   ## Enable
   # programs.hyprland = {
