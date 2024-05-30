@@ -67,8 +67,12 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    desktopManager.gnome.enable = true;
-    displayManager.gdm.enable = true;
+    libinput.enable = true;
+    displayManager.lightdm.enable = true;
+    desktopManager = {
+      cinnamon.enable = true;
+    };
+    displayManager.defaultSession = "cinnamon";
   };
 
   programs.dconf.enable = true;
@@ -78,8 +82,6 @@
     enable = true;
     allowedTCPPorts = [ 9090 22 80 ];
   };
-
-  services.xserver.libinput.enable = true;
 
   # Define a user account
   users.users.hacky = {
