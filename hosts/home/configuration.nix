@@ -77,26 +77,17 @@
   # Gnome
   services.xserver = {
     enable = true;
-    desktopManager.gnome.enable = true;
-    displayManager.gdm.enable = true;
+    libinput.enable = true;
+    displayManager.lightdm.enable = true;
+    desktopManager = {
+      cinnamon.enable = true;
+    };
+    displayManager.defaultSession = "cinnamon";
+    # desktopManager.gnome.enable = true;
+    # displayManager.gdm.enable = true;
   };
 
-  # KDE
-  # services.xserver = {
-  #   enable = true;
-  #   displayManager.sddm.enable = true;
-  #   desktopManager.plasma5.enable = true;
-  # };
-
   programs.dconf.enable = true;
-
-  # RDP
-
-  # services.xrdp = {
-  #   enable = true;
-  #   defaultWindowManager = "startplasma-x11";
-  #   openFirewall = true;
-  # };
   
   ## Open Firewall Ports
   networking.firewall = {
