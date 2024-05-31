@@ -15,7 +15,7 @@
       ../../hardware/system76.nix
       ../../system/fonts.nix
       ../../system/udev.nix
-      ../../system/gnome.nix
+      # ../../system/gnome.nix
       ../../system/language_servers.nix
     ];
 

@@ -39,39 +39,22 @@
   home.packages = with pkgs; [
 
     # Main
-    alacritty
     brave
     fastfetch
     glow
     kitty
-    # ollama
-    # librewolf
     monero-gui
     pandoc
     pop
     signal-desktop
     texliveSmall
     thunderbird
-    ungoogled-chromium
-    xmrig
     
     # Testing!
     typst
     typstfmt
     typst-lsp
     typst-live
-    
-    # Hyprland
-    brightnessctl
-    dunst
-    grim
-    mpvpaper
-    rofi
-    rofimoji
-    slurp
-    swappy
-    swaylock-effects
-    swww
     
     # Terminal Programs
     openvpn
