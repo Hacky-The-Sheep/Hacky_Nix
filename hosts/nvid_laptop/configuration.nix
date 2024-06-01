@@ -129,7 +129,7 @@
 ];
  
   # System Version
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
   
   # Nix Flakes ❄️
   nix.package= pkgs.nixFlakes;
