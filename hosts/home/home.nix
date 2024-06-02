@@ -70,9 +70,7 @@
     thc-hydra
 
     # "Work"
-    libreoffice
-    mullvad-vpn
-    
+    libreoffice    
     # Fun
     mpv
     obs-studio

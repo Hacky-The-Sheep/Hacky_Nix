@@ -136,6 +136,7 @@
 
   (with pkgs; [
     goreleaser
+    mullvad-vpn
     obsidian
     simplex-chat-desktop
   ]);
