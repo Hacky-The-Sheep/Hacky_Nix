@@ -16,7 +16,7 @@
       ../../system/udev.nix
       ../../hardware/system76.nix
       ../../system/fonts.nix
-      ../../system/gnome.nix
+      # ../../system/gnome.nix
       ../../system/language_servers.nix
     ];
 
@@ -68,13 +68,17 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-    videoDrivers = [ "amdgpu" ];
-  };  
+    libinput.enable = true;
+    displayManager.lightdm.enable = true;
+    desktopManager = {
+      cinnamon.enable = true;
+    };
+    displayManager.defaultSession = "cinnamon";
+    videoDrivers = [ "amdgpu "];
+  };
 
   hardware.opengl.extraPackages = with pkgs; [
-  rocmPackages.clr.icd
+    rocmPackages.clr.icd
   ];
 
   programs.dconf.enable = true;

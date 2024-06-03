@@ -83,8 +83,6 @@
       cinnamon.enable = true;
     };
     displayManager.defaultSession = "cinnamon";
-    # desktopManager.gnome.enable = true;
-    # displayManager.gdm.enable = true;
   };
 
   programs.dconf.enable = true;
