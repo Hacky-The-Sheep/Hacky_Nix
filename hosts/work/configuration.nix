@@ -95,13 +95,6 @@
   #   trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   # };
 
-  # Remove Gnome bloat
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-photos
-    gnome-tour
-    epiphany
-  ]);
-
   # Virtualization
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
@@ -134,9 +127,6 @@
   };
 
   services.libinput.enable = true;
-  services.udev.packages = with pkgs; [
-    gnome.gnome-settings-daemon
-  ];
 
   # Define a user account
   users.users.hacky = {
@@ -148,7 +138,6 @@
 
   environment.systemPackages = 
   (with pkgs-stable; [
-    age
     cargo
     delve
     discord
@@ -156,17 +145,14 @@
     git
     home-manager
     go
-    # gopls
     makemkv
     microsoft-edge-dev
     nil
-    # rustc
     steam
     synology-drive-client
     vim
     wget
     wineWowPackages.stable
-    xmrig
     zellij
     ])
 
@@ -174,18 +160,7 @@
 
   (with pkgs; [
     simplex-chat-desktop
-    gnome.gdm
-    gnome.gnome-control-center
-    gnome.gnome-settings-daemon
-    gnome.gnome-disk-utility
-    gnome.gnome-keyring
-    gnome.gnome-session
-    gnome.gnome-shell
-    gnome.gnome-tweaks
-    gnome.gvfs
-    gnome.mutter
-    gnome.nautilus
-    gnome.sushi
+    xmrig-mo
   ]);
 
   # System Version
