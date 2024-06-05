@@ -28,7 +28,7 @@
     ];
 
   # Catppuccin
-  catppuccin.flavour = "mocha";
+  catppuccin.flavor = "mocha";
 
   # Must be enabled for cat/nix to work
   xdg.enable = true;
