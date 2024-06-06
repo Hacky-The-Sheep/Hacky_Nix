@@ -10,6 +10,9 @@
         cursorline = true;
         auto-format = true;
       };
+      editor.lsp = {
+        auto-signature-help = false;
+      };
       editor.statusline = {
         left = [ "mode" "spinner" "read-only-indicator" "file-modification-indicator"];
         center = [ "file-name" ];

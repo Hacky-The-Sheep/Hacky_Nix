@@ -48,7 +48,7 @@
     fastfetch
     glow
     kitty
-    librewolf
+    monero-gui
     pandoc
     signal-desktop
     texliveSmall
