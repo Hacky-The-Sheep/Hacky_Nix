@@ -50,6 +50,19 @@
     texliveSmall
     thunderbird
     
+    # Hyprland Packages
+    brightnessctl
+    dunst
+    grim
+    mpvpaper
+    polkit_gnome
+    rofi
+    rofimoji
+    slurp
+    swappy
+    swaylock-effects
+    swww
+
     # Testing!
     typst
     typstfmt
