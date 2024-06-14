@@ -107,6 +107,13 @@
     rhythmbox
 ];
  
+  dconf.settings = {
+    "org/virt-manager/virt-manager/connections" = {
+    autoconnect = ["qemu:///system"];
+    uris = ["qemu:///system"];
+    };
+  };
+
   # Home Manager Version
   home.stateVersion = "24.05";
 }
