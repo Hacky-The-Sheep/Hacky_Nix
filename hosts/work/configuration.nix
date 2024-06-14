@@ -16,7 +16,7 @@
       ../../system/udev.nix
       ../../hardware/system76.nix
       ../../system/fonts.nix
-      # ../../system/gnome.nix
+      ../../system/gnome.nix
       ../../system/language_servers.nix
     ];
 
@@ -68,32 +68,59 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    libinput.enable = true;
-    displayManager.lightdm.enable = true;
-    desktopManager = {
-      cinnamon.enable = true;
-    };
-    displayManager.defaultSession = "cinnamon";
+    # libinput.enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+    # displayManager.lightdm.enable = true;
+    # desktopManager = {
+    #   cinnamon.enable = true;
+    # };
+    # displayManager.defaultSession = "cinnamon";
     videoDrivers = [ "amdgpu "];
   };
 
-  hardware.opengl.extraPackages = with pkgs; [
-    rocmPackages.clr.icd
+  # OPENCL
+   hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+    extraPackages = with pkgs; [
+      rocmPackages_5.clr.icd
+      rocmPackages_5.clr
+      rocmPackages_5.rocminfo
+      rocmPackages_5.rocm-runtime
+    ];
+  };
+  # This is necesery because many programs hard-code the path to hip
+  systemd.tmpfiles.rules = [
+    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages_5.clr}"
   ];
+  environment.variables = {
+    # As of ROCm 4.5, AMD has disabled OpenCL on Polaris based cards. So this is needed if you have a 500 series card. 
+    ROC_ENABLE_PRE_VEGA = "1";
+  };
+
+  #########
 
   programs.dconf.enable = true;
+  dconf.settings = {
+    "org/virt-manager/virt-manager/connections" = {
+    autoconnect = ["qemu:///system"];
+    uris = ["qemu:///system"];
+    };
+  };
 
   ## Enable
-  # programs.hyprland = {
-  #   enable = true;
-  #   package = inputs.hyprland.packages.${pkgs.system}.hyprland; 
-  # };
+  programs.hyprland = {
+    enable = true;
+    # package = inputs.hyprland.packages.${pkgs.system}.hyprland; 
+  };
 
   # Cachix
-  # nix.settings = {
-  #   substituters = ["https://hyprland.cachix.org"];
-  #   trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  # };
+  nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
 
   # Virtualization
   virtualisation.libvirtd.enable = true;
@@ -132,7 +159,7 @@
   users.users.hacky = {
     isNormalUser = true;
     description = "hacky";
-    extraGroups = [ "networkmanager" "wheel" "plugdev" "dialout"];
+    extraGroups = [ "networkmanager" "wheel" "plugdev" "dialout" "libvirtd"];
     uid = 1000;
   };
 
