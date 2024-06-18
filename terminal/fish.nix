@@ -36,7 +36,10 @@
       ymp3 = "yt-dlp --extract-audio --audio-format mp3 ";
       ls = "exa -1";
       sls = "exa -a --color --icons";
+
+      # General
       zj = "zellij";
+      screens = "rm /home/hacky/Pictures/Screenshots/Screenshot* ";
 
       # NixOS ❄
       ## Laptop
