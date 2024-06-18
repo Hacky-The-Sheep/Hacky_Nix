@@ -15,7 +15,7 @@
       ../../hardware/system76.nix
       ../../system/fonts.nix
       ../../system/udev.nix
-      # ../../system/gnome.nix
+      ../../system/gnome.nix
       ../../system/language_servers.nix
     ];
 
@@ -77,13 +77,11 @@
   # Gnome
   services.xserver = {
     enable = true;
-    libinput.enable = true;
-    displayManager.lightdm.enable = true;
-    desktopManager = {
-      cinnamon.enable = true;
-    };
-    displayManager.defaultSession = "cinnamon";
+    # libinput.enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
   };
+  # services.libinput.enable = true;
 
   programs.dconf.enable = true;
   
