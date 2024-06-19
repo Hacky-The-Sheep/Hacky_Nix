@@ -11,7 +11,7 @@
     [
       ../../hosts/work/hardware-configuration.nix
       ../../hardware/bluetooth.nix
-      ../../hardware/work_nvidia.nix
+      # ../../hardware/work_nvidia.nix
       ../../system/printers.nix
       ../../system/udev.nix
       ../../hardware/system76.nix
@@ -54,6 +54,7 @@
     # libinput.enable = true;
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
+    videoDrivers = [ "amdgpu" ];
   };
 
   programs.dconf.enable = true;
@@ -146,4 +147,7 @@
   hardware.cpu.x86.msr.enable = true;
 
   #TEST ---> DELETE IF NOT WORKING
+  hardware.opengl.extraPackages = with pkgs; [
+    rocmPackages.clr.icd
+  ];
 }
