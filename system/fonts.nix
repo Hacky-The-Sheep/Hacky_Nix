@@ -9,5 +9,6 @@
   	iosevka
     monaspace
     powerline
+    source-sans-pro
   ];
 }
