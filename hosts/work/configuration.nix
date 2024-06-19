@@ -11,7 +11,7 @@
     [
       ../../hosts/work/hardware-configuration.nix
       ../../hardware/bluetooth.nix
-      # ../../hardware/work_nvidia.nix
+      ../../hardware/work_nvidia.nix
       ../../system/printers.nix
       ../../system/udev.nix
       ../../hardware/system76.nix
@@ -26,26 +26,9 @@
   # Gnome Keyring for Hyprland
   security.pam.services.login.enableGnomeKeyring = true;
 
-  # Samba
-  services.samba = {
-    enable = true;
-    openFirewall = true;
-    securityType = "user";
-    shares = {
-      public = {
-        path = "/home/hacky/syn_mov";
-        "guest ok" = "yes";
-      };
-    };
-  };
-
-  services.samba-wsdd = {
-    enable = true;
-    openFirewall = true;
-  };
   networking.firewall.allowPing = true;
 
-  # Bootloader.
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -71,36 +54,7 @@
     # libinput.enable = true;
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
-    # displayManager.lightdm.enable = true;
-    # desktopManager = {
-    #   cinnamon.enable = true;
-    # };
-    # displayManager.defaultSession = "cinnamon";
-    videoDrivers = [ "amdgpu "];
   };
-
-  # OPENCL
-   hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-    extraPackages = with pkgs; [
-      rocmPackages_5.clr.icd
-      rocmPackages_5.clr
-      rocmPackages_5.rocminfo
-      rocmPackages_5.rocm-runtime
-    ];
-  };
-  # This is necesery because many programs hard-code the path to hip
-  systemd.tmpfiles.rules = [
-    "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages_5.clr}"
-  ];
-  environment.variables = {
-    # As of ROCm 4.5, AMD has disabled OpenCL on Polaris based cards. So this is needed if you have a 500 series card. 
-    ROC_ENABLE_PRE_VEGA = "1";
-  };
-
-  #########
 
   programs.dconf.enable = true;
 
@@ -115,11 +69,6 @@
     substituters = ["https://hyprland.cachix.org"];
     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
   };
-
-  # Virtualization
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
-  virtualisation.spiceUSBRedirection.enable = true;
 
   # Printing
   services.printing.enable = true;
@@ -142,8 +91,8 @@
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
+    # alsa.enable = true;
+    # alsa.support32Bit = true;
     pulse.enable = true;
   };
 
@@ -181,7 +130,8 @@
 
   (with pkgs; [
     simplex-chat-desktop
-    xmrig-mo
+    xmrig
+    cudaPackages.cudatoolkit
   ]);
 
   # System Version
@@ -191,4 +141,9 @@
   nix.package= pkgs.nixFlakes;
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
+
+  # Enable MSR Mod
+  hardware.cpu.x86.msr.enable = true;
+
+  #TEST ---> DELETE IF NOT WORKING
 }

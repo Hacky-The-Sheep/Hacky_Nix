@@ -12,10 +12,16 @@
 
   hardware.nvidia = {
     modesetting.enable = true;
+    nvidiaPersistenced = true;
+    nvidiaSettings = true;
+    open = false;
+    package = config.boot.kernelPackages.nvidiaPackages.beta;
     powerManagement.enable = false;
     powerManagement.finegrained = false;
-    open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    prime = {
+      offload.enable = true;
+      amdgpuBusId = "PCI:11:0:0";
+      nvidiaBusId = "PCI:1:0:0";
+    };
   };
 }
