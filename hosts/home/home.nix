@@ -17,7 +17,7 @@
 
       # System
       ../../system/gtk.nix
-      ../../apps/firefox.nix
+      # ../../apps/firefox.nix
 
       # Hyprland
       ../../apps/dunst.nix
@@ -43,6 +43,7 @@
     fastfetch
     glow
     kitty
+    librewolf
     monero-gui
     pandoc
     pop

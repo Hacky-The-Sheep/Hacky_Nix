@@ -15,7 +15,7 @@
       ../../hardware/system76.nix
       ../../system/fonts.nix
       ../../system/udev.nix
-      ../../system/gnome.nix
+      # ../../system/gnome.nix
       ../../system/language_servers.nix
     ];
 
@@ -78,10 +78,13 @@
   services.xserver = {
     enable = true;
     # libinput.enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
+    # displayManager.gdm.enable = true;
+    # desktopManager.gnome.enable = true;
+    displayManager.sddm.enable = true;
+    desktopManager.plasma6.enable = true;
+    displayManager.defaultSession = "plasma";
+    displayManager.sddm.wayland.enable = true;
   };
-  # services.libinput.enable = true;
 
   programs.dconf.enable = true;
   
