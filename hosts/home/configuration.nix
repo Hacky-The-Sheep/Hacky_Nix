@@ -15,7 +15,6 @@
       ../../hardware/system76.nix
       ../../system/fonts.nix
       ../../system/udev.nix
-      # ../../system/gnome.nix
       ../../system/language_servers.nix
     ];
 
@@ -74,16 +73,16 @@
   };
 
   # Enable the X11 windowing system.
-  # Gnome
   services.xserver = {
     enable = true;
-    # libinput.enable = true;
-    # displayManager.gdm.enable = true;
-    # desktopManager.gnome.enable = true;
-    displayManager.sddm.enable = true;
+  };
+
+  # Plasma6
+  services = {
     desktopManager.plasma6.enable = true;
     displayManager.defaultSession = "plasma";
     displayManager.sddm.wayland.enable = true;
+    displayManager.sddm.enable = true;
   };
 
   programs.dconf.enable = true;
@@ -102,12 +101,6 @@
     description = "hacky";
     extraGroups = [ "networkmanager" "wheel" "plugdev" "dialout"];
     uid = 1000;
-  };
-
-  users.users.monkey = {
-    isNormalUser = true;
-    description = "monkey";
-    home = "/home/monkey";
   };
 
   # Partition Manager
