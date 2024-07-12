@@ -44,7 +44,7 @@
       # NixOS ❄
       ## Laptop
       lhmu = "home-manager switch --flake .#laptop";
-      lnup = "sudo nix-channel --update && sudo nixos-rebuild switch --flake .#laptop";
+      lnup = "nix flake update && sudo nixos-rebuild switch --flake .#laptop && home-manager switch --flake .#laptop";
 
       ## Work Desktop
       whmu = "home-manager switch --flake .#work";

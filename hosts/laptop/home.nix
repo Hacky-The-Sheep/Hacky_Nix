@@ -16,7 +16,7 @@
       ../../terminal/install.nix
 
       # System
-      ../../system/gtk.nix
+      # ../../system/gtk.nix
     ];
 
   home.username = "hacky";
@@ -62,7 +62,7 @@
     # Fun
     mpv
     qbittorrent
-    rhythmbox
+    # rhythmbox
 ];
  
   # Home Manager Version

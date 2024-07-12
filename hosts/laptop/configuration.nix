@@ -14,7 +14,7 @@
       ../../hardware/bluetooth.nix
       ../../system/fonts.nix
       ../../system/udev.nix
-      ../../system/gnome.nix
+      # ../../system/gnome.nix
       ../../system/language_servers.nix
     ];
   
@@ -67,13 +67,14 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    libinput.enable = true;
-    displayManager.lightdm.enable = true;
-    desktopManager = {
-      cinnamon.enable = true;
-    };
-    displayManager.defaultSession = "cinnamon";
   };
+
+  # Plasma6
+  services = {
+    desktopManager.plasma6.enable = true;
+    displayManager.sddm.enable = true;
+  };
+    
 
   programs.dconf.enable = true;
 
@@ -99,19 +100,6 @@
     cargo
     delve
     git
-    gnome.gdm
-    gnome.gnome-control-center
-    gnome.gnome-disk-utility
-    gnome.gnome-keyring
-    gnome.gnome-session
-    gnome.gnome-settings-daemon
-    gnome.gnome-shell
-    gnome.gnome-tweaks
-    gnome.gvfs
-    gnome.mutter
-    gnome.nautilus
-    gnome.simple-scan
-    gnome.sushi
     go
     helix
     home-manager
