@@ -16,7 +16,6 @@
       ../../terminal/install.nix
 
       # System
-      ../../system/gtk.nix
       # ../../apps/firefox.nix
 
       # Hyprland
