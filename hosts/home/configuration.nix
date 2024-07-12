@@ -123,6 +123,7 @@
     git
     home-manager
     go
+    microsoft-edge-dev
     nil
     rustc
     synology-drive-client
