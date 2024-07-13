@@ -27,8 +27,6 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
-  # catppuccin.flavour = "mocha";
-  
   # Packages to install
   home.packages = with pkgs; [
 
@@ -43,6 +41,7 @@
     # Terminal Programs
     openvpn
     ripgrep
+    unzip
     yt-dlp
 
     # Pentesting
