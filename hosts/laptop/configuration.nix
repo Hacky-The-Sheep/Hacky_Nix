@@ -96,13 +96,13 @@
 
   environment.systemPackages = 
   ( with pkgs; [
-    baobab
     cargo
     delve
     git
     go
     helix
     home-manager
+    microsoft-edge
     nil
     rustc
     simplex-chat-desktop
