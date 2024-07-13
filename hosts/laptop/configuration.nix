@@ -14,7 +14,6 @@
       ../../hardware/bluetooth.nix
       ../../system/fonts.nix
       ../../system/udev.nix
-      # ../../system/gnome.nix
       ../../system/language_servers.nix
     ];
   
@@ -102,7 +101,6 @@
     go
     helix
     home-manager
-    microsoft-edge
     nil
     rustc
     simplex-chat-desktop
