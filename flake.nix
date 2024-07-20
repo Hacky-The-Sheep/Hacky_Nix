@@ -2,9 +2,7 @@
   description = "Jon's Flake";
 
   inputs = {
-    # nixpkgs.url = "nixpkgs/nixos-23.11";
     nixpkgs.url = "nixpkgs/nixos-unstable";
-
     nixpkgs-stable.url = "nixpkgs/nixos-24.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     hyprland.url = "github:hyprwm/Hyprland";
@@ -38,7 +36,7 @@
         nvid_laptop = lib.nixosSystem {
           specialArgs = { inherit system inputs; };
           modules = [
-            ./hosts/nvid_laptop/configuration.nix
+            ./hosts/nvid_laptop/hardware-configuration.nix
           ];
         };
 
@@ -51,7 +49,8 @@
           modules = [ 
             nixos-hardware.nixosModules.framework-13-7040-amd
             catppuccin.nixosModules.catppuccin
-            ./hosts/laptop/configuration.nix
+            ./hosts/laptop/hardware-configuration.nix
+            ./configuration.nix
           ];
         };
 
@@ -101,11 +100,14 @@
           };
         	modules = [ 
             catppuccin.homeManagerModules.catppuccin
-          ./hosts/laptop/home.nix ];
+          ./hosts/laptop/home.nix 
+          ];
       };
       	server = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;
-        	extraSpecialArgs = { inherit inputs; };
+        	extraSpecialArgs = { 
+            inherit inputs; 
+          };
         	modules = [ ./hosts/server/home.nix ];
       };
       	work = home-manager.lib.homeManagerConfiguration {
@@ -118,7 +120,9 @@
       };
       	home = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;
-        	extraSpecialArgs = { inherit inputs; };
+        	extraSpecialArgs = { 
+            inherit inputs; 
+          };
         	modules = [ 
             catppuccin.homeManagerModules.catppuccin
             ./hosts/home/home.nix 

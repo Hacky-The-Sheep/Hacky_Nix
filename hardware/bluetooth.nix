@@ -3,5 +3,5 @@
 {
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true; # For use with HyprLand
+  # services.blueman.enable = true; # For use with HyprLand
 }

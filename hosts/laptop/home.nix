@@ -1,16 +1,8 @@
 { pkgs, ... }:
 
-# ██╗  ██╗ ██████╗ ███╗   ███╗███████╗
-# ██║  ██║██╔═══██╗████╗ ████║██╔════╝
-# ███████║██║   ██║██╔████╔██║█████╗  
-# ██╔══██║██║   ██║██║╚██╔╝██║██╔══╝  
-# ██║  ██║╚██████╔╝██║ ╚═╝ ██║███████╗
-# ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
-
 {
   # --- MODULARITY --- #
   imports = 
-
     [
       # Terminal
       ../../terminal/install.nix
@@ -31,12 +23,11 @@
   home.packages = with pkgs; [
 
     # Main
-    brave
+    # brave
     fastfetch
     kitty
     librewolf
     signal-desktop
-    pop
 
     # Terminal Programs
     openvpn
@@ -60,7 +51,7 @@
     
     # Fun
     mpv
-    qbittorrent
+    # qbittorrent
     # rhythmbox
 ];
  

@@ -1,6 +1,23 @@
 { pkgs, ... }:
 
 {
+  # Add Gnome bloat
+  environment.systemPackages = with pkgs; [
+
+    # Core Gnome
+    gnome-tweaks
+    gnome-browser-connector
+    gnomeExtensions.appindicator
+
+    # Gnome Circle
+    blanket
+    emblem
+    fragments
+    gnome.polari
+    shortwave
+    video-trimmer
+  ];
+
   # Remove the bloat
   environment.gnome.excludePackages = with pkgs; [
     baobab 
@@ -9,14 +26,5 @@
     simple-scan
     yelp
     evince
-  ];
-
-  # # Add extensions
-  environment.systemPackages = with pkgs; [
-    gnome3.gnome-tweaks
-    gnomeExtensions.rounded-window-corners
-    gnomeExtensions.vitals
-    gnomeExtensions.appindicator
-    gnomeExtensions.blur-my-shell
   ];
 }
