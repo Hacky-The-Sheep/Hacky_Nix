@@ -12,6 +12,9 @@
         style = "Regular";
       };
       font.size = 16;
+      cursor = {
+        style = "Beam";
+      };
     };
   };
 }
