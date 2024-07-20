@@ -81,7 +81,8 @@
           };
           modules = [ 
             catppuccin.nixosModules.catppuccin
-            ./hosts/home/configuration.nix
+            ./hosts/home/hardware-configuration.nix
+            ./configuration.nix
           ];
         };
       };

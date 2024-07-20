@@ -100,10 +100,14 @@
   (with pkgs-stable; [
 
     # General Purpose
+    alacritty
     brave
+    fastfetch
     fish
     git
     home-manager
+    kitty
+    signal-desktop
     synology-drive-client
     vim
     wget
@@ -117,6 +121,21 @@
 
     # Entertainment
     g4music
+    mpv
+
+    # Pentesting
+    ffuf
+    gobuster
+    john
+    nmap
+    rlwrap
+    thc-hydra
+
+    # Terminal Programs
+    openvpn
+    ripgrep
+    yt-dlp
+
 
     # Work Stuff
     libreoffice

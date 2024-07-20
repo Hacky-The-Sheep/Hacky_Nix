@@ -16,13 +16,12 @@
       ../../terminal/install.nix
 
       # System
-      # ../../apps/firefox.nix
 
       # Hyprland
-      ../../apps/dunst.nix
-      ../../apps/rofi.nix
-      ../../wm/hyprland.nix
-      ../../wm/waybar.nix
+      # ../../apps/dunst.nix
+      # ../../apps/rofi.nix
+      # ../../wm/hyprland.nix
+      # ../../wm/waybar.nix
     ];
 
   home.username = "hacky";
@@ -38,58 +37,21 @@
   home.packages = with pkgs; [
 
     # Main
-    brave
-    fastfetch
-    glow
-    kitty
-    librewolf
     monero-gui
     pandoc
     pop
-    signal-desktop
-    texliveSmall
     thunderbird
     
-    # Hyprland Packages
-    brightnessctl
-    dunst
-    grim
-    mpvpaper
-    polkit_gnome
-    rofi
-    rofimoji
-    slurp
-    swappy
-    swaylock-effects
-    swww
-
     # Testing!
     typst
     typstfmt
     typst-lsp
     typst-live
     
-    # Terminal Programs
-    openvpn
-    ripgrep
-    yt-dlp
 
-    # Pentesting
-    ffuf
-    gobuster
-    john
-    nmap
-    rlwrap
-    thc-hydra
-
-    # "Work"
-    libreoffice    
     # Fun
-    mpv
     obs-studio
-    qbittorrent
     qFlipper
-    rhythmbox
 ];
  
   # Home Manager Version
