@@ -73,7 +73,7 @@
   ## Open Firewall Ports
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 9090 22 80 46745 ];
+    allowedTCPPorts = [ 9090 22 80 46745 9091 ];
   };
 
   # Enable sound with pipewire.
