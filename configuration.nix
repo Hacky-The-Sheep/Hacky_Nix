@@ -1,9 +1,8 @@
-{ pkgs, pkgs-stable, catppuccin, ... }:
+{ pkgs, pkgs-stable, ... }:
 
 {
   imports =
     [
-      # ../../hosts/work/hardware-configuration.nix
       hardware/bluetooth.nix
       system/printers.nix
       system/udev.nix
@@ -51,15 +50,15 @@
   programs.dconf.enable = true;
 
   ## Enable
-  # programs.hyprland = {
-  #   enable = true;
-  # };
+  programs.hyprland = {
+    enable = true;
+  };
 
   # Cachix
-  # nix.settings = {
-  #   substituters = ["https://hyprland.cachix.org"];
-  #   trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  # };
+  nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
 
   # Printing
   services.printing.enable = true;
