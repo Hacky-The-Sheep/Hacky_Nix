@@ -37,7 +37,7 @@
   home.packages = with pkgs; [
 
     # Main
-    monero-gui
+    # monero-gui
     pandoc
     pop
     thunderbird
