@@ -134,7 +134,6 @@
     rofimoji
     slurp
     swappy
-    swaylock-effects
     swww
 
     # Pentesting
