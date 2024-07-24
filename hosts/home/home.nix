@@ -22,6 +22,7 @@
       ../../apps/rofi.nix
       ../../wm/hyprland.nix
       ../../wm/waybar.nix
+      ../../apps/hyprlock.nix
     ];
 
   home.username = "hacky";
