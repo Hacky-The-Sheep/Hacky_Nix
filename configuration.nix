@@ -11,11 +11,11 @@
       system/language_servers.nix
     ];
 
-  # Needed to run swaylock
-  security.pam.services.swaylock = {};
-
-  # Gnome Keyring for Hyprland
-  security.pam.services.login.enableGnomeKeyring = true;
+  # Hyprland
+  security.pam.services = {
+    login.enableGnomeKeyring = true;
+    hyprlock.enable = true;
+  };
 
   networking.firewall.allowPing = true;
 
