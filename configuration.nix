@@ -108,7 +108,7 @@
     home-manager
     kitty
     librewolf
-    signal-desktop
+    # signal-desktop
     synology-drive-client
     vim
     wget

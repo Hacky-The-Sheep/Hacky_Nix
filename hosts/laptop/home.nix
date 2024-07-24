@@ -27,7 +27,6 @@
     fastfetch
     kitty
     librewolf
-    signal-desktop
 
     # Terminal Programs
     openvpn
