@@ -9,6 +9,7 @@
       system/fonts.nix
       system/gnome.nix
       system/language_servers.nix
+      wm/hyprland.nix
     ];
 
   # Needed to run swaylock
