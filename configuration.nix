@@ -122,6 +122,18 @@
     # Entertainment
     g4music
     mpv
+    
+    # Hyprland    
+    brightnessctl
+    dunst
+    grim
+    polkit_gnome
+    rofi
+    rofimoji
+    slurp
+    swappy
+    swaylock-effects
+    swww
 
     # Pentesting
     ffuf
@@ -135,7 +147,6 @@
     openvpn
     ripgrep
     yt-dlp
-
 
     # Work Stuff
     libreoffice
