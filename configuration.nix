@@ -107,6 +107,7 @@
     git
     home-manager
     kitty
+    librewolf
     signal-desktop
     synology-drive-client
     vim
@@ -127,6 +128,7 @@
     brightnessctl
     dunst
     grim
+    hyprlock
     polkit_gnome
     rofi
     rofimoji
