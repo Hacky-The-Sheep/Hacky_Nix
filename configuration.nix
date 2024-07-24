@@ -14,7 +14,9 @@
   # Hyprland
   security.pam.services = {
     login.enableGnomeKeyring = true;
-    hyprlock.enable = true;
+    hyprlock = {
+      enable = true;
+    };
   };
 
   networking.firewall.allowPing = true;
