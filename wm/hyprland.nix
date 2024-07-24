@@ -7,7 +7,7 @@ wayland.windowManager.hyprland = {
     exec-once = [
       "waybar"
       "dunst"
-      "swww init"
+      "swww-daemon"
       "polkit_gnome"
       "NetworkManager"
       "synology-drive"
