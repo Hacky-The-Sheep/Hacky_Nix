@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, ... }:
+{ pkgs, pkgs-stable, inputs, ... }:
 
 {
   imports =
@@ -9,7 +9,6 @@
       system/fonts.nix
       system/gnome.nix
       system/language_servers.nix
-      wm/hyprland.nix
     ];
 
   # Needed to run swaylock
@@ -53,6 +52,7 @@
   ## Enable
   programs.hyprland = {
     enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
   };
 
   # Cachix

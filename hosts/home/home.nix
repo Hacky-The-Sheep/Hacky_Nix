@@ -18,10 +18,10 @@
       # System
 
       # Hyprland
-      # ../../apps/dunst.nix
-      # ../../apps/rofi.nix
-      # ../../wm/hyprland.nix
-      # ../../wm/waybar.nix
+      ../../apps/dunst.nix
+      ../../apps/rofi.nix
+      ../../wm/hyprland.nix
+      ../../wm/waybar.nix
     ];
 
   home.username = "hacky";
@@ -47,7 +47,6 @@
     typstfmt
     typst-lsp
     typst-live
-    
 
     # Fun
     obs-studio
