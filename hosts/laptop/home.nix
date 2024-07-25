@@ -9,6 +9,14 @@
 
       # System
       # ../../system/gtk.nix
+
+      # Hyprland
+      ../../apps/dunst.nix
+      ../../apps/rofi.nix
+      ../../wm/hyprland.nix
+      ../../wm/waybar.nix
+      ../../apps/hyprlock.nix
+
     ];
 
   home.username = "hacky";
@@ -22,32 +30,8 @@
   # Packages to install
   home.packages = with pkgs; [
 
-    # Main
-    # brave
-    fastfetch
-    kitty
-    librewolf
 
     # Terminal Programs
-    openvpn
-    ripgrep
-    unzip
-    yt-dlp
-
-    # Pentesting
-    ffuf
-    gobuster
-    john
-    nmap
-    rlwrap
-    thc-hydra
-
-    # "Work"
-    libreoffice
-    mullvad-vpn
-    putty
-    remmina
-    
     # Fun
     mpv
     # qbittorrent

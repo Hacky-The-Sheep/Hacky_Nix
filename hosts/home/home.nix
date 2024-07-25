@@ -50,7 +50,7 @@
     typst-live
 
     # Fun
-    obs-studio
+    # obs-studio
     qFlipper
 ];
  
