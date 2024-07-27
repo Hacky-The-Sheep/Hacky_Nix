@@ -121,7 +121,7 @@
     nil
 
     # Entertainment
-    g4music
+    # g4music
     mpv
     
     # Hyprland    
