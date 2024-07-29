@@ -41,6 +41,7 @@
     # monero-gui
     pandoc
     pop
+    signal-desktop
     thunderbird
     
     # Testing!
