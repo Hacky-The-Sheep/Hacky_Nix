@@ -74,6 +74,7 @@
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [ 9090 22 80 46745 9091 ];
+    allowedUDPPorts = [ 7236 5353 ];
   };
 
   # Enable sound with pipewire.
@@ -151,14 +152,13 @@
 
     # Work Stuff
     libreoffice
-    onlyoffice-bin
+    remmina
     ])
 
   ++
 
   (with pkgs; [
     simplex-chat-desktop
-    xmrig
   ]);
 
   # System Version
@@ -168,9 +168,6 @@
   nix.package= pkgs.nixFlakes;
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
-
-  # Enable MSR Mod
-  hardware.cpu.x86.msr.enable = true;
 
   # Catppuccin
   catppuccin = {
