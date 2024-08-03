@@ -33,15 +33,6 @@
     in {	
       nixosConfigurations = {
 
-        main = lib.nixosSystem {
-          specialArgs = {
-            inherit system inputs;
-          };
-          modules = [
-            ./configuration.nix
-          ];
-        };
-
         amd = lib.nixosSystem {
           specialArgs = {
             inherit system; 
@@ -123,7 +114,7 @@
         	modules = [ 
             catppuccin.homeManagerModules.catppuccin
             nixos-hardware.nixosModules.framework-13-7040-amd
-          ./hosts/laptop/home.nix 
+            ./hosts/laptop/home.nix 
           ];
       };
       	server = home-manager.lib.homeManagerConfiguration {

@@ -152,6 +152,7 @@
 
     # Work Stuff
     libreoffice
+    microsoft-edge-beta
     remmina
     ])
 

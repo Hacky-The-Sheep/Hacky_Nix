@@ -7,15 +7,12 @@
       # Terminal
       ../../terminal/install.nix
 
-      # System
-      # ../../system/gtk.nix
-
       # Hyprland
       ../../apps/dunst.nix
       ../../apps/rofi.nix
       ../../wm/hyprland.nix
       ../../wm/waybar.nix
-      ../../apps/hyprlock.nix
+      # ../../apps/hyprlock.nix
 
     ];
 
@@ -34,11 +31,11 @@
     # Terminal Programs
     # Fun
     mpv
+    microsoft-edge-beta
     # qbittorrent
     # rhythmbox
 ];
  
   # Home Manager Version
   home.stateVersion = "24.05";
-
 }
