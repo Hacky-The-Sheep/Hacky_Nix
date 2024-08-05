@@ -123,6 +123,7 @@
 
     # Entertainment
     # g4music
+    rhythmbox
     mpv
     
     # Hyprland    
