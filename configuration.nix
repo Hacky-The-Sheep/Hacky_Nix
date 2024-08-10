@@ -109,7 +109,6 @@
     home-manager
     kitty
     librewolf
-    # signal-desktop
     synology-drive-client
     vim
     wget
@@ -122,7 +121,6 @@
     nil
 
     # Entertainment
-    # g4music
     rhythmbox
     mpv
     
@@ -155,6 +153,7 @@
     libreoffice
     microsoft-edge-beta
     remmina
+    sshs
     ])
 
   ++

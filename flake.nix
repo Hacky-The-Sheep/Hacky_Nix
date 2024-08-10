@@ -46,9 +46,15 @@
           ];
         };
         nvid_laptop = lib.nixosSystem {
-          specialArgs = { inherit system inputs; };
-          modules = [
+          specialArgs = { 
+            inherit system;
+            inherit inputs;
+            inherit pkgs-stable;
+          };
+          modules = [ 
+            catppuccin.nixosModules.catppuccin
             ./hosts/nvid_laptop/hardware-configuration.nix
+            ./configuration.nix
           ];
         };
 
