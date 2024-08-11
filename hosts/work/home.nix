@@ -44,10 +44,6 @@
 
 
     # Main
-    brave
-    fastfetch
-    glow
-    kitty
     monero-gui
     pandoc
     signal-desktop
@@ -55,56 +51,16 @@
     xdg-desktop-portal-hyprland
     zathura
 
-    # Hyprland Packages
-    brightnessctl
-    dunst
-    grim
-    mpvpaper
-    polkit_gnome
-    rofi
-    rofimoji
-    slurp
-    swappy
-    swaylock-effects
-    swww
-
     # Terminal Programs
-    bat
-    btop
-    eza
-    gitui
-    helix
-    htop
-    lf
     ollama
-    openvpn
-    ripgrep
     sops
-    vscode-langservers-extracted
     yazi
-    yt-dlp
-
-    # "Work"
-    libreoffice
-    mullvad-vpn
-    remmina
-    gnome-network-displays
-    
-    # Pentesting
-    ffuf
-    gobuster
-    john
-    nmap
-    rlwrap
-    thc-hydra
-
+ 
     # Fun
     inkscape
     gimp
-    mpv
     obs-studio
     handbrake
-    rhythmbox
 ];
  
   dconf.settings = {

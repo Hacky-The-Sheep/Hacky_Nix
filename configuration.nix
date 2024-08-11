@@ -44,7 +44,6 @@
     enable = true;
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
-    # videoDrivers = [ "amdgpu" ];
   };
 
   programs.dconf.enable = true;
@@ -101,6 +100,7 @@
   (with pkgs-stable; [
 
     # General Purpose
+    age
     alacritty
     brave
     fastfetch
@@ -109,6 +109,7 @@
     home-manager
     kitty
     librewolf
+    sops
     synology-drive-client
     vim
     wget
@@ -145,6 +146,9 @@
     thc-hydra
 
     # Terminal Programs
+    eza
+    helix
+    htop
     openvpn
     ripgrep
     yt-dlp
