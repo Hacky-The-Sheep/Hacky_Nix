@@ -119,7 +119,7 @@
           };
         	modules = [ 
             catppuccin.homeManagerModules.catppuccin
-            nixos-hardware.nixosModules.framework-13-7040-amd
+            # nixos-hardware.nixosModules.framework-13-7040-amd
             ./hosts/laptop/home.nix 
           ];
       };
@@ -132,7 +132,10 @@
       };
       	work = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;
-        	extraSpecialArgs = { inherit inputs; };
+        	extraSpecialArgs = { 
+            inherit inputs; 
+            inherit pkgs-stable;
+          };
         	modules = [ 
             catppuccin.homeManagerModules.catppuccin
             ./hosts/work/home.nix 

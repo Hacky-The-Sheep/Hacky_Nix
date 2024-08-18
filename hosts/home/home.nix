@@ -32,9 +32,6 @@
   xdg.enable = true;
 
   # SSH
-  sops = {
-    age.sshKeyPaths = [ "/home/hacky/.ssh/id_ed25519" ];
-  };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
     

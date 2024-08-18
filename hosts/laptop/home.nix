@@ -13,9 +13,12 @@
       ../../wm/hyprland.nix
       ../../wm/waybar.nix
       # ../../apps/hyprlock.nix
-
     ];
 
+  # Catppuccin
+  catppuccin.flavor = "mocha";
+
+  # Home
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
 
@@ -27,11 +30,10 @@
   # Packages to install
   home.packages = with pkgs; [
 
-
     # Terminal Programs
     # Fun
     mpv
-    microsoft-edge-beta
+    # microsoft-edge-beta
     # qbittorrent
     # rhythmbox
 ];

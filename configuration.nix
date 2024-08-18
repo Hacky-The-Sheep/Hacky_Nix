@@ -122,8 +122,9 @@
     nil
 
     # Entertainment
-    rhythmbox
+    audacious
     mpv
+    vlc
     
     # Hyprland    
     brightnessctl
@@ -155,9 +156,10 @@
 
     # Work Stuff
     libreoffice
-    microsoft-edge-beta
+    putty
     remmina
     sshs
+    wireshark
     ])
 
   ++
