@@ -4,11 +4,12 @@
   imports =
     [
       hardware/bluetooth.nix
-      system/printers.nix
-      system/udev.nix
       system/fonts.nix
       system/gnome.nix
       system/language_servers.nix
+      system/printers.nix
+      system/ssh.nix
+      system/udev.nix
     ];
 
   # Hyprland
