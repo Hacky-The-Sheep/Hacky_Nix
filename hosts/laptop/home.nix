@@ -8,6 +8,9 @@
       ../../terminal/install.nix
       ../../system/ssh.nix
 
+      # Firefox
+      ../../apps/firefox.nix
+      
       # Hyprland
       ../../apps/dunst.nix
       ../../apps/rofi.nix
