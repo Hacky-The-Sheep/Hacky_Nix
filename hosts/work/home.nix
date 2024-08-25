@@ -16,6 +16,7 @@
 
       # System
       ../../system/gtk.nix
+      ../../system/ssh.nix
 
       # Hyprland
       ../../apps/dunst.nix
