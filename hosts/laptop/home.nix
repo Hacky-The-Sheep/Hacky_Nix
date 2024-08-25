@@ -6,6 +6,7 @@
     [
       # Terminal
       ../../terminal/install.nix
+      ../../system/ssh.nix
 
       # Hyprland
       ../../apps/dunst.nix
@@ -29,13 +30,7 @@
 
   # Packages to install
   home.packages = with pkgs; [
-
-    # Terminal Programs
-    # Fun
-    mpv
-    # microsoft-edge-beta
-    # qbittorrent
-    # rhythmbox
+    signal-desktop
 ];
  
   # Home Manager Version
