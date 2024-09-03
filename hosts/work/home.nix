@@ -42,13 +42,11 @@
   # Packages to install
   home.packages = with pkgs; [
 
-
     # Main
     monero-gui
     pandoc
     signal-desktop
     texliveSmall
-    xdg-desktop-portal-hyprland
     zathura
 
     # Terminal Programs
