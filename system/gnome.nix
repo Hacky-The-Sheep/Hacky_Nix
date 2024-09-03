@@ -13,7 +13,7 @@
     blanket
     emblem
     fragments
-    gnome.polari
+    polari
     shortwave
     video-trimmer
   ];

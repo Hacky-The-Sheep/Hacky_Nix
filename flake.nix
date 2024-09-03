@@ -5,7 +5,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-24.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     catppuccin.url = "github:catppuccin/nix";
 
     home-manager = {
@@ -79,7 +79,9 @@
               inherit pkgs-stable;
             };
             modules = [
-              ./hosts/work/configuration.nix
+              catppuccin.nixosModules.catppuccin
+              ./hosts/work/hardware-configuration.nix
+              ./configuration.nix
             ];
           };
 
