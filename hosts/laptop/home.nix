@@ -12,10 +12,10 @@
       ../../apps/firefox.nix
       
       # Hyprland
-      ../../apps/dunst.nix
-      ../../apps/rofi.nix
-      ../../wm/hyprland.nix
-      ../../wm/waybar.nix
+      # ../../apps/dunst.nix
+      # ../../apps/rofi.nix
+      # ../../wm/hyprland.nix
+      # ../../wm/waybar.nix
       # ../../apps/hyprlock.nix
     ];
 

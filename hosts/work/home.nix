@@ -15,14 +15,13 @@
       ../../terminal/install.nix
 
       # System
-      ../../system/gtk.nix
       ../../system/ssh.nix
 
       # Hyprland
-      ../../apps/dunst.nix
-      ../../apps/rofi.nix
-      ../../wm/hyprland.nix
-      ../../wm/waybar.nix
+      # ../../apps/dunst.nix
+      # ../../apps/rofi.nix
+      # ../../wm/hyprland.nix
+      # ../../wm/waybar.nix
 
       # Apps
       ../../apps/firefox.nix

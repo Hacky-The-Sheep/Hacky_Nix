@@ -8,35 +8,22 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "nvme" "thunderbolt" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "sr_mod" ];
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "uas" "sd_mod" ];
+  boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/f9d8305d-d757-4b75-8b68-cda9bfd9c40c";
+    { device = "/dev/disk/by-uuid/e787fca6-b9b2-499c-8a66-f27c729ae390";
       fsType = "ext4";
     };
 
-  fileSystems."/home/hacky/syn_games" =
-    { device = "/dev/disk/by-uuid/ce9af1fa-1fa2-4a2e-8edb-dff502898156";
-      fsType = "ext4";
-    };
-
-  fileSystems."/home/hacky/syn_movies" =
-    { device = "/dev/disk/by-uuid/197a1136-5235-44f3-82c8-5b83d3ea7f1e";
-      fsType = "ext4";
-    };
-
-  fileSystems."/home/hacky/syn_tv" =
-    { device = "/dev/disk/by-uuid/e610116f-c4c7-4c0e-b620-cb31a386d1ad";
-      fsType = "ext4";
-    };
+  boot.initrd.luks.devices."luks-2b355a4f-8d90-48c0-b55d-aee023b930d9".device = "/dev/disk/by-uuid/2b355a4f-8d90-48c0-b55d-aee023b930d9";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/59D6-630E";
+    { device = "/dev/disk/by-uuid/F104-4E6B";
       fsType = "vfat";
-      options = [ "fmask=0022" "dmask=0022" ];
+      options = [ "fmask=0077" "dmask=0077" ];
     };
 
   swapDevices = [ ];
@@ -46,9 +33,7 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
-  # networking.interfaces.eno2.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp7s0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp1s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
