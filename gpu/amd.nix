@@ -9,10 +9,8 @@
   hardware.cpu.x86.msr.enable = true;
 
   # OpenCL
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
     extraPackages = with pkgs; [
     rocmPackages.clr.icd
     ];
