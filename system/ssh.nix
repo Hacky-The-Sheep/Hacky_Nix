@@ -94,14 +94,7 @@
     Port 22
     KexAlgorithms +diffie-hellman-group1-sha1,diffie-hellman-group14-sha1
     HostKeyAlgorithms +ssh-rsa
-    
-   Host Kitchen
-    HostName 192.168.2.99
-    User admin
-    Port 22
-    KexAlgorithms +diffie-hellman-group1-sha1,diffie-hellman-group14-sha1
-    HostKeyAlgorithms +ssh-rsa
-    
+        
    Host home
     Hostname 10.0.0.17
     User hacky
