@@ -49,6 +49,7 @@
     texliveSmall
 
     # Terminal Programs
+    powershell
     ollama
     xmrig
     yazi

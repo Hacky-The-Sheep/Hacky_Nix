@@ -5,6 +5,9 @@
 
   services.xserver.videoDrivers = [ "amdgpu" ];
 
+  # for Sea Islands (CIK i.e. GCN 2) cards
+  boot.kernelParams = [ "radeon.cik_support=0" "amdgpu.cik_support=1" ];
+
   # Enable MSR Mod
   hardware.cpu.x86.msr.enable = true;
 
@@ -12,7 +15,8 @@
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
-    rocmPackages.clr.icd
+      rocmPackages.clr.icd
+      amdvlk
     ];
   };
 
