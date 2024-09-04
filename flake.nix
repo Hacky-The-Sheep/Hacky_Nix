@@ -80,6 +80,7 @@
             };
             modules = [
               catppuccin.nixosModules.catppuccin
+              ./gpu/amd.nix
               ./hosts/work/hardware-configuration.nix
               ./configuration.nix
             ];
