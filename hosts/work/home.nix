@@ -47,11 +47,10 @@
     pandoc
     signal-desktop
     texliveSmall
-    zathura
 
     # Terminal Programs
     ollama
-    sops
+    xmrig
     yazi
  
     # Fun
