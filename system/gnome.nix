@@ -6,8 +6,8 @@
 
     # Core Gnome
     gnome-tweaks
-    gnome-browser-connector
     gnomeExtensions.appindicator
+    gnomeExtensions.wallpaper-slideshow
 
     # Gnome Circle
     blanket
