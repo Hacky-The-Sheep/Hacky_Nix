@@ -68,7 +68,7 @@
             nixos-hardware.nixosModules.framework-13-7040-amd
             catppuccin.nixosModules.catppuccin
             ./hosts/laptop/hardware-configuration.nix
-            ./configuration.nix
+            ./hosts/home/configuration.nix
           ];
         };
 
