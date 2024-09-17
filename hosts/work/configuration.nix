@@ -1,30 +1,28 @@
 { pkgs, pkgs-stable, ... }:
 
-# ██     ██  ██████  ██████  ██   ██ 
-# ██     ██ ██    ██ ██   ██ ██  ██  
-# ██  █  ██ ██    ██ ██████  █████   
-# ██ ███ ██ ██    ██ ██   ██ ██  ██  
-#  ███ ███   ██████  ██   ██ ██   ██ 
+# ██╗  ██╗ ██████╗ ███╗   ███╗███████╗
+# ██║  ██║██╔═══██╗████╗ ████║██╔════╝
+# ███████║██║   ██║██╔████╔██║█████╗  
+# ██╔══██║██║   ██║██║╚██╔╝██║██╔══╝  
+# ██║  ██║╚██████╔╝██║ ╚═╝ ██║███████╗
+# ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
 
 {
   imports =
     [
-      ../../hosts/work/hardware-configuration.nix
       ../../hardware/bluetooth.nix
-      # ../../hardware/work_nvidia.nix
-      ../../system/printers.nix
-      ../../system/udev.nix
-      ../../hardware/system76.nix
       ../../system/fonts.nix
       ../../system/gnome.nix
       ../../system/language_servers.nix
+      ../../system/printers.nix
+      ../../system/udev.nix
     ];
 
-  # Needed to run swaylock
-  security.pam.services.swaylock = {};
-
-  # Gnome Keyring for Hyprland
-  security.pam.services.login.enableGnomeKeyring = true;
+  # # Hyprland
+  # security.pam.services = {
+  #   login.enableGnomeKeyring = true;
+  # };
+  # programs.hyprlock.enable = true;
 
   networking.firewall.allowPing = true;
 
@@ -33,7 +31,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Networking
-  networking.hostName = "jonix";
+  networking.hostName = "homenix";
   networking.networkmanager.enable = true;
   services.openssh.enable = true;
 
@@ -51,25 +49,23 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    # libinput.enable = true;
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
-    videoDrivers = [ "amdgpu" ];
   };
 
   programs.dconf.enable = true;
 
   ## Enable
-  programs.hyprland = {
-    enable = true;
-    # package = inputs.hyprland.packages.${pkgs.system}.hyprland; 
-  };
+  # programs.hyprland = {
+  #   enable = true;
+  #   package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+  # };
 
   # Cachix
-  nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  };
+  # nix.settings = {
+  #   substituters = ["https://hyprland.cachix.org"];
+  #   trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  # };
 
   # Printing
   services.printing.enable = true;
@@ -83,7 +79,8 @@
   ## Open Firewall Ports
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 9090 22 80 46745 ];
+    allowedTCPPorts = [ 9090 22 80 46745 9091 ];
+    allowedUDPPorts = [ 7236 5353 ];
   };
 
   # Enable sound with pipewire.
@@ -91,8 +88,8 @@
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
-    # alsa.enable = true;
-    # alsa.support32Bit = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
     pulse.enable = true;
   };
 
@@ -108,30 +105,75 @@
 
   environment.systemPackages = 
   (with pkgs-stable; [
-    cargo
-    delve
-    discord
+
+    # General Purpose
+    age
+    alacritty
+    fastfetch
     fish
     git
     home-manager
-    go
-    makemkv
-    microsoft-edge-dev
-    nil
-    steam
+    kitty
+    librewolf
+    sops
     synology-drive-client
     vim
     wget
-    wineWowPackages.stable
     zellij
+
+    # Coding
+    cargo
+    delve
+    go
+    nil
+
+    # Entertainment
+    audacious
+    mpv
+    vlc
+    
+    # Hyprland    
+    # brightnessctl
+    # dunst
+    # grim
+    # hyprlock
+    # polkit_gnome
+    # rofi
+    # rofimoji
+    # slurp
+    # swappy
+    # swww
+
+    # Pentesting
+    ffuf
+    gobuster
+    john
+    nmap
+    rlwrap
+    thc-hydra
+
+    # Terminal Programs
+    eza
+    helix
+    htop
+    openvpn
+    ripgrep
+    yt-dlp
+
+    # Work Stuff
+    libreoffice
+    putty
+    remmina
+    sshs
+    wireshark
     ])
 
   ++
 
   (with pkgs; [
+    brave
+    discord
     simplex-chat-desktop
-    xmrig
-    cudaPackages.cudatoolkit
   ]);
 
   # System Version
@@ -142,11 +184,17 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
 
-  # Enable MSR Mod
-  hardware.cpu.x86.msr.enable = true;
-
-  #TEST ---> DELETE IF NOT WORKING
-  hardware.opengl.extraPackages = with pkgs; [
-    rocmPackages.clr.icd
-  ];
+  # Clean Nix
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 7d";
+  };
+  
+  # Catppuccin
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+    accent = "peach";
+  };
 }
