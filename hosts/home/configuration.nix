@@ -79,7 +79,7 @@
   ## Open Firewall Ports
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 9090 22 80 46745 9091 ];
+    allowedTCPPorts = [ 9090 22 80 46745 9091 51413 ];
     allowedUDPPorts = [ 7236 5353 ];
   };
 
