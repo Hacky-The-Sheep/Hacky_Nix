@@ -24,9 +24,6 @@
       # ----- System Settings ----- #
       system = "x86_64-linux";      
       lib = nixpkgs.lib;
-      home-host = "homenix";
-      frame-host = "framenix";
-      work-host = "worknix";
       pkgs = nixpkgs.legacyPackages.${system};
       pkgs-stable = import nixpkgs-stable {
         system = "x86_64-linux";
@@ -66,7 +63,7 @@
             inherit system; 
             inherit inputs; 
             inherit pkgs-stable;
-            inherit frame-host;
+            hostname = "framenix";
           };
           modules = [ 
             nixos-hardware.nixosModules.framework-13-7040-amd
@@ -79,8 +76,8 @@
         work = lib.nixosSystem {
             inherit system;
             specialArgs = { 
+              hostname = "worknix";
               inherit system;
-              inherit work-host;
               inherit inputs;
               inherit pkgs-stable;
             };
@@ -102,10 +99,10 @@
 
         home = lib.nixosSystem {
           specialArgs = { 
+            hostname = "homenix";
             inherit system;
             inherit inputs;
             inherit pkgs-stable;
-            inherit home-host;
           };
           modules = [ 
             catppuccin.nixosModules.catppuccin
