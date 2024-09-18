@@ -24,6 +24,9 @@
       # ----- System Settings ----- #
       system = "x86_64-linux";      
       lib = nixpkgs.lib;
+      home-host = "homenix";
+      frame-host = "framenix";
+      work-host = "worknix";
       pkgs = nixpkgs.legacyPackages.${system};
       pkgs-stable = import nixpkgs-stable {
         system = "x86_64-linux";
@@ -63,18 +66,21 @@
             inherit system; 
             inherit inputs; 
             inherit pkgs-stable;
+            inherit frame-host;
           };
           modules = [ 
             nixos-hardware.nixosModules.framework-13-7040-amd
             catppuccin.nixosModules.catppuccin
+            ./configuration.nix
             ./hosts/laptop/hardware-configuration.nix
-            ./hosts/laptop/configuration.nix
           ];
         };
 
         work = lib.nixosSystem {
             inherit system;
             specialArgs = { 
+              inherit system;
+              inherit work-host;
               inherit inputs;
               inherit pkgs-stable;
             };
@@ -82,7 +88,7 @@
               catppuccin.nixosModules.catppuccin
               ./gpu/amd.nix
               ./hosts/work/hardware-configuration.nix
-              ./hosts/work/configuration.nix
+              ./configuration.nix
             ];
           };
 
@@ -99,10 +105,11 @@
             inherit system;
             inherit inputs;
             inherit pkgs-stable;
+            inherit home-host;
           };
           modules = [ 
             catppuccin.nixosModules.catppuccin
-            ./hosts/home/configuration.nix
+            ./configuration.nix
             ./hosts/home/hardware-configuration.nix
           ];
         };
@@ -122,7 +129,6 @@
           };
         	modules = [ 
             catppuccin.homeManagerModules.catppuccin
-            # nixos-hardware.nixosModules.framework-13-7040-amd
             ./hosts/laptop/home.nix 
           ];
       };

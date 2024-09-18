@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, inputs, ... }:
+{ pkgs, pkgs-stable, frame-host, ... }:
 
 {
   imports =
@@ -24,7 +24,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Networking
-  networking.hostName = "jonix";
+  networking.hostName = frame-host;
   networking.networkmanager.enable = true;
   services.openssh.enable = true;
 
