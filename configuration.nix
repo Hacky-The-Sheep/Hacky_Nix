@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, frame-host, ... }:
+{ pkgs, pkgs-stable, hostname, ... }:
 
 {
   imports =
@@ -24,7 +24,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Networking
-  networking.hostName = frame-host;
+  networking.hostName = hostname;
   networking.networkmanager.enable = true;
   services.openssh.enable = true;
 
