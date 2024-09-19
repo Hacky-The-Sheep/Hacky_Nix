@@ -155,6 +155,7 @@
 
     # Work Stuff
     libreoffice
+    obsidian
     putty
     remmina
     sshs
