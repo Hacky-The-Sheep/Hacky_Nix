@@ -165,6 +165,7 @@
 
   (with pkgs; [
     brave
+    powershell
     simplex-chat-desktop
   ]);
 
