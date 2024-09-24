@@ -51,6 +51,7 @@
     # Terminal Programs
     powershell
     ollama
+    mullvad-vpn
     xmrig
     yazi
  
