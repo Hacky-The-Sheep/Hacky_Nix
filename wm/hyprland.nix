@@ -15,7 +15,7 @@ wayland.windowManager.hyprland = {
     ];
 
     # Set the default monitor
-    monitor = ", highrr, 0x0, 1";
+    monitor = ", highrr, 0x0, 2";
 
     env = "XCURSOR_SIZE,24";
 
