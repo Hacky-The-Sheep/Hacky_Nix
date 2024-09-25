@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, hostname, ... }:
+{ pkgs, pkgs-stable, inputs, hostname, ... }:
 
 {
   imports =
@@ -11,11 +11,11 @@
       system/udev.nix
     ];
 
-  # # Hyprland
-  # security.pam.services = {
-  #   login.enableGnomeKeyring = true;
-  # };
-  # programs.hyprlock.enable = true;
+  # Hyprland
+  security.pam.services = {
+    login.enableGnomeKeyring = true;
+  };
+  programs.hyprlock.enable = true;
 
   networking.firewall.allowPing = true;
 
@@ -48,17 +48,17 @@
 
   programs.dconf.enable = true;
 
-  ## Enable
-  # programs.hyprland = {
-  #   enable = true;
-  #   package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-  # };
+  # Enable
+   programs.hyprland = {
+     enable = true;
+     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+   };
 
-  # Cachix
-  # nix.settings = {
-  #   substituters = ["https://hyprland.cachix.org"];
-  #   trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
-  # };
+   # Cachix
+   nix.settings = {
+     substituters = ["https://hyprland.cachix.org"];
+     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+   };
 
   # Printing
   services.printing.enable = true;
@@ -126,16 +126,16 @@
     vlc
     
     # Hyprland    
-    # brightnessctl
-    # dunst
-    # grim
-    # hyprlock
-    # polkit_gnome
-    # rofi
-    # rofimoji
-    # slurp
-    # swappy
-    # swww
+    brightnessctl
+    dunst
+    grim
+    hyprlock
+    polkit_gnome
+    rofi
+    rofimoji
+    slurp
+    swappy
+    swww
 
     # Pentesting
     ffuf
