@@ -2,13 +2,14 @@
 
 {
  environment.systemPackages = with pkgs; [
+  ansible-language-server
   clippy
+  gopls
   marksman
   openssl
+  # python311Packages.python-lsp-server
   rust-analyzer
   rustc
-  # python311Packages.python-lsp-server
-  gopls
   vscode-langservers-extracted
-  ];
+  yaml-language-server  ];
 }
