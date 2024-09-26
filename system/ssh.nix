@@ -32,7 +32,7 @@
     KexAlgorithms +diffie-hellman-group1-sha1,diffie-hellman-group14-sha1
     HostKeyAlgorithms +ssh-rsa
 
-   Host Main_Closet
+   Host Asbestos_Closet
     HostName 192.168.2.40
     User admin
     Port 22

@@ -60,6 +60,7 @@
     gimp
     obs-studio
     handbrake
+    qFlipper
 ];
  
   dconf.settings = {
