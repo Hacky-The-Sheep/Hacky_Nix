@@ -48,7 +48,6 @@
   home.packages = with pkgs; [
 
     # Main
-    microsoft-edge
     monero-gui
     pandoc
     signal-desktop
