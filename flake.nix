@@ -138,9 +138,6 @@
       };
       	work = home-manager.lib.homeManagerConfiguration {
         	inherit pkgs;
-          config = {
-            allowUnfree = true;
-          };
         	extraSpecialArgs = { 
             inherit inputs; 
             inherit pkgs-stable;

@@ -8,6 +8,11 @@
 
 {
 
+  # Allow Unfree
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+
   # --- MODULARITY --- #
   imports = 
     [ 
@@ -43,7 +48,7 @@
   home.packages = with pkgs; [
 
     # Main
-    microsoft-edge-stable-bin
+    microsoft-edge
     monero-gui
     pandoc
     signal-desktop
