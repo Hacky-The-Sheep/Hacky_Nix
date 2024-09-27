@@ -191,4 +191,7 @@
     flavor = "mocha";
     accent = "peach";
   };
+
+  # Enable Flatpak
+  services.flatpak.enable = true;
 }
