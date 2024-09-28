@@ -11,12 +11,6 @@
       system/udev.nix
     ];
 
-  # Hyprland
-  security.pam.services = {
-    login.enableGnomeKeyring = true;
-  };
-  programs.hyprlock.enable = true;
-
   networking.firewall.allowPing = true;
 
   # Bootloader
@@ -52,12 +46,6 @@
    programs.hyprland = {
      enable = true;
      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-   };
-
-   # Cachix
-   nix.settings = {
-     substituters = ["https://hyprland.cachix.org"];
-     trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
    };
 
   # Printing
@@ -125,18 +113,6 @@
     mpv
     vlc
     
-    # Hyprland    
-    brightnessctl
-    dunst
-    grim
-    hyprlock
-    polkit_gnome
-    rofi
-    rofimoji
-    slurp
-    swappy
-    swww
-
     # Pentesting
     ffuf
     gobuster

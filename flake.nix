@@ -82,6 +82,7 @@
               inherit pkgs-stable;
             };
             modules = [
+              ./wm/hypr_config.nix
               catppuccin.nixosModules.catppuccin
               ./gpu/amd.nix
               ./hosts/work/hardware-configuration.nix
@@ -105,6 +106,7 @@
             inherit pkgs-stable;
           };
           modules = [ 
+            ./wm/hypr_config.nix
             catppuccin.nixosModules.catppuccin
             ./configuration.nix
             ./hosts/home/hardware-configuration.nix
