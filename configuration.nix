@@ -45,7 +45,11 @@
 
   # KDE
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
+  services.displayManager = {
+    sddm.enable = true;
+    defaultSession = "plasma";
+    sddm.wayland.enable = true;
+  };
   services.desktopManager.plasma6.enable = true;
 
   programs.dconf.enable = true;
