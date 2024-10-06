@@ -5,8 +5,8 @@
     [
       hardware/bluetooth.nix
       system/fonts.nix
-      # system/gnome.nix
-      system/kde.nix
+      system/gnome.nix
+      # system/kde.nix
       system/language_servers.nix
       system/printers.nix
       system/udev.nix
@@ -37,20 +37,20 @@
   # Desktop Environment
 
   # GNOME
-  # services.xserver = {
-  #   enable = true;
-  #   displayManager.gdm.enable = true;
-  #   desktopManager.gnome.enable = true;
-  # };
-
-  # KDE
-  services.xserver.enable = true;
-  services.displayManager = {
-    sddm.enable = true;
-    defaultSession = "plasma";
-    sddm.wayland.enable = true;
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
   };
-  services.desktopManager.plasma6.enable = true;
+
+  # # KDE
+  # services.xserver.enable = true;
+  # services.displayManager = {
+  #   sddm.enable = true;
+  #   defaultSession = "plasma";
+  #   sddm.wayland.enable = true;
+  # };
+  # services.desktopManager.plasma6.enable = true;
 
   programs.dconf.enable = true;
 
