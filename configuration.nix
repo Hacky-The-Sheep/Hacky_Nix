@@ -122,6 +122,7 @@
     nil
 
     # Entertainment
+    qbittorrent
     rhythmbox
     vlc
     
