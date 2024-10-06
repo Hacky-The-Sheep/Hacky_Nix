@@ -110,6 +110,7 @@
     librewolf
     sops
     synology-drive-client
+    unzip
     vim
     wget
     zellij
