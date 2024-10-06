@@ -5,7 +5,8 @@
     [
       hardware/bluetooth.nix
       system/fonts.nix
-      system/gnome.nix
+      # system/gnome.nix
+      system/kde.nix
       system/language_servers.nix
       system/printers.nix
       system/udev.nix
@@ -33,12 +34,19 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-  };
+  # Desktop Environment
+
+  # GNOME
+  # services.xserver = {
+  #   enable = true;
+  #   displayManager.gdm.enable = true;
+  #   desktopManager.gnome.enable = true;
+  # };
+
+  # KDE
+  services.xserver.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   programs.dconf.enable = true;
 
@@ -109,8 +117,7 @@
     nil
 
     # Entertainment
-    audacious
-    mpv
+    rhythmbox
     vlc
     
     # Pentesting
