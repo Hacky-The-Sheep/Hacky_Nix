@@ -48,6 +48,7 @@
   home.packages = with pkgs; [
 
     # Main
+    calibre
     monero-gui
     pandoc
     signal-desktop
@@ -61,12 +62,12 @@
     yazi
  
     # Fun
-    inkscape
     gimp
-    obs-studio
     handbrake
+    inkscape
+    obs-studio
     qFlipper
-];
+  ];
  
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
