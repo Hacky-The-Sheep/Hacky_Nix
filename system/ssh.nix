@@ -11,6 +11,13 @@
     KexAlgorithms +diffie-hellman-group1-sha1,diffie-hellman-group14-sha1
     HostKeyAlgorithms +ssh-rsa
 
+   Host Panth_Lounge
+    HostName 192.168.2.10
+    User admin
+    Port 22
+    KexAlgorithms +diffie-hellman-group1-sha1,diffie-hellman-group14-sha1
+    HostKeyAlgorithms +ssh-rsa
+
    Host Tech_Deck
     HostName 192.168.2.2
     User admin
