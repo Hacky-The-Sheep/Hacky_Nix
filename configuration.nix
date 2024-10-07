@@ -122,8 +122,6 @@
     nil
 
     # Entertainment
-    qbittorrent
-    rhythmbox
     vlc
     
     # Pentesting
