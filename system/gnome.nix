@@ -8,6 +8,7 @@
     gnome-tweaks
     gnomeExtensions.appindicator
     gnomeExtensions.wallpaper-slideshow
+    gnomeExtensions.sound-output-device-chooser
 
     # Gnome Circle
     blanket
