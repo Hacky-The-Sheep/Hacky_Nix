@@ -5,8 +5,10 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nixpkgs-stable.url = "nixpkgs/nixos-24.05";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     catppuccin.url = "github:catppuccin/nix";
+
+    # Testing
+    stylix.url = "github:danth/stylix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -82,7 +84,6 @@
               inherit pkgs-stable;
             };
             modules = [
-              ./wm/hypr_config.nix
               catppuccin.nixosModules.catppuccin
               ./gpu/amd.nix
               ./hosts/work/hardware-configuration.nix
@@ -106,8 +107,15 @@
             inherit pkgs-stable;
           };
           modules = [ 
-            ./wm/hypr_config.nix
-            catppuccin.nixosModules.catppuccin
+            # catppuccin.nixosModules.catppuccin
+             home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.backupFileExtension = "backup";
+            home-manager.users.hacky = import ./hosts/home/home.nix;
+          }
+            inputs.stylix.nixosModules.stylix
             ./configuration.nix
             ./hosts/home/hardware-configuration.nix
           ];

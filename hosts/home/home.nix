@@ -20,29 +20,31 @@
   home.homeDirectory = "/home/hacky";
 
   # Catppuccin
-  catppuccin = {
-    enable = true;
-    flavor = "mocha";
-    accent = "sky";
-    pointerCursor = {
-      accent = "rosewater";
-    };
-  };
-  gtk.enable = true;
-  gtk.catppuccin = {
-    enable = true;
-    accent = "sky";
-    flavor = "mocha";
-    gnomeShellTheme = true;
-    icon = {
-      enable = true;
-      accent = "peach";
-    };
-  };
+  # catppuccin = {
+  #   enable = true;
+  #   flavor = "mocha";
+  #   accent = "sky";
+  #   pointerCursor = {
+  #     accent = "rosewater";
+  #   };
+  # };
+  # gtk.enable = true;
+  # gtk.catppuccin = {
+  #   enable = true;
+  #   accent = "sky";
+  #   flavor = "mocha";
+  #   gnomeShellTheme = true;
+  #   icon = {
+  #     enable = true;
+  #     accent = "peach";
+  #   };
+  # };
 
+  # Stylix
+  stylix.targets.helix.enable = true;
 
   # Must be enabled for cat/nix to work
-  xdg.enable = true;
+  # xdg.enable = true;
 
   # SSH
   # Let Home Manager install and manage itself.

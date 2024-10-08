@@ -1,4 +1,4 @@
-{ pkgs, pkgs-stable, inputs, hostname, ... }:
+{ pkgs, pkgs-stable, hostname, ... }:
 
 {
   imports =
@@ -6,7 +6,6 @@
       hardware/bluetooth.nix
       system/fonts.nix
       system/gnome.nix
-      # system/kde.nix
       system/language_servers.nix
       system/printers.nix
       system/udev.nix
@@ -53,12 +52,6 @@
   # services.desktopManager.plasma6.enable = true;
 
   programs.dconf.enable = true;
-
-  # Enable
-   programs.hyprland = {
-     enable = true;
-     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-   };
 
   # Printing
   services.printing.enable = true;
@@ -178,6 +171,17 @@
   #   flavor = "mocha";
   #   accent = "peach";
   # };
+
+  # Stylix
+  stylix = {
+    autoEnable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    enable = true;
+    image = ./anime_space.png;
+    polarity = "dark";
+    targets.gtk.enable = true;  
+  };
+
 
   # Enable Flatpak
   services.flatpak.enable = true;
