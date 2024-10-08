@@ -55,7 +55,7 @@
 
   # Printing
   services.printing.enable = true;
-  services.printing.drivers = [ pkgs.brlaser pkgs.cups-toshiba-estudio ];
+  services.printing.drivers = [ pkgs.brlaser ];
   services.avahi = {
     enable = true;
     nssmdns4 = true;
@@ -179,7 +179,27 @@
     enable = true;
     image = ./anime_space.png;
     polarity = "dark";
-    targets.gtk.enable = true;  
+    fonts = {
+      serif = {
+        package = pkgs.iosevka;
+        name = "Iosevka";
+      };
+      sansSerif = {
+        package = pkgs.iosevka;
+        name = "Iosevka";
+      };
+      monospace = {
+        package = pkgs.iosevka;
+        name = "Iosevka";
+      };
+      emoji = {
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Color Emoji";
+      };
+    };
+    targets = {
+      chromium.enable = false;
+    };
   };
 
 

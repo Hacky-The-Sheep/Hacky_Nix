@@ -18,25 +18,7 @@
     [ 
       # Terminal
       ../../terminal/install.nix
-
-      # System
-      ../../system/ssh.nix
-
-      # Hyprland
-      ../../apps/dunst.nix
-      ../../apps/rofi.nix
-      ../../wm/hyprland.nix
-      ../../wm/waybar.nix
-
-      # Apps
-      ../../apps/firefox.nix
     ];
-
-  # Catppuccin
-  catppuccin.flavor = "mocha";
-
-  # Must be enabled for cat/nix to work
-  xdg.enable = true;
 
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
