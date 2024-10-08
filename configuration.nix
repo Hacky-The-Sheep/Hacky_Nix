@@ -173,11 +173,11 @@
   };
   
   # Catppuccin
-  catppuccin = {
-    enable = true;
-    flavor = "mocha";
-    accent = "peach";
-  };
+  # catppuccin = {
+  #   enable = true;
+  #   flavor = "mocha";
+  #   accent = "peach";
+  # };
 
   # Enable Flatpak
   services.flatpak.enable = true;

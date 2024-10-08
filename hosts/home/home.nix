@@ -14,19 +14,32 @@
     [
       # Terminal
       ../../terminal/install.nix
-
-      # System
-
-      # Hyprland
-      # ../../apps/dunst.nix
-      # ../../apps/rofi.nix
-      # ../../wm/hyprland.nix
-      # ../../wm/waybar.nix
-      # ../../apps/hyprlock.nix
     ];
 
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
+
+  # Catppuccin
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+    accent = "sky";
+    pointerCursor = {
+      accent = "rosewater";
+    };
+  };
+  gtk.enable = true;
+  gtk.catppuccin = {
+    enable = true;
+    accent = "sky";
+    flavor = "mocha";
+    gnomeShellTheme = true;
+    icon = {
+      enable = true;
+      accent = "peach";
+    };
+  };
+
 
   # Must be enabled for cat/nix to work
   xdg.enable = true;
