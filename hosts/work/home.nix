@@ -18,6 +18,7 @@
     [ 
       # Terminal
       ../../terminal/install.nix
+      ../../system/ssh.nix
     ];
 
   home.username = "hacky";

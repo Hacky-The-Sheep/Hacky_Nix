@@ -9,7 +9,6 @@
       system/language_servers.nix
       system/printers.nix
       system/udev.nix
-      system/ssh.nix
     ];
 
   networking.firewall.allowPing = true;
@@ -139,7 +138,6 @@
     obsidian
     putty
     remmina
-    sshs
     wireshark
     ])
 
@@ -149,6 +147,7 @@
     brave
     powershell
     simplex-chat-desktop
+    sshs
   ]);
 
   # System Version
