@@ -127,7 +127,7 @@
     thc-hydra
 
     # Terminal Programs
-    eza
+    # eza
     helix
     htop
     openvpn
