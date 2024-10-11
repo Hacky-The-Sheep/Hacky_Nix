@@ -19,9 +19,6 @@
       # ../../apps/hyprlock.nix
     ];
 
-  # Catppuccin
-  catppuccin.flavor = "mocha";
-
   # Home
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
