@@ -9,6 +9,7 @@
       system/language_servers.nix
       system/printers.nix
       system/udev.nix
+      system/ssh.nix
     ];
 
   networking.firewall.allowPing = true;

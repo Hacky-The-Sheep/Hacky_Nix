@@ -88,7 +88,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "backup";
+              home-manager.backupFileExtension = "work_backup";
               home-manager.users.hacky = import ./hosts/work/home.nix;
             }
               inputs.stylix.nixosModules.stylix
