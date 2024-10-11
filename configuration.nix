@@ -27,7 +27,7 @@
 
   # Fish 🐡
   # programs.fish.enable = true;
-  programs.nushell.enable = true;
+  # programs.nushell.enable = true;
   users.defaultUserShell = pkgs.nushell;
   environment.shells = with pkgs; [ nushell ];
 
