@@ -20,8 +20,11 @@
   home.username = "hacky";
   home.homeDirectory = "/home/hacky";
 
-  # Stylix
-  stylix.targets.helix.enable = true;
+  # Catppuccin
+  catppuccin.enable = true;
+  
+  # # Stylix
+  # stylix.targets.helix.enable = true;
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
