@@ -170,39 +170,8 @@
   catppuccin = {
     enable = true;
     flavor = "mocha";
-    accent = "peach";
+    accent = "pink";
   };
-
-  # Stylix
-  # stylix = {
-  #   autoEnable = true;
-  #   base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-  #   enable = true;
-  #   image = ./anime_space.png;
-  #   polarity = "dark";
-  #   fonts = {
-  #     serif = {
-  #       package = pkgs.iosevka;
-  #       name = "Iosevka";
-  #     };
-  #     sansSerif = {
-  #       package = pkgs.iosevka;
-  #       name = "Iosevka";
-  #     };
-  #     monospace = {
-  #       package = pkgs.iosevka;
-  #       name = "Iosevka";
-  #     };
-  #     emoji = {
-  #       package = pkgs.noto-fonts-emoji;
-  #       name = "Noto Color Emoji";
-  #     };
-  #   };
-  #   targets = {
-  #     chromium.enable = false;
-  #   };
-  # };
-
 
   # Enable Flatpak
   services.flatpak.enable = true;

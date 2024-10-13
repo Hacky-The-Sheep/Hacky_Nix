@@ -60,14 +60,19 @@
             hostname = "framenix";
           };
           modules = [ 
-             home-manager.nixosModules.home-manager
+              home-manager.nixosModules.home-manager
+              catppuccin.nixosModules.catppuccin
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.backupFileExtension = "backup";
-              home-manager.users.hacky = import ./hosts/laptop/home.nix;
+              home-manager.users.hacky = {
+                imports = [ 
+                  ./hosts/laptop/home.nix
+                  catppuccin.homeManagerModules.catppuccin
+                ];
+              };
             }
-            inputs.stylix.nixosModules.stylix
             nixos-hardware.nixosModules.framework-13-7040-amd
             ./configuration.nix
             ./hosts/laptop/hardware-configuration.nix
@@ -109,12 +114,18 @@
               inherit system;
             };
             modules = [
-               home-manager.nixosModules.home-manager
+              catppuccin.nixosModules.catppuccin
+              home-manager.nixosModules.home-manager
               {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
                 home-manager.backupFileExtension = "backup";
-                home-manager.users.hacky = import ./hosts/server/home.nix;
+                home-manager.users.hacky = {
+                  imports = [ 
+                    ./hosts/server/home.nix
+                    catppuccin.homeManagerModules.catppuccin
+                  ];
+                };
               }
               ./hosts/server/configuration.nix
             ];
@@ -141,57 +152,10 @@
                 ];
               };
             }
-            # inputs.stylix.nixosModules.stylix
             ./configuration.nix
             ./hosts/home/hardware-configuration.nix
           ];
         };
       };
-
-	# homeConfigurations = {
- #      	nvid_laptop = home-manager.lib.homeManagerConfiguration {
- #        	inherit pkgs;
- #        	extraSpecialArgs = { inherit inputs; };
- #        	modules = [ 
- #            ./hosts/nvid_laptop/home.nix 
- #          ];
- #      };
- #      	laptop = home-manager.lib.homeManagerConfiguration {
- #        	inherit pkgs;
- #        	extraSpecialArgs = { 
- #            inherit inputs; 
- #            inherit pkgs-stable; 
- #          };
- #        	modules = [ 
- #            ./hosts/laptop/home.nix 
- #          ];
- #      };
- #      	server = home-manager.lib.homeManagerConfiguration {
- #        	inherit pkgs;
- #        	extraSpecialArgs = { 
- #            inherit inputs; 
- #          };
- #        	modules = [ ./hosts/server/home.nix ];
- #      };
- #      	work = home-manager.lib.homeManagerConfiguration {
- #        	inherit pkgs;
- #        	extraSpecialArgs = { 
- #            inherit inputs; 
- #            inherit pkgs-stable;
- #          };
- #        	modules = [ 
- #            ./hosts/work/home.nix 
- #            ];
- #      };
- #      	home = home-manager.lib.homeManagerConfiguration {
- #        	inherit pkgs;
- #        	extraSpecialArgs = { 
- #            inherit inputs; 
- #          };
- #        	modules = [ 
- #            ./hosts/home/home.nix 
- #          ];
- #      };
- #    };
   };
 }
