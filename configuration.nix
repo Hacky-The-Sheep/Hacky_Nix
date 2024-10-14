@@ -95,13 +95,13 @@
 
     # General Purpose
     age
-    alacritty
+    # alacritty
     fastfetch
     fish
     git
     home-manager
     kitty
-    librewolf
+    # librewolf
     sops
     synology-drive-client
     unzip
