@@ -153,6 +153,7 @@
               };
             }
             ./configuration.nix
+            ./secrets/tailscale.nix
             ./hosts/home/hardware-configuration.nix
           ];
         };
