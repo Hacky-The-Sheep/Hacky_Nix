@@ -14,7 +14,7 @@
     ];
 
     fonts = {
-      enableDefaultFonts = true;
+      enableDefaultPackages = true;
       fontDir.enable = true;
       fontconfig = {
         antialias = true;
