@@ -32,6 +32,10 @@ format = '[ ](green)'
 [golang]
 format = '[ ](blue)'
 
+[nix_shell]
+disabled = true
+symbol = '󰼩 '
+format = 'via [☃️ $state( \($name\))](bold blue) '
 
 [directory]
 truncation_length = 3

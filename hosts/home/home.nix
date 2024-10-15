@@ -37,6 +37,7 @@
     pop
     signal-desktop
     thunderbird
+    tailscale
     
     # Testing!
     typst
