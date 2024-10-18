@@ -26,10 +26,12 @@
   time.timeZone = "America/Chicago";
 
   # Fish 🐡
-  # programs.fish.enable = true;
+  programs.fish.enable = true;
+  users.defaultUserShell = pkgs.fish;
+  environment.shells = with pkgs; [ fish ];
   # programs.nushell.enable = true;
-  users.defaultUserShell = pkgs.nushell;
-  environment.shells = with pkgs; [ nushell ];
+  # users.defaultUserShell = pkgs.nushell;
+  # environment.shells = with pkgs; [ nushell ];
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";

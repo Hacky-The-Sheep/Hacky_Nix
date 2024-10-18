@@ -24,6 +24,7 @@
   # Packages to install
   home.packages = with pkgs; [
     signal-desktop
+    mullvad-vpn
 ];
  
   # Home Manager Version
