@@ -75,6 +75,7 @@
             }
             nixos-hardware.nixosModules.framework-13-7040-amd
             ./configuration.nix
+            ./secrets/tailscale.nix
             ./hosts/laptop/hardware-configuration.nix
           ];
         };
